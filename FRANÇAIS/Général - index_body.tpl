@@ -66,7 +66,7 @@
 <!-- BEGIN disable_viewonline -->
 <div class="qeel">
 
-    <div class="qeel-right">
+    <div class="qeel-left">
 
         <!-- Dernier inscrit -->
         <div id="last_user">
@@ -104,7 +104,7 @@
     </div>
 
     <!-- Derniers connectés au cours de ces Xh -->
-    <div class="qeel-left" id="24hconnected">
+    <div class="qeel-right" id="24hconnected">
         {L_CONNECTED_MEMBERS}<br />
     </div>
 </div>
@@ -165,7 +165,6 @@ document.getElementById('24hconnected').innerHTML = document.getElementById('24h
 
 <!----------------------------------------------->
 <!-- CB (si affichée en bas) -------------->
-
 {CHATBOX_BOTTOM}
 
 

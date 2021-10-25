@@ -1,73 +1,73 @@
-/*** MODERNBB CSS V.1 - BLANK THEME
- * !!!! DESACTIVEZ le CSS de base du forum (en chochant [NON] en bas de la page) !!!!
+/*** CSS FOR BLANK THEME - MODERNBB 
+ * !!!! DEACTIVATE the basic CSS (by selecting [YES] at the bottom of the page) !!!!
  * 
- *** INDEX :
+ *** INDEX:
 
----- Structure du forum
+---- Forum structure
 -- Root
--- Toutes les pages
+-- All pages
 
----- Généralités
--- Liens et textes
--- Boutons interactions et barre de texte
--- Editeur de texte
--- Paginations
--- Elements esthétiques
+---- Generalities
+-- Links and text
+-- Interaction buttons and text bar
+-- Text editor
+-- Pagination
+-- Esthetic elements
 
----- Entête du forum
+---- Forum header
 -- Toolbar
--- Switcheroo (par Monomer)
--- Bannière
--- Barre de navigation 
--- Annonces défilantes
+-- Switcheroo (by Monomer)
+-- Banner
+-- Navigation bar
+-- Scrolling announcements
 
----- Page principale, index
--- Page d'accueil
--- Catégories
--- Qui est en ligne
+---- Main page, index
+-- Landing page
+-- Categories
+-- Who is online
 
----- Liste des sujets
--- Entête et footer de la liste
--- Liste des sujets
+---- Topics list
+-- List header and footer
+-- Topics list
 
----- Affichage d'un sujet
--- Sujet
--- Sondage
--- Liens, textes, balises, ...
+---- Topic view
+-- Topic
+-- Poll
+-- Links, text, tags...
 
----- Membres
--- Page de profil 
--- Profils simplifiés des tags
--- Liste des membres
+---- Members
+-- Profile page
+-- Simplified profile for tags
+-- Member list
 
----- Messages privés
--- Liste des MPs
--- Affichage d'un MP
+---- Private messages
+-- PM list
+-- PM view
 
----- Pages annexes
--- Page d'envoi d'un message
--- Edition de profil
--- Page de recherche
--- Page de connexion
--- Elements flottants
+---- Annex pages
+-- Message sending page
+-- Profile editing
+-- Search page
+-- Login page
+-- Floating elements
 
 ---- Blogs
--- Liste des blogs
--- Affichage d'un blog
--- Commentaire d'un blog
+-- Blog list
+-- Blog view
+-- Blog comments
 
 
----- Structure de forumactif
--- Balise générales
--- Poubelle de FA
+---- Forumotion structure
+-- General tags
+-- Wastebasket
 */
 
-/****** STRUCTURE DU FORUM ----------------------------------------------------------- 
- ****** Elements du forum qui déifnissent sa structure et hiérachie sur toutes les pages 
- ****** (ne les RENOMMEZ PAS, ils sont généraux aux pages Web ou à Forumactif) ------- ******/
+/****** FORUM STRUCTURE ----------------------------------------------------------- 
+ ****** Forum elements that define its structure and hierarchy on all pages. 
+ ****** (DO NOT RENAME THEM, they are general to the web or Forumotion) ------- ******/
 
 /*** ROOT 
- *** how to use : geniuspandalab.tumblr.com/post/634694343906689024/cssroot ***/
+ *** how to use: geniuspandalab.tumblr.com/post/634694343906689024/cssroot ***/
 :root {
     --black: #000;
     --dark: #333;
@@ -89,46 +89,46 @@
     --font: 'Open Sans';
 }
 
-/* S'applique à TOUS les éléments du forum*/
+/* Applies to ALL forum elements */
 * { 
-  box-sizing: border-box; /*évite que les éléments soient agrandis par le padding*/
+  box-sizing: border-box; /* Prevents elements from being stretched by padding */
 }
 
 /*** ------------------------------- ***/
-/*** TOUTES LES PAGES --------------- ***/
+/*** ALL PAGES --------------- ***/
 
-/* FOND DU FORUM ---*/
+/* FORUM BACKGROUND ---*/
 body {
     background: var(--grey);
     font-family: var(--font);
     font-size: var(--normal-size);
-    margin: 0;
+    margin: 0!important;
 }
 
 
 /* SCROLLBAR --- */
 
-/* Scrollbar entière */
+/* Whole scrollbar */
 ::-webkit-scrollbar {width: px;}
 
-/* Rail */
+/* Scrollbar track */
 ::-webkit-scrollbar-track {}
 
-/* Poignée */
+/* Scrollbar thumb */
 ::-webkit-scrollbar-thumb {}
 
 
-/* STRUCTURE PRINCIPALE ---*/
+/* MAIN STRUCTURE ---*/
 .main_forum {
-    width: 940px; /*largeur forum*/
-    margin: 10px auto; 
+    width: 940px; /*forum width*/
+    margin: 20px auto; 
     padding: 20px;
     background: #fff;
     border-radius: 5px;
 }
 
-/* Conteneur de toutes les sous-sections
- * comme les encadrés d'options, de rappel, etc... */
+/* All subsection containers
+ * like option and reminder boxes, etc... */
 .panel {
     background: var(--light);
     border: var(--border);
@@ -137,10 +137,10 @@ body {
     margin: 10px 0;
 }
 
-/* ASCENSEUR --- */
+/* ELEVATOR --- */
 
-/* Conteneur de l'ascenseur
- * Sert essentiellement à définir où le placer dans la page */
+/* Elevator contents
+ * Essentially defines where it is placed on the page */
 .elevator {
     position: fixed;
     bottom: 20px;
@@ -148,7 +148,7 @@ body {
     width: 120px;
 }
 
-/* Lien de renvoi haut/bas */
+/* Go to top/Go to bottom links */
 .elevator a {
     display: block;
     padding: 5px 8px;
@@ -164,36 +164,36 @@ body {
 
 
 /****** ------------------------------------------------------------------------------
- ****** GÉNÉRALITÉS ------------------------------------------------------------------ 
- ****** Sélecteurs généraux s'appliquant à plusieurs reprises sur tout le forum ******/
+ ****** GENERALITIES ------------------------------------------------------------------ 
+ ****** General elements that apply over the whole forum in many places ******/
 
 
 
 /*** ----------------------------------- ***/
-/*** LIENS ET TEXTE -------------------- ***/
+/*** LINKS AND TEXT -------------------- ***/
 
-/* LIENS DU FORUM --- */
+/* FORUM LINKS --- */
 a {
     font-weight: 600;
     text-decoration: none;
     color: var(--black);
 }
 
-/*liens au survol*/
+/*link hover*/
 a:hover { 
   color: var(--light-dark);
 }
 
-/* Emoji mis par défaut de FA
- * Les réduire les rend moins horribles à voir */
+/* Forumotion default emoji
+ * Making them smallers makes them less terrible to look at */
 .emojione {
     width: 15px !important
 }
 
 
-/* TITRES DES PAGES --- ***/
+/* PAGE TITLES --- ***/
 
-/* Utilisé pour des titres de pages */
+/* Used for page titles */
 h1, h1.page-title {
     color: var(--dark);
     margin: 10px 0 20px;
@@ -203,14 +203,14 @@ h1, h1.page-title {
     text-align: center;
 }
 
-/* Utilisé pour des titres de sujets, blogs... */
+/* Used to topic/blog post titles, etc... */
 h2, .h2 {
     margin: 0;
     font-size: var(--large-size);
     font-weight: 700;
 }
 
-/* Utilisé pour des titres de sous-sections, petit encadré, ...*/
+/* Used for subsection titles, small boxes...*/
 h3, .h3 {
     color: var(--dark);
     padding-bottom: 10px;
@@ -222,9 +222,9 @@ h3, .h3 {
 
 
 /*** --------------------------------------- ***/
-/*** BOUTONS D'INTERACTION ET BARRE DE TEXTE ***/
+/*** INTERACTION BUTTONS AND TEXT BAR ***/
 
-/* BARRE DE TEXTE ---*/
+/* TEXT BAR ---*/
 input[type="text"], input[type="password"], input.inputbox{
     border: var(--border);
     border-radius: 5px;
@@ -234,8 +234,8 @@ input[type="text"], input[type="password"], input.inputbox{
 }
 
 
-/* BOUTONS D'INTERACTION --- *
- * Envoyer, prévisualiser, sauvegarder, aller,... */
+/* INTERACTION BUTTONS --- *
+ * Send, preview, save, go to,... */
 input[type="submit"], input[type="button"], button[type="submit"], .button2 {
     font-size: var(--normal-size);
     padding: 2px 8px!important;
@@ -260,7 +260,7 @@ input[type="submit"]:hover {
 }
 
 
-/* MENUS DEROULANTS --- */
+/* DROP-DOWN MENUS --- */
 select {
     background: transparent;
     border: var(--border);
@@ -272,60 +272,60 @@ select {
 
 
 /*** ------------------------------- ***/
-/*** EDITEUR DE TEXTE -------------- ***/
+/*** TEXT EDITOR -------------- ***/
 
 
-/* Editeur de texte */
+/* Text editor */
 .sceditor-container {}
 
-/* Barre d'outils de l'éditeur de texte*/
+/* Text editor toolbar */
 div.sceditor-toolbar {
     background: var(--light) !important;
     border-bottom: var(--border) !important;
 }
 
-/* Conteneur des groupes d'outils */
+/* Tool group containers */
 div.sceditor-group {
     background: var(--grey) !important;
     border-bottom: var(--border) !important;
 }
 
-/* Bouton d'un outil */
+/* Tool button */
 a.sceditor-button {
     height: 26px !important;
-    /*ne pas retirer*/
+    /*do not remove*/
     width: 26px !important;
-    /*ne pas retirer*/
+    /*do not remove*/
 }
 
-/* Conteneur de la zone de texte */
+/* Text box container */
 .sceditor-container iframe,
 .sceditor-container textarea {
-    /*ne pas supprimer*/
+    /*do not remove*/
     width: 100% !important;
     margin: 0 !important;
     padding: 5px !important;
-    /*ne pas supprimer*/
+    /*ne pado not remove*/
     min-height: 250px !important;
 }
 
 
 /*** ------------------------------- ***/
-/*** PAGINATIONS -------------------- ***/
+/*** PAGINATION -------------------- ***/
 
 .pagination {}
 
-/*lien unique vers les pages numérotées*/
+/* unique link to numbered pages */
 .pagination span a {
     font-size: var(--little-size);
 }
 
-/*survol des liens uniques des pages*/
+/* unique page link hover */
 .pagination span a:hover {
     font-weight: 700
 }
 
-/*lien actif : page sur laquelle vous vous trouvez */
+/* active link: page where you are right now */
 .pagination span strong {
     background-color: var(--grey);
     border-radius: 3px;
@@ -333,23 +333,23 @@ a.sceditor-button {
 }
 
 
-/*suppression de l'image-lien "aller à la page suivante" */
+/* removing the "Go to next page" link image */
 .page-topic span a:last-child, .pag-img {
     display: none;
 }
 
 
 /*** ------------------------------- ***/
-/*** ELEMENTS ESTHETIQUES ---------- ***/
+/*** ESTHETIC ELEMENTS ---------- ***/
 
-/* Contenur général qui sert généralement de fond et/ou de contour*/
+/* General container that generally serves as background */
 .container {
     background: var(--grey);
     padding: 10px;
     border-radius: 5px;
 }
 
-/* Barre de séparation */
+/* Separator */
 .separator {
     padding-bottom: 5px;
     margin-bottom: 5px;
@@ -359,14 +359,14 @@ a.sceditor-button {
     width: 100%;
 }
 
-/* Conteneur moins large (les historiques des messages essentiellement) */
+/* Narrower container (mostly message history) */
 .wrapped {
     width: 80%;
     margin: 10px auto;
     clear: both;
 }
 
-/* Image/avatar réduit */
+/* Reduced image/avatar */
 .mini_img img {
     width: 40px;
     height: 40px;
@@ -378,14 +378,14 @@ a.sceditor-button {
 }
 
 
-/* Permet d'aligner un élément à droite ou à gauche */
+/* Allows to align an element to the left or right */
 .right {float: right}
 .left {float: left}
 
 .clear { clear: both }
 
-/* Barre de gestion 
- * Contient des boutons ou des liens spéciaux */
+/* Management bar
+ * Contains special links or buttons */
 .links_bar {
     padding: 10px;
     border: var(--border);
@@ -394,17 +394,17 @@ a.sceditor-button {
     clear: both;
 }
 
-/* supprime si vide */
+/* Hides bar if empty */
 .links_bar:empty {display: none}
 
-/* Lien spécial mis en avant */
+/* special link put to the forefront */
 .specials_links a, a.specials_links {
   background: var(--grey);
   padding: 2px 6px;
   border-radius: 5px;
 }
 
-/* Suppression des liens vides */
+/* Hides empty links */
 .specials_links a:empty, a.specials_links:empty {display: none}
 
 
@@ -413,32 +413,31 @@ a.sceditor-button {
 
 
 /****** ------------------------------------------------------------------------------ 
- ****** ENTETE DU FORUM --------------------------------------------------------------
- ****** Tous les éléments qui s'affichent en tête de toutes les pages ---------------- ******/
+ ****** FORUM HEADER --------------------------------------------------------------
+ ****** All elements that appear at the top of every page ---------------- ******/
 
 
 /*** ------------------------------- ***/
 /*** TOOLBAR ----------------------- ***/
 
-/* Toute la toolbar */
+/* Whole toolbar */
 #fa_toolbar {
     font-size: var(--little-size);
     font-family: var(--font);
 }
 
-/* Supression de la barre de recherche, des boutons sociaux et des flèches */
+/* Hiding the search bar, social media buttons, and arrows */
 #fa_search, #fa_share, #fa_hide 
     {display: none}
 
-/* Logo Forumactif : 
- * ATTENTION, il est techniquement interdit de supprimer de logo de FA. 
- * Techniquement. Faites-en donc ce que vous voulez. */
+/* Forumotion logo: 
+ * BE CAREFUL, you're technically not allowed to hide the forumotion logo. 
+ * Technically. Do what you want! */
 #fa_left {
-    margin-right: 80px;
-    /* display: none */
+    display: none
 }
 
-/* Conteneur du lien de bienvenue et notification */
+/* Container for the welcome link and notification */
 #fa_right {
     position: relative;
     margin-top: 5px;
@@ -452,9 +451,9 @@ a.sceditor-button {
     padding: 5px;
 }
 
-/* LIENS DE LA TOOLBAR ---*/
+/* TOOLBAR LINKS ---*/
 
-/* Tous les liens : connexion, s'enregistrer, bienvenue (pseudo), notification*/
+/* All links: login, register, Welcome (username), notifications */
 #fa_welcome,
 #fa_notifications,
 #fa_right a.rightHeaderLink[href*="/login"],
@@ -463,20 +462,20 @@ a.sceditor-button {
     padding: 4px 6px;
 }
 
-/* Lien "Connexion" */
+/* "Login" link */
 #fa_right a.rightHeaderLink[href*="/login"] {}
 
-/* Lien "S'enregistrer" */
+/* "Register" link */
 #fa_right a.rightHeaderLink[href*="/register"] {}
 
-/* Lien "Bienvenue (pseudo)" */
+/* Welcome (username) link */
 #fa_welcome {}
 
-/* Lien "notification"*/
+/* "Notifications" link */
 #fa_notifications {}
 
 
-/* liens "bienvenue" et "notification" [AU CLIC] */
+/* "Welcome" and "Notification" links [UPON CLICKING] */
 #fa_right.welcome #fa_menu #fa_welcome,
 #fa_toolbar > #fa_right.notification > #fa_notifications {
     background: var(--grey);
@@ -484,7 +483,7 @@ a.sceditor-button {
 }
 
 
-/* MENU bienvenue [ET] liste des notification */
+/* Welcome and notification list menu */
 ul#fa_menulist,
 ul#notif_list {
     border: var(--border);
@@ -499,13 +498,13 @@ ul#notif_list {
 }
 
 
-/* MENU BIENVENUE ---*/
-/* conteneur */
+/* WELCOME MENU ---*/
+/* container */
 #fa_menulist {
     width: 350px;
 }
 
-/* Colonne gauche du menu bienvenu avec avatar */
+/* Left column of the welcome menu, with avatar */
 #fa_usermenu {
     float: left;
     padding: 15px;
@@ -513,7 +512,7 @@ ul#notif_list {
     min-height: 250px
 }
 
-/* Image de l'avatar dans le menu bienvenue */
+/* Avatar image in the welcome menu */
 #fa_usermenu img {
     object-fit: cover;
     object-position: center;
@@ -523,27 +522,27 @@ ul#notif_list {
     margin-bottom: 10px;
 }
 
-/* Liens du menu bienvenue */
+/* Welcome menu links */
 #fa_menulist li {
     margin: 10px 0;
 }
 
-/* Séparateur du menu bienvenue */
+/* Welcome menu separator */
 #fa_toolbar #fa_right .fa_separator {
     margin: 5px 0 5px 150px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 
-/* LISTE DES NOTIFICATIONS ---*/
-/* conteneur*/
+/* NOTIFICATIONS LIST ---*/
+/* container */
 #notif_list {
     width: 380px;
     padding: 5px;
     flex-direction: column-reverse;
 }
 
-/* Ligne d'une notification */
+/* Notification line  */
 #notif_list li {
     position: relative;
     padding: 5px;
@@ -554,20 +553,20 @@ ul#notif_list {
 #notif_list li:nth-last-child(2) {border-top: none}
 
 
-/* Notifications non lues */
+/* Unread notifications */
 #notif_list .unread {
     background: var(--grey);
     font-weight: bold;
 }
 
-/* Bouton suppresion d'une notification */
+/* "Delete notification" button */
 #fa_toolbar #fa_right #notif_list li a.delete {
     position: absolute;
     top: 3px;
     right: 0;
 }
 
-/* Croix du bouton suppression */
+/* Deletion button symbol (X) */
 #fa_toolbar #fa_right #notif_list li a.delete:before {
     content: "\f12a";
     display: inline-block;
@@ -577,7 +576,7 @@ ul#notif_list {
     color: #FF4F42;
 }
 
-/* Lien "voir toutes les notifications" */
+/* "See all notifications" link */
 #notif_list .see_all {
     background: var(--grey);
     border-radius: 5px;
@@ -586,16 +585,16 @@ ul#notif_list {
     order: -1;
 }
 
-/* POPUP NOTIFICATION ---*/
+/* NOTIFICATION POPUP ---*/
 
-/* Placement du pop-up de nouvelle notification */
+/* New notification popup placement */
 #fa_toolbar #live_notif {
     position: absolute;
     top: 45px;
     right: 0px !important;
 }
 
-/* Stylisation du pop-up */
+/* Popup style */
 #fa_toolbar #live_notif .fa_notification {
     border-radius: 5px;
     background: rgba(0, 0, 0, 0.2);
@@ -603,8 +602,8 @@ ul#notif_list {
 }
 
 
-/* AVATAR TOOLBAR ---*/
-/* Conteneur de l'avatar toolbar */
+/* TOOLBAR AVATAR ---*/
+/* Toolbar avatar container */
 .fa_avatar {
     position: absolute;
     top: -1px;
@@ -618,7 +617,7 @@ ul#notif_list {
     place-items: center;
 }
 
-/* Image de l'avatar */
+/* Avatar image */
 .fa_avatar img {
     object-fit: cover;
     object-position: center;
@@ -629,8 +628,8 @@ ul#notif_list {
 
 
 
-/* STRUCTURE DE LA TOOLBAR 
- * Il est conseillé de ne rien modifier pour un bon fonctionnement de la toolbar ---*/
+/* TOOLBAR STRUCTURE 
+ * For best results, don't modify anything ---*/
 
 #fa_right #fa_menu ul,
 #fa_right.notification #fa_menu ul,
@@ -655,8 +654,8 @@ ul#notif_list {
 
 
 /*** ------------------------------- ***/
-/*** SWITCHEROO - Par Monomer ------ ***/
-/*** Gestionnaire de multicompte --- ***/
+/*** SWITCHEROO - By Monomer ------ ***/
+/*** Multiple account manager --- ***/
 
 :root {
   --gap-size: 16px;
@@ -664,14 +663,14 @@ ul#notif_list {
   --ease-bounce: cubic-bezier(0.43, 0.09, 0.38, 2.56);
 }
 
-/* BARRE SWITCHEROO --- */
+/* SWITCHEROO BAR --- */
 .switcheroo {}
 
 .switcheroo[position="static"] {
   position: relative;
 }
 
-/* si barre EN HAUT */
+/* if bar is ON TOP */
 .switcheroo[position="top"] {
   position: fixed;
   top: 0;
@@ -679,7 +678,7 @@ ul#notif_list {
   z-index: 100;
 }
 
-/* si barre EN BAS */
+/* if bar is ON THE BOTTOM */
 .switcheroo[position="bottom"] {
   position: fixed;
   bottom: 0;
@@ -687,17 +686,17 @@ ul#notif_list {
   z-index: 100;
 }
 
-/* si barre A L'HORIZONRAL */
+/* if bar is HORIZONTAL */
 .switcheroo[direction="horizontal"] {
   width: 100%;
 }
 
-/* si barre A LA VERTICAL */
+/* if bar is VERTICAL */
 .switcheroo[direction="vertical"] {
   height: 100%;
 }
 
-/* Positionnement des ronds */
+/* Circle positions */
 .switcheroo__squircles {
   display: flex;
   margin: 0;
@@ -713,7 +712,7 @@ ul#notif_list {
   flex-direction: column;
 }
 
-/* BARRE --- */
+/* BAR --- */
 .switcheroo {
   color: var(--color-text);
   background-color: var(--light);
@@ -722,9 +721,9 @@ ul#notif_list {
 }
 
 
-/* AFFICHAGE DES COMPTES ---*/
+/* ACCOUNT VIEW ---*/
 
-/* Rond */
+/* Circles */
 .switcheroo__squircle {
   position: relative;
   display: grid;
@@ -737,17 +736,17 @@ ul#notif_list {
   transition: border-radius 128ms var(--ease);
 }
 
-/* Rond au survol */
+/* Hovering on circles */
 .switcheroo__squircle:hover {
   border-radius: 6px;
   background: var(--greyer)
 }
 
-/* Contenenur de l'avatar */
+/* Avatar container */
 .switcheroo__avatar {}
 
 
-/* Image de l'avatar */
+/* Avatar image */
 .switcheroo__avatar img {
   width: 40px;
   height: 40px;
@@ -758,12 +757,12 @@ ul#notif_list {
   position: relative;
 }
 
-/* Image de l'avatar au survol */
+/* Hovering on avatar image */
 .switcheroo__avatar img:hover {
   border-radius: 5px;
 }
 
-/* Avatar du compte connecté */
+/* Currently logged in account avatar */
 .switcheroo__squircle.active, 
 .switcheroo__squircle.active img {
   border-radius: 6px;
@@ -771,7 +770,7 @@ ul#notif_list {
 }
 
 
-/* Indicateur de l'avatar survolé */
+/* Hovered-on avatar indicator */
 .switcheroo__squircle:before {
   content: "";
   display: block;
@@ -792,7 +791,7 @@ ul#notif_list {
 }
 
 
-/* Indicateur du compte sélectionné/actif */
+/* Active account indicator */
 .switcheroo__squircle.active:before {
   opacity: 1;
   border-radius: 8px;
@@ -805,7 +804,7 @@ ul#notif_list {
 }
 
 
-/* Bouton de suppression */
+/* Deletion button */
 .switcheroo__delete {
   display: grid;
   place-items: center;
@@ -829,9 +828,9 @@ ul#notif_list {
 
 
 
-/* TOOLTIP - INFOBULLE DU PSEUDO ---*/
+/* TOOLTIP - CHARACTER INFO BUBBLE ---*/
 
-/* Conteneur du pseudo */
+/* Username container */
 .switcheroo__popper {
   background-color: var(--dark);
   padding: 0.68rem 1rem;
@@ -846,14 +845,14 @@ ul#notif_list {
   color: #fff;
 }
 
-/* Conteneur du pseudo: si vertical */
+/* Username container:; if vertical */
 .switcheroo[direction="vertical"] .switcheroo__popper {
   left: 155%;
   top: 50%;
   transform-origin: left;
   transform: translateY(-50%) scale(0.98);
 }
-/* Conteneur du pseudo : si horizontal */
+/* Username container: if horizontal */
 .switcheroo[direction="horizontal"] .switcheroo__popper {
   top: 155%;
   left: 50%;
@@ -861,7 +860,7 @@ ul#notif_list {
   transform: translateX(-50%) scale(0.98);
 }
 
-/* Flèche tooltip */
+/* Tooltip arrow */
 .switcheroo__popper:before {
   content: "";
   position: absolute;
@@ -871,14 +870,14 @@ ul#notif_list {
   z-index: -1;
 }
 
-/* Flèche tooltip : si vertical */
+/* Tooltip arrow: if vertical */
 .switcheroo[direction="vertical"] .switcheroo__popper:before {
   left: -2px;
   top: 50%;
   transform: translateY(-50%) rotate(-45deg);
 }
 
-/* Flèche tooltip : si horizontal */
+/* Tooltip arrow: if horizontal */
 .switcheroo[direction="horizontal"] .switcheroo__popper:before {
   left: 50%;
   top: -2px;
@@ -886,7 +885,7 @@ ul#notif_list {
 }
 
 
-/* Positionnement tooltip au survol */
+/* Tooltip position upon hover */
 .switcheroo[direction="vertical"] .switcheroo__squircle:hover .switcheroo__popper {
   opacity: 1;
   transform: translateY(-50%) scale(1);
@@ -901,34 +900,34 @@ ul#notif_list {
 /* LOGO --- */
 .switcheroo__logo {
   /* display: none */
-  /* à ajouter si vous voulez supprimer le logo*/
+  /* add if you want to hide the logo */
 }
 
-/* DIVIDER : barre de séparation --- */
+/* DIVIDER: separation bar --- */
 .switcheroo__divider {
   /* display: none */
-  /* à ajouter si vous voulez supprimer le logo*/
+  /* add if you want to hide the logo */
   
   background-color: var(--greyer);
   border-radius: 3px;
   transform: scale(0.8);
 }
 
-/* Divider : si vertical */
+/* Divider: if vertical */
 .switcheroo[direction="vertical"] .switcheroo__divider {
   width: 100%;
   height: 2px;
 }
 
-/* Divider : si horizontal */
+/* Divider: if horizontal */
 .switcheroo[direction="horizontal"] .switcheroo__divider {
   width: 2px;
 }
 
 
-/* AJOUTER UN COMPTE ---*/
+/* ADD ACCOUNT ---*/
 
-/* button : ajouter un compte */
+/* button: add account */
 .switcheroo__squircle--button {
   transition: border-radius 128ms var(--ease);
   color: var(--dark);
@@ -939,9 +938,9 @@ ul#notif_list {
 }
 
 
-/* MODAL : FENETRE DE CONNEXION --- */
+/* MODAL: LOGIN WINDOW --- */
 
-/* Fond de l'afficage connexion */
+/* Login view background */
 .monomer-overlay {
   position: fixed;
   z-index: 999;
@@ -954,7 +953,7 @@ ul#notif_list {
   background: rgba(0, 0, 0, 0.2);
 }
 
-/* Boîte de connexion */
+/* Login box */
 .monomer-modal {
   position: fixed;
   z-index: 999;
@@ -970,14 +969,14 @@ ul#notif_list {
   color: var(--dark);
 }
 
-/* Formulaire */
+/* Form */
 .switcheroo__form {
   padding: 48px;
   background: var(--light);
   border-radius: 5px;
 }
 
-/* Champs à remplir */
+/* Fields */
 .switcheroo__form-row {
   display: flex;
   flex-flow: column;
@@ -985,7 +984,7 @@ ul#notif_list {
   margin-bottom: 16px;
 }
 
-/* Nom du champs */
+/* Field name */
 .switcheroo__form-label {
   margin-bottom: 8px;
   font-size: 14px;
@@ -993,7 +992,7 @@ ul#notif_list {
   font-weight: 600;
 }
 
-/* Zone de texte */
+/* Text box */
 .switcheroo__form-input {
   padding: 6px;
   font-size: 16px;
@@ -1006,7 +1005,7 @@ ul#notif_list {
   cursor: text;
 }
 
-/* Bouton de connexion */
+/* Login button */
 .switcheroo__form-button {
   border-radius: 8px;
   padding: 4px 6px;
@@ -1031,7 +1030,7 @@ ul#notif_list {
   opacity: 1;
 }
 
-/* Fermer la boîte de connexion */
+/* Closing the login box */
 .monomer-close {
   font-size: 20px;
   display: grid;
@@ -1058,7 +1057,7 @@ ul#notif_list {
 
 
 /*** ------------------------------- ***/
-/*** BANNIERE ---------------------- ***/
+/*** BANNER/HEADER ---------------------- ***/
 
 #header { }
 
@@ -1066,45 +1065,45 @@ ul#notif_list {
 
 
 /*** ------------------------------- ***/
-/*** BARRE DE NAVIGATION ----------- ***/
+/*** NAVIGATION BAR ----------- ***/
 
-/* Conteneur de la barre de nav */
+/* Nav bar container */
 .navbar {
     background: var(--grey);
     border-radius: 5px;
     margin-top: 10px;
     padding: 10px;
 
-    display: flex;  /* permet de mettre les liens sur une ligne */
-    align-items: center;  /*centre verticalement*/
-    justify-content: center;  /*centre horizontalement*/
+    display: flex;  /* allows links to appear on a single line */
+    align-items: center;  /* centers vertically */
+    justify-content: center;  /*centers horizontally */
 }
 
-/* Suppresion des liens peu utilisés en les identifiant par leur numéro d'ordre*/
-.navbar li:nth-child(2), /*calendrier*/
-.navbar li:nth-child(3), /*faq*/
-.navbar li:nth-child(6) /*groupes*/
-    {display: none;}
+/* Hides seldom used links */
+.navbar a[href^="/faq"],  /*faq*/
+.navbar a[href^="/calendar"],  /*calendar*/
+.navbar a[href^="/groups"] /*groups*/
+{display: none}
 
-/* liens de navigation */
+/* navigation links */
 a.mainmenu {
     padding: 5px;
 }
 
-/* Lien navigation au survol*/
+/* navigation links upon hovering */
 a.mainmenu:hover {
     background: var(--light);
     border-radius: 5px;
 }
 
-/* Image des liens */
+/* link images */
 a.mainmenu img {display: none}
 
 
 /*** ------------------------------- ***/
-/*** ANNONCES DEFILANTES ----------- ***/
+/*** SCROLLING ANNOUNCEMENTS ----------- ***/
 
-/* Barre défilante */
+/* Scrolling bar */
 .module {
     border-radius: 5px;
     border: var(--border);
@@ -1116,9 +1115,9 @@ a.mainmenu img {display: none}
 
 
 /****** ------------------------------------------------------------------------------
- ****** PAGE PRINCIPALE, INDEX ------------------------------------------------------- ******/
+ ****** MAIN PAGE, INDEX ------------------------------------------------------- ******/
 
-/* PAGE D'ACCUEIL ---*/
+/* LANDING PAGE ---*/
 .introduction { }
 
 
@@ -1128,14 +1127,14 @@ a.mainmenu img {display: none}
 /*** ------------------------------- ***/
 /*** CATEGORIES -------------------- ***/
 
-.categorie {
+.category {
   background: var(--grey);
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 10px;
 }
 
-/* Titre d'une catégorie */
+/* Category title */
 .cate_title h2 {
     display: block;
     text-align: center;
@@ -1157,7 +1156,7 @@ a.mainmenu img {display: none}
 .forum_row:last-child {margin-bottom: 0}
 
 
-/* titre d'un forum */
+/* forum title */
 a.forumtitle {
     width: 100%;
     margin-bottom: 10px;
@@ -1203,9 +1202,9 @@ a.forumtitle {
 }
 
 
-#ssforum {font-size: 0}
+#subforum {font-size: 0}
 
-#ssforum a {
+#subforum a {
   font-size: var(--little-size);
   margin-right: 10px;
 }
@@ -1220,7 +1219,7 @@ a.forumtitle {
 
 
 /*** ------------------------------- ***/
-/*** QUI EST EN LIGNE -------------- ***/
+/*** WHO IS ONLINE -------------- ***/
 
 .qeel {
     background: var(--grey);
@@ -1237,11 +1236,11 @@ a.forumtitle {
     padding: 15px 10px;
 }
 
-.qeel-right {
+.qeel-left {
     border-radius: 5px 0 0 5px;
 }
 
-/* Dernier inscrit */
+/* Last registered user */
 #last_user {
   display: flex; 
   align-items: center;
@@ -1256,7 +1255,7 @@ a.forumtitle {
     margin-right: 10px;
 }
 
-/* groupes*/
+/* groups*/
 a.groups {
     display: block;
     background: var(--grey);
@@ -1275,16 +1274,16 @@ a.groups:last-child {margin-bottom: 0}
 
 .qeel-middle {}
 
-/*X connectés :: 1 membre, 0 invisible, 0 invité*/
+/*X connected :: 1 member, 0 invisible, 0 guests*/
 #total_users {}
 
-/*Connectés en ce moment*/
+/*Now online*/
 #online_users {
     height: 95px;
     overflow: auto;
 }
 
-/*ne pas supprimer*/
+/*don't delete*/
 #online_users br {display: none}
 
 .credits {
@@ -1295,7 +1294,7 @@ a.groups:last-child {margin-bottom: 0}
     margin-top: 5px;
 }
 
-.qeel-left {
+.qeel-right {
     border-radius: 0 5px 5px 0;
     text-align: justify;
 }
@@ -1303,40 +1302,40 @@ a.groups:last-child {margin-bottom: 0}
 
 
 /****** ------------------------------------------------------------------------------
- ****** LISTE DES SUJETS ------------------------------------------------------------- ******/
+ ****** TOPICS LIST ------------------------------------------------------------- ******/
 
 /*** ------------------------------- ***/
-/*** ENTETE ET FOOTER DE LA LISTE DES SUJETS ***/
+/*** TOPICS LIST HEADER AND FOOTER ***/
 
-/* Chaîne de navigation et pagination
- * (réutilisé dans l'affichage d'un sujet (viewtopic_body)) */
+/* Pagination and navigation chain
+ * (reused in the topic view template (viewtopic_body)) */
 .navigation_links {
     display: flex;
     justify-content: space-between;
     margin: 10px 0;
 }
 
-/* chaîne de lien de navigation : catégorie > forum > sous-fo */
+/* navigation chain: category > forum > subforum */
 .navigation_chain {
     font-size: 0;
-    /*retire les :: de séparation */
+    /*removes the :: in the chain */
 }
 
 .navigation_chain a {
-    font-size: initial; /*rétablit la taille des liens*/
+    font-size: initial; /*resets the link size*/
     margin-right: 8px;
 }
 
 .navigation_chain a:before {
     content: '›';
-    /*symbole ou texte modifiable*/
+    /*modifiable text or symbol*/
     font-size: var(--nomal-size);
     margin-right: 3px;
 }
 
 
-/* BOUTONS DE MESSAGE : Répondre, Nouveau,... ---* 
- * (réutilisé dans l'affichage d'un sujet (viewtopic_body) et les MP (privmsgs_body) */
+/* MESSAGE BUTTONS: Reply, New,... ---* 
+ * (reused in the topic view template (viewtopic_body) and PMs (privmsgs_body) */
 .buttons {
     background: var(--grey);
     padding: 1px 8px;
@@ -1346,7 +1345,7 @@ a.groups:last-child {margin-bottom: 0}
 
 .buttons:hover {background: var(--lighter);}
 
-/* BOUTONS : modérer les sujets de ce forum */
+/* BUTTONS: moderate topics in this forum */
 #moderation_forum_tools, #moderation_forum_tools strong {
   font-size: 0px;
 }
@@ -1362,7 +1361,7 @@ a.groups:last-child {margin-bottom: 0}
 
 
 /*** ------------------------------- ***/
-/*** LISTE DES SUJETS -------------- ***/
+/*** TOPICS LIST -------------- ***/
 
 .topicslist_row {
     background: var(--light);
@@ -1377,7 +1376,7 @@ a.groups:last-child {margin-bottom: 0}
 
 .topicslist_row:last-child {margin-bottom: 0}
 
-/* Image du sujet */
+/* Topic image */
 .topicslist-img {
     width: 50px;
     height: 50px;
@@ -1389,12 +1388,12 @@ a.groups:last-child {margin-bottom: 0}
 }
 
 
-/*titre du sujet*/
+/* Topic title */
 .topictitle {
   font-size: var(--medium-size)
 }
 
-/* icone de type de message ( exemple: -18 ans, sujet résolu, ... ) */
+/* Message type icon (example: NSFW, solved, ... ) */
 .topic_msgicon { 
   margin-right: 5px 
 }
@@ -1430,10 +1429,44 @@ a.groups:last-child {margin-bottom: 0}
 
 
 /****** ------------------------------------------------------------------------------
- ****** AFFICHAGE D'UN SUJET --------------------------------------------------------- ******/
+ ****** TOPICS VIEW --------------------------------------------------------- ******/
+
+/* POSTERS ---*/
+
+/* Posters list container */
+.poster-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -10px
+}
+
+/* Posters avatar */
+.poster {
+    background: var(--poster-avatar);
+        height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    margin-left: -8px;
+    border: 2px solid var(--grey);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Link to poster profile */
+.poster a {
+    display: block;
+    height: 100%;
+}
+
+/* Poster count */
+.poster-count {
+    margin-left: 8px;
+}
+
 
 /*** ------------------------------- ***/
-/*** SUJET ------------------------- ***/
+/*** TOPICS ------------------------- ***/
 
 
 .post_row {
@@ -1465,28 +1498,28 @@ div.post_row:last-of-type {
 .post_date {flex-grow: 100;}
 
 
-/* BOUTONS D'EDITION DU MESSAGE --- */
-/* Conteneur boutons d'édition */
+/* MESSAGE EDIT BUTTONS --- */
+/* Edit buttons container */
 ul.profile-icons {
     flex-grow: 1;
     display: flex;
 }
 
-/*UN SEUL bouton d'édition */
+/* SINGLE edit button */
 ul.profile-icons li {
     padding: 2px 4px;
     border-radius: 5px;
 }
 
-/*hover d'un bouton d'édition*/
+/*hovering over edit button */
 ul.profile-icons li:hover {
     background: var(--grey);
 }
 
 
 
-/* BOUTON LIKE --- */
-/* Conteneur du bouton like */
+/* LIKE BUTTON --- */
+/* Like button container */
 .like_button {
     float: right;
     margin-left: 10px;
@@ -1494,7 +1527,7 @@ ul.profile-icons li:hover {
     cursor: pointer;
 }
 
-/* Bouton like */
+/* Like button */
 .rep-button,
 .rep-button:active,
 .rep-button:focus {
@@ -1505,13 +1538,13 @@ ul.profile-icons li:hover {
     font-weight: 600;
 }
 
-/*Bouton au survol*/
+/*Button upon hover*/
 .rep-button:hover {background: var(--greyer)}
 
-/* Texte "j'aime" */
+/* "Like" text */
 button.rep-button .like_text {}
 
-/*compteur de like*/
+/*like counter*/
 button.rep-button .rep-nb {
     margin-left: 5px;
     padding: 0 3px;
@@ -1520,7 +1553,7 @@ button.rep-button .rep-nb {
 }
 
 
-.post_profil {
+.post_profile {
     padding: 10px;
     border-right: 1px solid var(--grey);
 }
@@ -1529,11 +1562,11 @@ button.rep-button .rep-nb {
   font-weight: bold;
 }
 
-/* Lien "@" de mention */
+/* Mention link "@" */
 a.fa-mention { }
 
 
-/* Mention "en ligne" */
+/* "Online" mention */
 .online {
      display: inline-block;
      position: relative;
@@ -1550,18 +1583,18 @@ a.fa-mention { }
 }
 
 
-/* REPONSE RAPIDE --- */
-/*supression de la mention "réponse rapide" */
+/* QUICK REPLY --- */
+/*Hide "quick reply" title */
 .quickreply div.h3 {display: none}
 
-/*centrer la réponse rapide*/
+/*centering the quick reply*/
 .quickreply {
   display: flex;
   justify-content: center;
 }
 
 
-/* Retire le cadre de la réponse rapide pour les invités */
+/* Removes the quick reply border for guests */
 #quickreply_content:empty {
   display: none
 }
@@ -1569,7 +1602,7 @@ a.fa-mention { }
 
 
 /*** ------------------------------- ***/
-/*** SONDAGE ----------------------- ***/
+/*** POLL ----------------------- ***/
 
 .poll {
     background: var(--light);
@@ -1614,59 +1647,59 @@ a.fa-mention { }
 
 
 /*** ------------------------------- ***/
-/*** TEXTES, BALISES, ETC ---------- ***/
+/*** TEXT, TAGS, ETC ---------- ***/
 
-/* Lien-tag des utilisateurs */
+/* Users mention tag */
 .mentiontag {}
 
 
-/* BALISES DE MESSAGE : spoiler, code, quote... */
+/* MESSAGE TAGS: spoiler, code, quote... */
 
-/* Balise code, spoiler et hide*/
+/* Code, spoiler and hide tags*/
 .codebox {
   display: block;
   width: 90%;
   margin: 0 auto;
 }
 
-/* Contenu code, spoiler et hide*/
+/* Code, spoiler and hide contents */
 .codebox dd {
   background: var(--grey);
   border-radius: 5px;
   padding: 5px
 }
 
-/* Nom de balise "code, spoiler" */
+/* "code, spoiler" tag names */
 .codebox dt { 
   font-weight: 700;
   font-size: var(--little-size);
 }
 
-/* Bouton "sélectionner le" code */
-.selectCode { float:right; cursor:pointer; }
+/* "Select code" button */
+.selectCode { float:ri ght; cursor:pointer; }
 .selectCode:hover {color: var(--light-dark);}
 div.cont_code {clear: right;}
 
 /* Spoiler */
 .hidebox.spoiler {}
 
-/* spoiler fermé */
+/* closed spoiler */
 .spoiler_content {display: none;}
-/* spoiler ouvert */
+/* open spoiler */
 .spoiler_content.hidden {display: block;}
 
 
-/* Citation contenu */
+/* Quote contents */
 blockquote div {padding-left: 20px;}
 
-/* Citation mention "... a écrit" */
+/* Quote "... wrote" mention */
 blockquote cite {
     display: block;
     margin-left: -20px;
     font-style: normal;
 }
 
-/* Citation pseudo */
+/* username quote */
 blockquote cite a {text-decoration: none!important}
 
 /* Hide */
@@ -1678,10 +1711,10 @@ blockquote cite a {text-decoration: none!important}
 
 
 /****** ------------------------------------------------------------------------------
- ****** MEMBRES ------------------------------------------------------ ******/
+ ****** MEMBERS ------------------------------------------------------ ******/
 
 /*** ------------------------------- ***/
-/*** PAGE DE PROFIL ---------------- ***/
+/*** PROFILE PAGE ---------------- ***/
 
 .user_profile {
     background: var(--light);
@@ -1702,8 +1735,8 @@ blockquote cite a {text-decoration: none!important}
 
 .profile_contact form > div {margin-left: 5px;}
 
-/* Suppression des cases vides de contact qui affichent " - " 
- * nth-child(n+4) supprime toutes les cases après la quatrième */
+/* Hiding empty fields that show " - " 
+ * nth-child(n+4) hides all fields after the 4th */
 .profile_contact form div:nth-child(n+4) {display: none}
 
 .profile_content {
@@ -1731,7 +1764,7 @@ blockquote cite a {text-decoration: none!important}
 }
 
 
-/* Bouton édition d'un champ de profil */
+/* Edit profile field button */
 .ajax-profil_edit {
     cursor: pointer;
     position: absolute;
@@ -1739,7 +1772,7 @@ blockquote cite a {text-decoration: none!important}
     left: 0px;
 }
 
-/* Bouton édition d'un champ de profil */
+/* Edit profile field button */
 .ajax-profil_edit {
     cursor: pointer;
     position: absolute;
@@ -1747,7 +1780,7 @@ blockquote cite a {text-decoration: none!important}
     left: -15px;
 }
  
-/* Bouton validation des modifications */
+/* Validate changes field button */
 .ajax-profil_valid {
     cursor: pointer;
     margin-left: 4px;
@@ -1756,9 +1789,9 @@ blockquote cite a {text-decoration: none!important}
 
 
 /*** ------------------------------- ***/
-/*** PROFILS SIMPLIFIÉS DES TAGS ---- ***/
+/*** SIMPLIFIED PROFILE FOR TAGS ---- ***/
 
-/* Supression de la flèche peu esthétique*/
+/* Hide the ugly arrow */
 .tooltipster-arrow {}
 
 .tooltipster-default {}
@@ -1795,7 +1828,7 @@ blockquote cite a {text-decoration: none!important}
 
 
 /*** ------------------------------- ***/
-/*** LISTE DES MEMBRES ------------- ***/
+/*** MEMBER LIST ------------- ***/
 
 .userlist {
     display: grid;
@@ -1833,12 +1866,12 @@ blockquote cite a {text-decoration: none!important}
 
 
 /****** ------------------------------------------------------------------------------ 
- ****** MESSAGES PRIVES -------------------------------------------------------------- ******/
+ ****** PRIVATE MESSAGES -------------------------------------------------------------- ******/
 
 /*** ------------------------------- ***/
-/*** LISTE DES MPs ----------------- ***/
+/*** PM LIST ----------------- ***/
 
-/* Menu des MPS */
+/* PM menu */
 #privmsgs-menu {
     display: flex;
     justify-content: center;
@@ -1852,7 +1885,7 @@ blockquote cite a {text-decoration: none!important}
     gap: 5px;
 }
 
-/* Affichage d'un MP dans la liste */
+/* PM view in the list */
 .mp_row {
     background: var(--light);
     border-radius: 5px;
@@ -1866,7 +1899,7 @@ blockquote cite a {text-decoration: none!important}
 
 
 /*** ------------------------------- ***/
-/*** AFFICHAGE D'UN MESSAGE PRIVÉ -- ***/
+/*** PRIVATE MESSAGE VIEW -- ***/
 
 .message {
     background: var(--light);
@@ -1906,19 +1939,19 @@ blockquote cite a {text-decoration: none!important}
 
 
 /****** ------------------------------------------------------------------------------
- ****** PAGES ANNEXES ---------------------------------------------------------- ******/
+ ****** ANNEX PAGES ---------------------------------------------------------- ******/
 
 
 /*** ------------------------------- ***/
-/*** PAGE D'ENVOI D'UN MESSAGE ----- ***/
+/*** MESSAGE SENDING PAGE ----- ***/
 
 .message-edition {
     display: flex;
-    flex-direction: row; /* flex-direction: row-reverse; -- pour smiley à droite */
-    gap: 15px; /*espace entre la zone de texte et la boîte à smiley*/
+    flex-direction: row; /* flex-direction: row-reverse; -- if you want smileys to be to the right */
+    gap: 15px; /*space between textbox and smileys*/
 }
 
-/* Prévisualisation d'un message */
+/* Preview message */
 #preview {
     background: var(--light);
     padding: 10px;
@@ -1929,35 +1962,35 @@ blockquote cite a {text-decoration: none!important}
 
 
 /*** ------------------------------- ***/
-/*** EDITION DE PROFIL ------------- ***/
+/*** PROFILE EDIT ------------- ***/
 
-/* Onglets dans la modification de profil */
+/* Profile edit tabs */
 #tabs ul {
     display: flex;
     justify-content: space-between;
     margin: 20px 0 10px
 }
 
-/*onglet*/
+/*tab*/
 #tabs li {
     padding: 5px 10px;
     border: 1px solid transparent;
 }
   
-/* Onglet selectionné */
+/* Selected tab */
 #tabs li.activetab {
     background: var(--grey);
     border: var(--border);
     border-radius: 5px;
 }
-/* onglet au survol */
+/* Tabs upon hover */
 #tabs li:hover {
     background: var(--grey);
     border-radius: 5px;
     border: var(--border);
 }
 
-/* Suppression de l'onglet "amis et ignorés" */
+/* Hiding the "friends" tab */
 div#tabs li:nth-child(5) { display: none;}
 
 
@@ -1971,14 +2004,14 @@ div#tabs li:nth-child(5) { display: none;}
 
 
 
-/* EDITER SIGNATURE ---*/
+/* EDIT SIGNATURE ---*/
 
 #parent_editor_simple > #smiley-box {
-    float: left; /* float: right; -- pour smiley à droite */
+    float: left; /* float: right; -- if you want the smileys to be on the right */
 }
 
 #parent_editor_simple #message-box {
-    margin-left: 240px; /* margin-right: XXXpx -- pour smiley à droite */
+    margin-left: 240px; /* margin-right: XXXpx -- if you want the smileys to be on the right */
 }
 
 #parent_editor_simple #message-box > br {display: none}
@@ -1993,11 +2026,11 @@ div#tabs li:nth-child(5) { display: none;}
 
 
 /*** ------------------------------- ***/
-/*** PAGES DE RECHERCHES ----------- ***/
+/*** SEARCH PAGE ----------- ***/
 
-/* RECHERCHE DE MESSAGE -----*/
+/* SEARCH MESSAGE -----*/
 
-/* Conteneur d'un message*/
+/* Message container*/
 .post_search {
   display: grid;
   grid-template-columns: 200px auto;
@@ -2010,22 +2043,22 @@ div#tabs li:nth-child(5) { display: none;}
   padding: 10px;
 }
 
-/* Colonne d'information du message */
+/* Message info column */
 .postsearch_infos {
   border-right: var(--border);
   font-size: var(--little-size);
 }
 
 
-/* RECHERCHE DE SUJET -----*/
-/* Même CSS que la liste des sujets dans un forum */
+/* SEARCH TOPIC -----*/
+/* Same CSS as forum topic list */
 
 
 
 /*** ------------------------------- ***/
-/*** PAGE DE CONNEXION ------------- ***/
+/*** LOGIN PAGE ------------- ***/
 
-/* Centrer les pages de connexion */
+/* Centering login pages */
 form[name=form_login], form[name=form_login] ~ .panel {
     text-align: center;
 }
@@ -2040,9 +2073,9 @@ form[name=form_login] .content {
 
 
 /*** ------------------------------- ***/
-/*** ELEMENTS FLOTTANTS ------------ ***/
+/*** FLOATING ELEMENTS  ------------ ***/
 
-/* Fenêtre popup "recherche" */
+/* "Search" popup window */
 .overview {
     background: var(--light);
     border-radius: 5px;
@@ -2052,7 +2085,7 @@ form[name=form_login] .content {
     top: 50%!important;
 }
 
-/* Bouton rechercher */
+/* Search button */
 .overview button[type="submit"] {
     width: 26px;
     height: 26px;
@@ -2064,7 +2097,7 @@ form[name=form_login] .content {
 .overview a {float: right;}
 
 
-/* Boîte "recherche un utilisateur" */
+/* "Search for user" box */
 #find_username {
     display: none;
     position: fixed;
@@ -2094,7 +2127,7 @@ form[name=form_login] .content {
  ****** BLOGS ------------------------------------------------------------------------ ******/
 
 /*** ------------------------------- ***/
-/*** LISTE DES BLOGS --------------- ***/
+/*** BLOG LIST --------------- ***/
 
 
 .bloglist {
@@ -2130,7 +2163,7 @@ form[name=form_login] .content {
 
 
 /*** ------------------------------- ***/
-/***  AFFICHAGE D'UN BLOG ---------- ***/
+/***  BLOG VIEW ---------- ***/
 
 .blog_post {
     background: var(--light);
@@ -2150,7 +2183,7 @@ form[name=form_login] .content {
 
 
 /*** ------------------------------- ***/
-/*** COMMENTAIRES D'UN BLOG -------- ***/
+/*** BLOG COMMENTS -------- ***/
 
 
 .blog_comment {
@@ -2197,10 +2230,10 @@ form[name=form_login] .content {
 
 
 /****** ------------------------------------------------------------------------------
- ****** STRUCTURE DE FORUMACTIF ------------------------------------------------------ 
+ ****** FORUMOTION STRUCTURE ------------------------------------------------------ 
 
- ****** Elements de base qui servent à construire la structure de la page web --------
- ****** Il ya peu de chance que vous deviez toucher cette partie du CSS -------------- ******/
+ ****** Basic elements used to build the page structure --------
+ ****** There is little chance that you will need to touch this part of the CSS -------------- ******/
 
 
 /*** ------------------------------- ***/
@@ -2226,7 +2259,7 @@ button, select, input {
   cursor: pointer;
 }
 
-/* Structure page de connexion */
+/* Login page structure */
 
 .fld_connexion dl {
     display: grid;
@@ -2244,7 +2277,7 @@ button, select, input {
 .visible {display: block;visibility: visible;}
 
 
-/* Indicateur complexité mdp */
+/* Password security indicator */
 #cont_pwd {
     display: flex;
     align-items: center;
@@ -2266,7 +2299,7 @@ button, select, input {
 
 
 /*** ------------------------------- ***/
-/*** POUBELLE DE FORUMACTIF -------- ***/
+/*** FORUMOTION WASTEBASKET -------- ***/
 
 #find_username br, #users_here br, #main-content > p, .adminlink br, .corners-top, .corners-bottom
 {display: none;}
