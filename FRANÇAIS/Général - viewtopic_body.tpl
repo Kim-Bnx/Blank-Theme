@@ -49,7 +49,6 @@
   
     <!-- Liste des participants du sujet -->
     {POSTERS_LIST}
-    <br/>
 
 
     <!-- Sondage (template : viewtopic_poll_ballot /// viewtopic_poll_result) -->

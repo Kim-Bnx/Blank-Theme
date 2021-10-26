@@ -48,6 +48,9 @@
 
     <!-- Post title -->
     <h1 class="page-title">{TOPIC_TITLE}</h1>
+    
+    <!-- Posters list -->
+    {POSTERS_LIST}
 
 
     <!-- Poll (template: viewtopic_poll_ballot /// viewtopic_poll_result) -->
