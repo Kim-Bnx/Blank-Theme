@@ -819,6 +819,7 @@ ul#notif_list {
   opacity: 1;
   transition: transform 128ms var(--ease), opacity 64ms var(--ease);
   cursor: pointer;
+  line-height: 0;
   color: var(--light);
 }
 .switcheroo__squircle:hover .switcheroo__delete {

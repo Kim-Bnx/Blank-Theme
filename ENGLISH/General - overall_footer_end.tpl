@@ -45,19 +45,29 @@
 <script>
 (function() {
     new Switcheroo('#switcheroo', {
-        logo: '<i class="bi bi-house-door-fill"></i>', /* accepts html, allows a logo redirecting to the forum homepage to be displayed */
+        logo: ' logo ', /* accepts html, allows a logo redirecting to the forum homepage to be displayed */
+        enableReorder: true, /* enable drag&drop to switcher order account */
+        updateAvatar: true, /* enable right click to refresh the avatar */
         confirm: true, /* prompts for a confirmation before switching accounts */
-        confirmMsg: 'Confirm character Switcheroo?', /* message displayed during the switch */
-        explore: false, /* allows a link redirecting to the memberlist ("Discord-style") to be displayed vers la liste des membres */
-        exploreIcon: '<i class="material-icons">group</i>', /* accepts html, memberlist link icon */
         deleteIcon: '×', /* accepts html, icon to delete a linked account */
         addIcon: '+', /* accepts html, icon to open the login and pairing form */
-        errorMsg: 'An error has occured during the Switcheroo.',
+    },
+    {
+        button: {
+            add: "Link a character",
+        },
+        msg: {
+            error: "An error has occured.",
+            confirm: "Please confirm to switcheroo.",
+        },
+        modal: {
+            password_label: "Password",
+            username_label: "Username",
+            login_button: "Login",
+        }
     });
 })();
 </script>
-
-
 
 </body>
 </html>

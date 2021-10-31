@@ -77,21 +77,22 @@
     --lighter: #fafafa;
     --grey: #F4F4F4;
     --greyer: #E5E5E5;
-  
-    --border: 1px solid #E5E5E5;  
-  
+
+    --border: 1px solid #E5E5E5;
+
     --little-size: 12px;
     --normal-size: 14px;
     --medium-size: 16px;
     --large-size: 18px;
     --title-size: 22px;
-  
+
     --font: 'Open Sans';
 }
 
 /* S'applique à TOUS les éléments du forum*/
-* { 
-  box-sizing: border-box; /*évite que les éléments soient agrandis par le padding*/
+* {
+    box-sizing: border-box;
+    /*évite que les éléments soient agrandis par le padding*/
 }
 
 /*** ------------------------------- ***/
@@ -102,14 +103,16 @@ body {
     background: var(--grey);
     font-family: var(--font);
     font-size: var(--normal-size);
-    margin: 0!important;
+    margin: 0 !important;
 }
 
 
 /* SCROLLBAR --- */
 
 /* Scrollbar entière */
-::-webkit-scrollbar {width: px;}
+::-webkit-scrollbar {
+    width: px;
+}
 
 /* Rail */
 ::-webkit-scrollbar-track {}
@@ -120,8 +123,9 @@ body {
 
 /* STRUCTURE PRINCIPALE ---*/
 .main_forum {
-    width: 940px; /*largeur forum*/
-    margin: 20px auto; 
+    width: 940px;
+    /*largeur forum*/
+    margin: 20px auto;
     padding: 20px;
     background: #fff;
     border-radius: 5px;
@@ -180,8 +184,8 @@ a {
 }
 
 /*liens au survol*/
-a:hover { 
-  color: var(--light-dark);
+a:hover {
+    color: var(--light-dark);
 }
 
 /* Emoji mis par défaut de FA
@@ -194,7 +198,8 @@ a:hover {
 /* TITRES DES PAGES --- ***/
 
 /* Utilisé pour des titres de pages */
-h1, h1.page-title {
+h1,
+h1.page-title {
     color: var(--dark);
     margin: 10px 0 20px;
     font-size: var(--title-size);
@@ -204,14 +209,16 @@ h1, h1.page-title {
 }
 
 /* Utilisé pour des titres de sujets, blogs... */
-h2, .h2 {
+h2,
+.h2 {
     margin: 0;
     font-size: var(--large-size);
     font-weight: 700;
 }
 
 /* Utilisé pour des titres de sous-sections, petit encadré, ...*/
-h3, .h3 {
+h3,
+.h3 {
     color: var(--dark);
     padding-bottom: 10px;
     margin: 0;
@@ -225,7 +232,9 @@ h3, .h3 {
 /*** BOUTONS D'INTERACTION ET BARRE DE TEXTE ***/
 
 /* BARRE DE TEXTE ---*/
-input[type="text"], input[type="password"], input.inputbox{
+input[type="text"],
+input[type="password"],
+input.inputbox {
     border: var(--border);
     border-radius: 5px;
     background: var(--grey);
@@ -236,9 +245,12 @@ input[type="text"], input[type="password"], input.inputbox{
 
 /* BOUTONS D'INTERACTION --- *
  * Envoyer, prévisualiser, sauvegarder, aller,... */
-input[type="submit"], input[type="button"], button[type="submit"], .button2 {
+input[type="submit"],
+input[type="button"],
+button[type="submit"],
+.button2 {
     font-size: var(--normal-size);
-    padding: 2px 8px!important;
+    padding: 2px 8px !important;
     border-radius: 5px;
     background: var(--dark);
     color: var(--lighter);
@@ -247,8 +259,8 @@ input[type="submit"], input[type="button"], button[type="submit"], .button2 {
 }
 
 input[type="submit"]:hover {
-  background: var(--greyer);
-  color: var(--black)
+    background: var(--greyer);
+    color: var(--black)
 }
 
 .submit-buttons {
@@ -256,7 +268,7 @@ input[type="submit"]:hover {
 }
 
 .quickmod {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 
@@ -334,7 +346,8 @@ a.sceditor-button {
 
 
 /*suppression de l'image-lien "aller à la page suivante" */
-.page-topic span a:last-child, .pag-img {
+.page-topic span a:last-child,
+.pag-img {
     display: none;
 }
 
@@ -379,10 +392,17 @@ a.sceditor-button {
 
 
 /* Permet d'aligner un élément à droite ou à gauche */
-.right {float: right}
-.left {float: left}
+.right {
+    float: right
+}
 
-.clear { clear: both }
+.left {
+    float: left
+}
+
+.clear {
+    clear: both
+}
 
 /* Barre de gestion 
  * Contient des boutons ou des liens spéciaux */
@@ -395,17 +415,23 @@ a.sceditor-button {
 }
 
 /* supprime si vide */
-.links_bar:empty {display: none}
+.links_bar:empty {
+    display: none
+}
 
 /* Lien spécial mis en avant */
-.specials_links a, a.specials_links {
-  background: var(--grey);
-  padding: 2px 6px;
-  border-radius: 5px;
+.specials_links a,
+a.specials_links {
+    background: var(--grey);
+    padding: 2px 6px;
+    border-radius: 5px;
 }
 
 /* Suppression des liens vides */
-.specials_links a:empty, a.specials_links:empty {display: none}
+.specials_links a:empty,
+a.specials_links:empty {
+    display: none
+}
 
 
 
@@ -427,8 +453,11 @@ a.sceditor-button {
 }
 
 /* Supression de la barre de recherche, des boutons sociaux et des flèches */
-#fa_search, #fa_share, #fa_hide 
-    {display: none}
+#fa_search,
+#fa_share,
+#fa_hide {
+    display: none
+}
 
 /* Logo Forumactif : 
  * ATTENTION, il est techniquement interdit de supprimer de logo de FA. 
@@ -550,7 +579,9 @@ ul#notif_list {
     border-top: 1px solid var(--grey);
 }
 
-#notif_list li:nth-last-child(2) {border-top: none}
+#notif_list li:nth-last-child(2) {
+    border-top: none
+}
 
 
 /* Notifications non lues */
@@ -634,16 +665,34 @@ ul#notif_list {
 #fa_right #fa_menu ul,
 #fa_right.notification #fa_menu ul,
 #fa_right #fa_notifications #notif_unread,
-#notif_list hr 
-    {display: none;}
+#notif_list hr {
+    display: none;
+}
 
-#fa_toolbar #live_notif .fa_notification .content {display: inline-block;}
-#fa_right.welcome #fa_menulist {display: block;}
-#fa_right.notification #notif_list {display: flex;}
-#fa_toolbar #fa_right #fa_notifications.unread #notif_unread {display: inline;}
+#fa_toolbar #live_notif .fa_notification .content {
+    display: inline-block;
+}
 
-#fa_usermenu table {width: 100%;}
-#fa_usermenu table tr { display: flex;justify-content: center;}
+#fa_right.welcome #fa_menulist {
+    display: block;
+}
+
+#fa_right.notification #notif_list {
+    display: flex;
+}
+
+#fa_toolbar #fa_right #fa_notifications.unread #notif_unread {
+    display: inline;
+}
+
+#fa_usermenu table {
+    width: 100%;
+}
+
+#fa_usermenu table tr {
+    display: flex;
+    justify-content: center;
+}
 
 .fa_fix {
     position: fixed !important;
@@ -658,66 +707,68 @@ ul#notif_list {
 /*** Gestionnaire de multicompte --- ***/
 
 :root {
-  --gap-size: 16px;
-  --ease: cubic-bezier(0.4, 0.0, 0.2, 1);
-  --ease-bounce: cubic-bezier(0.43, 0.09, 0.38, 2.56);
+    --gap-size: 16px;
+    --ease: cubic-bezier(0.4, 0.0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.43, 0.09, 0.38, 2.56);
 }
 
 /* BARRE SWITCHEROO --- */
 .switcheroo {}
 
 .switcheroo[position="static"] {
-  position: relative;
+    position: relative;
 }
 
 /* si barre EN HAUT */
 .switcheroo[position="top"] {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
 }
 
 /* si barre EN BAS */
 .switcheroo[position="bottom"] {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 100;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
 }
 
 /* si barre A L'HORIZOTALE */
 .switcheroo[direction="horizontal"] {
-  width: 100%;
+    width: 100%;
 }
 
 /* si barre A LA VERTICALE */
 .switcheroo[direction="vertical"] {
-  height: 100%;
+    height: 100%;
 }
 
 /* Positionnement des ronds */
 .switcheroo__squircles {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  padding: var(--gap-size);
-  gap: var(--gap-size);
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding: var(--gap-size);
+    gap: var(--gap-size);
 }
+
 .switcheroo[direction="horizontal"] .switcheroo__squircles {
-  flex-direction: row;
+    flex-direction: row;
 }
+
 .switcheroo[direction="vertical"] .switcheroo__squircles {
-  flex-direction: column;
+    flex-direction: column;
 }
 
 /* BARRE --- */
 .switcheroo {
-  color: var(--color-text);
-  background-color: var(--light);
-  border: var(--border);
-  font-size: 16px;
+    color: var(--color-text);
+    background-color: var(--light);
+    border: var(--border);
+    font-size: 16px;
 }
 
 
@@ -725,21 +776,21 @@ ul#notif_list {
 
 /* Rond */
 .switcheroo__squircle {
-  position: relative;
-  display: grid;
-  place-items: center;
-  background-color: var(--grey);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: border-radius 128ms var(--ease);
+    position: relative;
+    display: grid;
+    place-items: center;
+    background-color: var(--grey);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: border-radius 128ms var(--ease);
 }
 
 /* Rond au survol */
 .switcheroo__squircle:hover {
-  border-radius: 6px;
-  background: var(--greyer)
+    border-radius: 6px;
+    background: var(--greyer)
 }
 
 /* Contenenur de l'avatar */
@@ -748,82 +799,86 @@ ul#notif_list {
 
 /* Image de l'avatar */
 .switcheroo__avatar img {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 50%;
-  transition: border-radius 128ms var(--ease);
-  position: relative;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    transition: border-radius 128ms var(--ease);
+    position: relative;
 }
 
 /* Image de l'avatar au survol */
 .switcheroo__avatar img:hover {
-  border-radius: 5px;
+    border-radius: 5px;
 }
 
 /* Avatar du compte connecté */
-.switcheroo__squircle.active, 
+.switcheroo__squircle.active,
 .switcheroo__squircle.active img {
-  border-radius: 6px;
-  cursor: default;
+    border-radius: 6px;
+    cursor: default;
 }
 
 
 /* Indicateur de l'avatar survolé */
 .switcheroo__squircle:before {
-  content: "";
-  display: block;
-  background-color: var(--grey);
-  border: var(--border);
-  border-radius: 50%;
-  height: 48px;
-  width: 48px;
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  top: -5px;
-  bottom: 0;
-  right: 0;
-  left: -5px;
-  z-index: -1;
-  transform 128ms var(--ease), opacity 64ms var(--ease);
+    content: "";
+    display: block;
+    background-color: var(--grey);
+    border: var(--border);
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: -5px;
+    bottom: 0;
+    right: 0;
+    left: -5px;
+    z-index: -1;
+    transform 128ms var(--ease),
+    opacity 64ms var(--ease);
 }
 
 
 /* Indicateur du compte sélectionné/actif */
 .switcheroo__squircle.active:before {
-  opacity: 1;
-  border-radius: 8px;
+    opacity: 1;
+    border-radius: 8px;
 }
 
 .switcheroo__squircle:hover:before {
     border-radius: 8px;
     opacity: 1;
-  transform 128ms var(--ease), opacity 64ms var(--ease);
+    transform 128ms var(--ease),
+    opacity 64ms var(--ease);
 }
 
 
 /* Bouton de suppression */
 .switcheroo__delete {
-  display: grid;
-  place-items: center;
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  top: -7px;
-  right: -7px;
-  border-radius: 50%;
-  background-color: var(--red);
-  transform: scale(0);
-  opacity: 1;
-  transition: transform 128ms var(--ease), opacity 64ms var(--ease);
-  cursor: pointer;
-  color: var(--light);
+    display: grid;
+    place-items: center;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: -7px;
+    right: -7px;
+    border-radius: 50%;
+    background-color: var(--red);
+    transform: scale(0);
+    opacity: 1;
+    transition: transform 128ms var(--ease), opacity 64ms var(--ease);
+    cursor: pointer;
+    color: var(--light);
+    line-height: 0;
 }
+
 .switcheroo__squircle:hover .switcheroo__delete {
-  opacity: 1;
-  transform: scale(1);
+    opacity: 1;
+    transform: scale(1);
 }
 
 
@@ -832,96 +887,98 @@ ul#notif_list {
 
 /* Conteneur du pseudo */
 .switcheroo__popper {
-  background-color: var(--dark);
-  padding: 0.68rem 1rem;
-  position: absolute;
-  width: -webkit-max-content;
-  width: max-content;
-  border-radius: 4px;
-  z-index: 0;
-  opacity: 0;
-  transition: opacity 64ms var(--ease), transform 128ms var(--ease-bounce);
-  pointer-events: none;
-  color: #fff;
+    background-color: var(--dark);
+    padding: 0.68rem 1rem;
+    position: absolute;
+    width: -webkit-max-content;
+    width: max-content;
+    border-radius: 4px;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 64ms var(--ease), transform 128ms var(--ease-bounce);
+    pointer-events: none;
+    color: #fff;
 }
 
 /* Conteneur du pseudo: si vertical */
 .switcheroo[direction="vertical"] .switcheroo__popper {
-  left: 155%;
-  top: 50%;
-  transform-origin: left;
-  transform: translateY(-50%) scale(0.98);
+    left: 155%;
+    top: 50%;
+    transform-origin: left;
+    transform: translateY(-50%) scale(0.98);
 }
+
 /* Conteneur du pseudo : si horizontal */
 .switcheroo[direction="horizontal"] .switcheroo__popper {
-  top: 155%;
-  left: 50%;
-  transform-origin: top;
-  transform: translateX(-50%) scale(0.98);
+    top: 155%;
+    left: 50%;
+    transform-origin: top;
+    transform: translateX(-50%) scale(0.98);
 }
 
 /* Flèche tooltip */
 .switcheroo__popper:before {
-  content: "";
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  background-color: var(--dark);
-  z-index: -1;
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: var(--dark);
+    z-index: -1;
 }
 
 /* Flèche tooltip : si vertical */
 .switcheroo[direction="vertical"] .switcheroo__popper:before {
-  left: -2px;
-  top: 50%;
-  transform: translateY(-50%) rotate(-45deg);
+    left: -2px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
 }
 
 /* Flèche tooltip : si horizontal */
 .switcheroo[direction="horizontal"] .switcheroo__popper:before {
-  left: 50%;
-  top: -2px;
-  transform: translateX(-50%) rotate(-45deg);
+    left: 50%;
+    top: -2px;
+    transform: translateX(-50%) rotate(-45deg);
 }
 
 
 /* Positionnement tooltip au survol */
 .switcheroo[direction="vertical"] .switcheroo__squircle:hover .switcheroo__popper {
-  opacity: 1;
-  transform: translateY(-50%) scale(1);
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
 }
+
 .switcheroo[direction="horizontal"] .switcheroo__squircle:hover .switcheroo__popper {
-  opacity: 1;
-  transform: translateX(-50%) scale(1);
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
 }
 
 
 
 /* LOGO --- */
 .switcheroo__logo {
-  /* display: none */
-  /* à ajouter si vous voulez supprimer le logo*/
+    /* display: none */
+    /* à ajouter si vous voulez supprimer le logo*/
 }
 
 /* DIVIDER : barre de séparation --- */
 .switcheroo__divider {
-  /* display: none */
-  /* à ajouter si vous voulez supprimer le logo*/
-  
-  background-color: var(--greyer);
-  border-radius: 3px;
-  transform: scale(0.8);
+    /* display: none */
+    /* à ajouter si vous voulez supprimer le logo*/
+
+    background-color: var(--greyer);
+    border-radius: 3px;
+    transform: scale(0.8);
 }
 
 /* Divider : si vertical */
 .switcheroo[direction="vertical"] .switcheroo__divider {
-  width: 100%;
-  height: 2px;
+    width: 100%;
+    height: 2px;
 }
 
 /* Divider : si horizontal */
 .switcheroo[direction="horizontal"] .switcheroo__divider {
-  width: 2px;
+    width: 2px;
 }
 
 
@@ -929,12 +986,13 @@ ul#notif_list {
 
 /* button : ajouter un compte */
 .switcheroo__squircle--button {
-  transition: border-radius 128ms var(--ease);
-  color: var(--dark);
+    transition: border-radius 128ms var(--ease);
+    color: var(--dark);
 }
+
 .switcheroo__squircle--button:hover {
-  color: var(--light);
-  font-weight: bold;
+    color: var(--light);
+    font-weight: bold;
 }
 
 
@@ -942,116 +1000,118 @@ ul#notif_list {
 
 /* Fond de l'affichage de connexion */
 .monomer-overlay {
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  transition: 0.2s opacity ease;
-  background: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.2s opacity ease;
+    background: rgba(0, 0, 0, 0.2);
 }
 
 /* Boîte de connexion */
 .monomer-modal {
-  position: fixed;
-  z-index: 999;
-  top: 50%;
-  left: 50%;
-  opacity: 0;
-  width: 94%;
-  padding: 30px;
-  transition: 0.2s opacity ease;
-  transform: translate(-50%, -50%);
-  border-radius: 5px;
-  background: var(--grey);
-  color: var(--dark);
+    position: fixed;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    width: 94%;
+    padding: 30px;
+    transition: 0.2s opacity ease;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    background: var(--grey);
+    color: var(--dark);
 }
 
 /* Formulaire */
 .switcheroo__form {
-  padding: 48px;
-  background: var(--light);
-  border-radius: 5px;
+    padding: 48px;
+    background: var(--light);
+    border-radius: 5px;
 }
 
 /* Champs à remplir */
 .switcheroo__form-row {
-  display: flex;
-  flex-flow: column;
-  align-items: flex-start;
-  margin-bottom: 16px;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    margin-bottom: 16px;
 }
 
 /* Nom du champ */
 .switcheroo__form-label {
-  margin-bottom: 8px;
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 /* Zone de texte */
 .switcheroo__form-input {
-  padding: 6px;
-  font-size: 16px;
-  border-radius: 4px;
-  width: 100%;
-  background-color: var(--light);
-  border: var(--border)!important;
-  border-bottom: 3px solid var(--greyer)!important;
-  color: var(--dark);
-  cursor: text;
+    padding: 6px;
+    font-size: 16px;
+    border-radius: 4px;
+    width: 100%;
+    background-color: var(--light);
+    border: var(--border) !important;
+    border-bottom: 3px solid var(--greyer) !important;
+    color: var(--dark);
+    cursor: text;
 }
 
 /* Bouton de connexion */
 .switcheroo__form-button {
-  border-radius: 8px;
-  padding: 4px 6px;
-  border: none;
-  outline: none;
-  box-shadow: none;
-  text-transform: uppercase;
-  font-size: 14px;
-  align-self: flex-end;
-  background-color: var(--light);
-  border: var(--border);
-  cursor: pointer;
+    border-radius: 8px;
+    padding: 4px 6px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    align-self: flex-end;
+    background-color: var(--light);
+    border: var(--border);
+    cursor: pointer;
 }
 
 .switcheroo__form-button:hover {
-  border: 1px solid transparent;
-  background: var(--dark);
-  color: var(--light);
+    border: 1px solid transparent;
+    background: var(--dark);
+    color: var(--light);
 }
 
-.monomer-modal.monomer-open, .monomer-overlay.monomer-open {
-  opacity: 1;
+.monomer-modal.monomer-open,
+.monomer-overlay.monomer-open {
+    opacity: 1;
 }
 
 /* Fermer la boîte de connexion */
 .monomer-close {
-  font-size: 20px;
-  display: grid;
-  place-items: center;
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  top: -7px;
-  right: -7px;
-  padding: 5px;
-  cursor: pointer;
-  color: #fff;
-  border: 0;
-  outline: none;
-  background: var(--red);
-  border-radius: 50%;
-  padding: 0;
+    font-size: 20px;
+    display: grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    padding: 5px;
+    cursor: pointer;
+    color: #fff;
+    border: 0;
+    outline: none;
+    background: var(--red);
+    border-radius: 50%;
+    padding: 0;
 }
+
 .monomer-close:hover {
-  background: var(--dark);
-  font-weight: 700;
+    background: var(--dark);
+    font-weight: 700;
 }
 
 
@@ -1059,9 +1119,9 @@ ul#notif_list {
 /*** ------------------------------- ***/
 /*** BANNIERE ---------------------- ***/
 
-#header { }
+#header {}
 
-#header img { }
+#header img {}
 
 
 /*** ------------------------------- ***/
@@ -1074,16 +1134,25 @@ ul#notif_list {
     margin-top: 10px;
     padding: 10px;
 
-    display: flex;  /* permet de mettre les liens sur une ligne */
-    align-items: center;  /*centre verticalement*/
-    justify-content: center;  /*centre horizontalement*/
+    display: flex;
+    /* permet de mettre les liens sur une ligne */
+    align-items: center;
+    /*centre verticalement*/
+    justify-content: center;
+    /*centre horizontalement*/
 }
 
 /* Suppression des liens peu utilisés*/
-.navbar a[href^="/faq"],  /*faq*/
-.navbar a[href^="/calendar"],  /*calendrier*/
-.navbar a[href^="/groups"] /*groupes*/
-{display: none}
+.navbar a[href^="/faq"],
+/*faq*/
+.navbar a[href^="/calendar"],
+/*calendrier*/
+.navbar a[href^="/groups"]
+
+/*groupes*/
+    {
+    display: none
+}
 
 /* liens de navigation */
 a.mainmenu {
@@ -1097,7 +1166,9 @@ a.mainmenu:hover {
 }
 
 /* Image des liens */
-a.mainmenu img {display: none}
+a.mainmenu img {
+    display: none
+}
 
 
 /*** ------------------------------- ***/
@@ -1118,7 +1189,7 @@ a.mainmenu img {display: none}
  ****** PAGE PRINCIPALE, INDEX ------------------------------------------------------- ******/
 
 /* PAGE D'ACCUEIL ---*/
-.introduction { }
+.introduction {}
 
 
 
@@ -1128,10 +1199,10 @@ a.mainmenu img {display: none}
 /*** CATEGORIES -------------------- ***/
 
 .category {
-  background: var(--grey);
-  border-radius: 10px;
-  padding: 10px;
-  margin-bottom: 10px;
+    background: var(--grey);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
 /* Titre d'une catégorie */
@@ -1153,7 +1224,9 @@ a.mainmenu img {display: none}
     border-radius: 5px;
 }
 
-.forum_row:last-child {margin-bottom: 0}
+.forum_row:last-child {
+    margin-bottom: 0
+}
 
 
 /* titre d'un forum */
@@ -1193,20 +1266,22 @@ a.forumtitle {
 }
 
 .forum_details {
-  border-top: 1px solid var(--grey);
-  padding-top: 10px;
-  margin-top: 10px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+    border-top: 1px solid var(--grey);
+    padding-top: 10px;
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 
-#subforum {font-size: 0}
+#subforum {
+    font-size: 0
+}
 
 #subforum a {
-  font-size: var(--little-size);
-  margin-right: 10px;
+    font-size: var(--little-size);
+    margin-right: 10px;
 }
 
 .forum_stats {
@@ -1242,8 +1317,8 @@ a.forumtitle {
 
 /* Dernier inscrit */
 #last_user {
-  display: flex; 
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 #lastuser_avatar img {
@@ -1269,7 +1344,9 @@ a.groups:hover {
     background: var(--lighter)
 }
 
-a.groups:last-child {margin-bottom: 0}
+a.groups:last-child {
+    margin-bottom: 0
+}
 
 
 .qeel-middle {}
@@ -1284,10 +1361,12 @@ a.groups:last-child {margin-bottom: 0}
 }
 
 /*ne pas supprimer*/
-#online_users br {display: none}
+#online_users br {
+    display: none
+}
 
 .credits {
-    font-size:  var(--little-size);
+    font-size: var(--little-size);
     border: var(--border);
     border-radius: 5px;
     padding: 5px;
@@ -1322,7 +1401,8 @@ a.groups:last-child {margin-bottom: 0}
 }
 
 .navigation_chain a {
-    font-size: initial; /*rétablit la taille des liens*/
+    font-size: initial;
+    /*rétablit la taille des liens*/
     margin-right: 8px;
 }
 
@@ -1343,18 +1423,21 @@ a.groups:last-child {margin-bottom: 0}
     border-radius: 5px;
 }
 
-.buttons:hover {background: var(--lighter);}
+.buttons:hover {
+    background: var(--lighter);
+}
 
 /* BOUTONS : modérer les sujets de ce forum */
-#moderation_forum_tools, #moderation_forum_tools strong {
-  font-size: 0px;
+#moderation_forum_tools,
+#moderation_forum_tools strong {
+    font-size: 0px;
 }
 
 #moderation_forum_tools a {
-  background: var(--grey);
-  border-radius: 5px;
-  padding: 2px 8px;
-  font-size: var(--normal-size);
+    background: var(--grey);
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-size: var(--normal-size);
 }
 
 
@@ -1374,7 +1457,9 @@ a.groups:last-child {margin-bottom: 0}
     align-items: center;
 }
 
-.topicslist_row:last-child {margin-bottom: 0}
+.topicslist_row:last-child {
+    margin-bottom: 0
+}
 
 /* Image du sujet */
 .topicslist-img {
@@ -1384,27 +1469,31 @@ a.groups:last-child {margin-bottom: 0}
 }
 
 .topicslist_infos {
-   flex-grow: 100;
+    flex-grow: 100;
 }
 
 
 /*titre du sujet*/
 .topictitle {
-  font-size: var(--medium-size)
+    font-size: var(--medium-size)
 }
 
 /* icône de type de message ( exemple : -18 ans, sujet résolu, ... ) */
-.topic_msgicon { 
-  margin-right: 5px 
+.topic_msgicon {
+    margin-right: 5px
 }
 
-.topic_msgicon:empty {display: none;}
+.topic_msgicon:empty {
+    display: none;
+}
 
-.topiclist-infos img {margin-right: 3px}
+.topiclist-infos img {
+    margin-right: 3px
+}
 
 
 .topicslist-stats {
-  text-align: right;
+    text-align: right;
 }
 
 .topicslist-avatar-lastpost img {
@@ -1445,7 +1534,7 @@ a.groups:last-child {margin-bottom: 0}
 /* Avatar du participant*/
 .poster {
     background: var(--poster-avatar);
-        height: 30px;
+    height: 30px;
     width: 30px;
     border-radius: 100%;
     margin-left: -8px;
@@ -1479,12 +1568,12 @@ a.groups:last-child {margin-bottom: 0}
 }
 
 div.post_row:nth-of-type(2) {
-  border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
 }
 
 div.post_row:last-of-type {
-  border-radius: 0 0 5px 5px; 
-  border-bottom: none
+    border-radius: 0 0 5px 5px;
+    border-bottom: none
 }
 
 .post_details {
@@ -1496,7 +1585,9 @@ div.post_row:last-of-type {
     width: 100%;
 }
 
-.post_date {flex-grow: 100;}
+.post_date {
+    flex-grow: 100;
+}
 
 
 /* BOUTONS D'EDITION DU MESSAGE --- */
@@ -1540,7 +1631,9 @@ ul.profile-icons li:hover {
 }
 
 /*Bouton au survol*/
-.rep-button:hover {background: var(--greyer)}
+.rep-button:hover {
+    background: var(--greyer)
+}
 
 /* Texte "j'aime" */
 button.rep-button .like_text {}
@@ -1560,24 +1653,26 @@ button.rep-button .rep-nb {
 }
 
 .post_pseudo {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 /* Lien "@" de mention */
-a.fa-mention { }
+a.fa-mention {}
 
 
 /* Mention "en ligne" */
 .online {
-     display: inline-block;
-     position: relative;
-     background-color: #93F037;
-     border-radius: 5px;
-     padding: 0 5px;
-     margin: 0 auto;
+    display: inline-block;
+    position: relative;
+    background-color: #93F037;
+    border-radius: 5px;
+    padding: 0 5px;
+    margin: 0 auto;
 }
 
-.online:empty {display: none}
+.online:empty {
+    display: none
+}
 
 .post_message {
     padding: 10px;
@@ -1586,18 +1681,20 @@ a.fa-mention { }
 
 /* REPONSE RAPIDE --- */
 /*supression de la mention "réponse rapide" */
-.quickreply div.h3 {display: none}
+.quickreply div.h3 {
+    display: none
+}
 
 /*centrer la réponse rapide*/
 .quickreply {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 
 /* Retire le cadre de la réponse rapide pour les invités */
 #quickreply_content:empty {
-  display: none
+    display: none
 }
 
 
@@ -1643,8 +1740,9 @@ a.fa-mention { }
 }
 
 .poll_vote:nth-child(2),
-.poll_option:first-child 
-{padding-top: 20px;}
+.poll_option:first-child {
+    padding-top: 20px;
+}
 
 
 /*** ------------------------------- ***/
@@ -1658,40 +1756,56 @@ a.fa-mention { }
 
 /* Balise code, spoiler et hide*/
 .codebox {
-  display: block;
-  width: 90%;
-  margin: 0 auto;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
 }
 
 /* Contenu code, spoiler et hide*/
 .codebox dd {
-  background: var(--grey);
-  border-radius: 5px;
-  padding: 5px
+    background: var(--grey);
+    border-radius: 5px;
+    padding: 5px
 }
 
 /* Nom de balise "code, spoiler" */
-.codebox dt { 
-  font-weight: 700;
-  font-size: var(--little-size);
+.codebox dt {
+    font-weight: 700;
+    font-size: var(--little-size);
 }
 
 /* Bouton "sélectionner le" code */
-.selectCode { float:right; cursor:pointer; }
-.selectCode:hover {color: var(--light-dark);}
-div.cont_code {clear: right;}
+.selectCode {
+    float: right;
+    cursor: pointer;
+}
+
+.selectCode:hover {
+    color: var(--light-dark);
+}
+
+div.cont_code {
+    clear: right;
+}
 
 /* Spoiler */
 .hidebox.spoiler {}
 
 /* spoiler fermé */
-.spoiler_content {display: none;}
+.spoiler_content {
+    display: none;
+}
+
 /* spoiler ouvert */
-.spoiler_content.hidden {display: block;}
+.spoiler_content.hidden {
+    display: block;
+}
 
 
 /* Citation contenu */
-blockquote div {padding-left: 20px;}
+blockquote div {
+    padding-left: 20px;
+}
 
 /* Citation mention "... a écrit" */
 blockquote cite {
@@ -1701,12 +1815,14 @@ blockquote cite {
 }
 
 /* Citation pseudo */
-blockquote cite a {text-decoration: none!important}
+blockquote cite a {
+    text-decoration: none !important
+}
 
 /* Hide */
 .codebox.hidecode dd {
-  background: transparent;
-  opacity: 0.8;
+    background: transparent;
+    opacity: 0.8;
 }
 
 
@@ -1727,18 +1843,24 @@ blockquote cite a {text-decoration: none!important}
 }
 
 .profile_avatar {
-  width: 200px;
+    width: 200px;
 }
 
 .profile_infos {}
 
-.profile_contact form {display: flex;}
+.profile_contact form {
+    display: flex;
+}
 
-.profile_contact form > div {margin-left: 5px;}
+.profile_contact form > div {
+    margin-left: 5px;
+}
 
 /* Suppression des cases vides de contact qui affichent " - " 
  * nth-child(n+4) supprime toutes les cases après la quatrième */
-.profile_contact form div:nth-child(n+4) {display: none}
+.profile_contact form div:nth-child(n+4) {
+    display: none
+}
 
 .profile_content {
     height: 265px;
@@ -1752,12 +1874,15 @@ blockquote cite a {text-decoration: none!important}
     grid-gap: 10px;
 }
 
-.profile_field label, .profile_field label > span {
+.profile_field label,
+.profile_field label > span {
     font-weight: 600;
     color: var(--link);
 }
 
-.profile_field field { position: relative; }
+.profile_field field {
+    position: relative;
+}
 
 .profile_admin {
     text-align: center;
@@ -1780,7 +1905,7 @@ blockquote cite a {text-decoration: none!important}
     top: 0;
     left: -15px;
 }
- 
+
 /* Bouton validation des modifications */
 .ajax-profil_valid {
     cursor: pointer;
@@ -1797,7 +1922,9 @@ blockquote cite a {text-decoration: none!important}
 
 .tooltipster-default {}
 
-.preview_content {display: flex;}
+.preview_content {
+    display: flex;
+}
 
 .preview_avatar img {
     object-fit: cover;
@@ -1813,7 +1940,8 @@ blockquote cite a {text-decoration: none!important}
     padding-top: 3px
 }
 
-.preview_pseudo, .preview_pseudo strong {
+.preview_pseudo,
+.preview_pseudo strong {
     font-size: var(--medium-size);
 }
 
@@ -1823,9 +1951,13 @@ blockquote cite a {text-decoration: none!important}
     right: 10px;
 }
 
-.preview_contacts a {margin-left: 5px}
+.preview_contacts a {
+    margin-left: 5px
+}
 
-.tooltipster-arrow {display: none}
+.tooltipster-arrow {
+    display: none
+}
 
 
 /*** ------------------------------- ***/
@@ -1857,7 +1989,9 @@ blockquote cite a {text-decoration: none!important}
 
 .userlist_details {}
 
-.userlist_pseudo {font-size: var(--medium-size);}
+.userlist_pseudo {
+    font-size: var(--medium-size);
+}
 
 .userlist_infos {}
 
@@ -1919,8 +2053,8 @@ blockquote cite a {text-decoration: none!important}
 }
 
 .mp-icons {
-  display: flex;
-  float: right;
+    display: flex;
+    float: right;
 }
 
 .message_profil {
@@ -1929,8 +2063,8 @@ blockquote cite a {text-decoration: none!important}
     text-align: center;
 }
 
-.message_content { 
-  padding: 10px;
+.message_content {
+    padding: 10px;
 }
 
 
@@ -1948,8 +2082,10 @@ blockquote cite a {text-decoration: none!important}
 
 .message-edition {
     display: flex;
-    flex-direction: row; /* flex-direction: row-reverse; -- pour smileys à droite */
-    gap: 15px; /*espace entre la zone de texte et la boîte à smileys*/
+    flex-direction: row;
+    /* flex-direction: row-reverse; -- pour smileys à droite */
+    gap: 15px;
+    /*espace entre la zone de texte et la boîte à smileys*/
 }
 
 /* Prévisualisation d'un message */
@@ -1977,13 +2113,14 @@ blockquote cite a {text-decoration: none!important}
     padding: 5px 10px;
     border: 1px solid transparent;
 }
-  
+
 /* Onglet selectionné */
 #tabs li.activetab {
     background: var(--grey);
     border: var(--border);
     border-radius: 5px;
 }
+
 /* onglet au survol */
 #tabs li:hover {
     background: var(--grey);
@@ -1992,15 +2129,18 @@ blockquote cite a {text-decoration: none!important}
 }
 
 /* Suppression de l'onglet "amis et ignorés" */
-div#tabs li:nth-child(5) { display: none;}
+div#tabs li:nth-child(5) {
+    display: none;
+}
 
 
-.profil_preferences dl, .profil_editavatar dl {
-      grid-template-columns: 40% auto;
+.profil_preferences dl,
+.profil_editavatar dl {
+    grid-template-columns: 40% auto;
 }
 
 .profil_preferences .italic {
-  font-size: var(--little-size);
+    font-size: var(--little-size);
 }
 
 
@@ -2008,16 +2148,22 @@ div#tabs li:nth-child(5) { display: none;}
 /* EDITER SIGNATURE ---*/
 
 #parent_editor_simple > #smiley-box {
-    float: left; /* float: right; -- pour smileys à droite */
+    float: left;
+    /* float: right; -- pour smileys à droite */
 }
 
 #parent_editor_simple #message-box {
-    margin-left: 240px; /* margin-right: XXXpx -- pour smileys à droite */
+    margin-left: 240px;
+    /* margin-right: XXXpx -- pour smileys à droite */
 }
 
-#parent_editor_simple #message-box > br {display: none}
+#parent_editor_simple #message-box > br {
+    display: none
+}
 
-#parent_editor_simple #message-box > #textarea_content {width: 100%!important;}
+#parent_editor_simple #message-box > #textarea_content {
+    width: 100% !important;
+}
 
 .panel.row2.sig {
     text-align: center;
@@ -2033,21 +2179,21 @@ div#tabs li:nth-child(5) { display: none;}
 
 /* Conteneur d'un message*/
 .post_search {
-  display: grid;
-  grid-template-columns: 200px auto;
-  border-radius: 5px;
-  margin: 10px 0;
-  background: var(--light);
+    display: grid;
+    grid-template-columns: 200px auto;
+    border-radius: 5px;
+    margin: 10px 0;
+    background: var(--light);
 }
 
 .post_search > div {
-  padding: 10px;
+    padding: 10px;
 }
 
 /* Colonne d'information du message */
 .postsearch_infos {
-  border-right: var(--border);
-  font-size: var(--little-size);
+    border-right: var(--border);
+    font-size: var(--little-size);
 }
 
 
@@ -2060,7 +2206,8 @@ div#tabs li:nth-child(5) { display: none;}
 /*** PAGE DE CONNEXION ------------- ***/
 
 /* Centrer les pages de connexion */
-form[name=form_login], form[name=form_login] ~ .panel {
+form[name=form_login],
+form[name=form_login] ~ .panel {
     text-align: center;
 }
 
@@ -2082,8 +2229,8 @@ form[name=form_login] .content {
     border-radius: 5px;
     border: var(--border);
     padding: 10px;
-    position: fixed!important;
-    top: 50%!important;
+    position: fixed !important;
+    top: 50% !important;
 }
 
 /* Bouton rechercher */
@@ -2093,9 +2240,13 @@ form[name=form_login] .content {
     margin-left: 5px;
 }
 
-.overview div {margin-bottom: 5px}
+.overview div {
+    margin-bottom: 5px
+}
 
-.overview a {float: right;}
+.overview a {
+    float: right;
+}
 
 
 /* Boîte "recherche un utilisateur" */
@@ -2149,8 +2300,14 @@ form[name=form_login] .content {
     text-align: center;
 }
 
-.blog_daymonth {font-size: 16px;font-weight: 700;}
-.blog_year {font-size: 18px;}
+.blog_daymonth {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.blog_year {
+    font-size: 18px;
+}
 
 .bloglist_infos {
     display: flex;
@@ -2158,9 +2315,13 @@ form[name=form_login] .content {
     padding: 10px;
 }
 
-.bloglist_details {text-align: right}
+.bloglist_details {
+    text-align: right
+}
 
-.bloglist_resum { padding: 0 10px 10px;}
+.bloglist_resum {
+    padding: 0 10px 10px;
+}
 
 
 /*** ------------------------------- ***/
@@ -2180,7 +2341,9 @@ form[name=form_login] .content {
     border-bottom: 1px solid var(--grey);
 }
 
-.blog_author {flex-grow: 100;}
+.blog_author {
+    flex-grow: 100;
+}
 
 
 /*** ------------------------------- ***/
@@ -2194,7 +2357,10 @@ form[name=form_login] .content {
     margin: 5px auto 10px;
 }
 
-.comment_avatar {margin-right: 10px;float: left;}
+.comment_avatar {
+    margin-right: 10px;
+    float: left;
+}
 
 .comment_avatar img {
     object-fit: cover;
@@ -2202,7 +2368,7 @@ form[name=form_login] .content {
     border-radius: 5px;
     width: 40px;
     height: 40px;
-    margin:0;
+    margin: 0;
 }
 
 .comment_details {
@@ -2212,9 +2378,13 @@ form[name=form_login] .content {
     justify-content: space-between;
 }
 
-.comment_details .left {flex-grow: 100;}
+.comment_details .left {
+    flex-grow: 100;
+}
 
-.comment_content {margin-left: 50px;}
+.comment_content {
+    margin-left: 50px;
+}
 
 
 
@@ -2240,24 +2410,46 @@ form[name=form_login] .content {
 /*** ------------------------------- ***/
 /* BALISES GENERALES --------------- ***/
 
-ul {list-style-type: none;padding: 0;margin: 0;}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 
-fieldset {border: none;padding: 0;margin: 0;}
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
 
 dl {
     display: grid;
     grid-template-columns: 220px auto;
     grid-gap: 15px
 }
-dd {margin: 0;}
-dt {margin:0}
-dt label {font-weight: bold}
 
-button, input {border: none}
+dd {
+    margin: 0;
+}
 
-button, select, input { 
-  font-family: var(--font);
-  cursor: pointer;
+dt {
+    margin: 0
+}
+
+dt label {
+    font-weight: bold
+}
+
+button,
+input {
+    border: none
+}
+
+button,
+select,
+input {
+    font-family: var(--font);
+    cursor: pointer;
 }
 
 /* Structure page de connexion */
@@ -2268,14 +2460,27 @@ button, select, input {
     grid-template-columns: 150px auto;
 }
 
-.fld_connexion dl:nth-of-type(2) dd:last-of-type {grid-column: 1 / span 2;}
+.fld_connexion dl:nth-of-type(2) dd:last-of-type {
+    grid-column: 1 / span 2;
+}
 
-.fld_connexion dl:nth-of-type(3) {margin: 0;}
+.fld_connexion dl:nth-of-type(3) {
+    margin: 0;
+}
 
-.fld_connexion dl:nth-of-type(n+3) {display: block;}
+.fld_connexion dl:nth-of-type(n+3) {
+    display: block;
+}
 
-.invisible {display: none;visibility: hidden;}
-.visible {display: block;visibility: visible;}
+.invisible {
+    display: none;
+    visibility: hidden;
+}
+
+.visible {
+    display: block;
+    visibility: visible;
+}
 
 
 /* Indicateur complexité du mot de passe */
@@ -2287,14 +2492,25 @@ button, select, input {
 }
 
 .pwd_img {
-  padding: 2px 6px;
-  display: none;
-  border-radius: 3px;
+    padding: 2px 6px;
+    display: none;
+    border-radius: 3px;
 }
 
-#pwd_good {background-color: #4CAF50;color: #FFF;}
-#pwd_middle {background-color: #FFCC00;color: #000;}
-#pwd_bad {background-color: #F04040;color: #FFF;}
+#pwd_good {
+    background-color: #4CAF50;
+    color: #FFF;
+}
+
+#pwd_middle {
+    background-color: #FFCC00;
+    color: #000;
+}
+
+#pwd_bad {
+    background-color: #F04040;
+    color: #FFF;
+}
 
 
 
@@ -2302,21 +2518,38 @@ button, select, input {
 /*** ------------------------------- ***/
 /*** POUBELLE DE FORUMACTIF -------- ***/
 
-#find_username br, #users_here br, #main-content > p, .adminlink br, .corners-top, .corners-bottom
-{display: none;}
-
-#find_username .panel {border: none; margin: 0}
-
-.adminlink {clear: both}
-
-#cp-main#cp-main#cp-main, table, .quickreply div#textarea_content {width: 100% !important;}
-
-.panel .panel {
-  background: transparent;
-  border: none;
-  padding: 0;
-  margin: 0;
-  border-radius: 0;
+#find_username br,
+#users_here br,
+#main-content > p,
+.adminlink br,
+.corners-top,
+.corners-bottom {
+    display: none;
 }
 
-.social_btn {display: none;}
+#find_username .panel {
+    border: none;
+    margin: 0
+}
+
+.adminlink {
+    clear: both
+}
+
+#cp-main#cp-main#cp-main,
+table,
+.quickreply div#textarea_content {
+    width: 100% !important;
+}
+
+.panel .panel {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+}
+
+.social_btn {
+    display: none;
+}

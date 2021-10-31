@@ -45,20 +45,29 @@
 <script>
 (function() {
     new Switcheroo('#switcheroo', {
-        logo: '<i class="bi bi-house-door-fill"></i>', /* accepte html, permet d'afficher un logo qui retourne à l'accueil du forum */
+        logo: ' logo ', /* accepte html, permet d'afficher un logo qui retourne à l'accueil du forum */
         enableReorder: true, /* activer le drag&drop pour l'ordre des comptes (true/false) */
         updateAvatar: true, /* activer le clique droit pour charger un nouvel avatar (true/false) */
         confirm: true, /* demande une confirmation avant le changement de compte */
-        confirmMsg: 'Confirmer le Switcheroo de personnage ?', /* le message affiché lors de la confirmation */
         deleteIcon: '×', /* accepte html, icone pour supprimer un compte lié */
         addIcon: '+', /* accepte html, icone qui ouvre le formulaire de connexion et d'association */
-        errorMsg: 'Une erreur est surviendue lors du Switcheroo.',
+    },
+    {
+        button: {
+            add: "Associer un personnage",
+        },
+        msg: {
+            error: "Une erreur est surviendu lors du Switcheroo.",
+            confirm: "Confirmer le Switcheroo de personnage ?",
+        },
+        modal: {
+            password_label: "Mot de passe",
+            username_label: "Nom d'utilisateur",
+            login_button: "Connexion",
+        }
     });
 })();
-  
 </script>
-
-<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#4B57C5', 'H2H72OYRJ');kofiwidget2.draw();</script> 
 
 </body>
 </html>
