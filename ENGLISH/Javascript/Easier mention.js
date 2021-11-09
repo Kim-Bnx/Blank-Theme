@@ -1,4 +1,4 @@
-// PLACEMENT : sur toutes les pages
+// PLACEMENT : All pages
 
 // [FRENCH] by Shadow
 // https://forum.forumactif.com/t378492-rendre-le-systeme-de-mentions-plus-facile-a-utiliser
