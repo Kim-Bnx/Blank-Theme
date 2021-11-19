@@ -31,7 +31,6 @@
 //]]>
 </script>
 
-
 <!-- SWITCHEROO plugins -->
 
 <!-- Plugin main bar, where the magic happens. Some values can be edited. -->

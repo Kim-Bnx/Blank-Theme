@@ -1476,7 +1476,7 @@ a.groups:last-child {margin-bottom: 0}
     background: var(--light);
     display: grid;
     grid-template-rows: max-content auto;
-    grid-template-columns: 200px auto;
+    grid-template-columns: min-content auto;
     border-bottom: 1px solid var(--grey);
 }
 

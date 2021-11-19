@@ -30,7 +30,6 @@
 	fa_endpage();
 //]]>
 </script>
-  
 
 <!-- Plugins SWITCHEROO -->
 
