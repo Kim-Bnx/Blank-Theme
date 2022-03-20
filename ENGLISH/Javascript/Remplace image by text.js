@@ -23,7 +23,9 @@ $(function(){
    $('.i_icon_profile, #i_icon_profile').replaceWith("Profile"); // Show profile
    $('.i_icon_pm, #i_icon_pm').replaceWith("PM"); // Send a PM
    $('.profil_contact a:nth-of-type(3) img').replaceWith("Other"); // Other
-  
-  
+   // If you have more contact buttons, add the same line and change nth-of-type(4), (5), ... It matches with the element's order
+   
+   // For contact button in the profile alone, use the inspector element to find the button ID
+   // $('#field_idxxx img').replaceWith("Other");
   
 });
