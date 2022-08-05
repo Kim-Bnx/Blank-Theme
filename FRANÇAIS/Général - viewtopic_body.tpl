@@ -50,7 +50,6 @@
     <!-- Liste des participants du sujet -->
     {POSTERS_LIST}
 
-
     <!-- Sondage (template : viewtopic_poll_ballot /// viewtopic_poll_result) -->
     {POLL_DISPLAY}
 
@@ -59,7 +58,7 @@
     <!-- BEGIN postrow -->
     <!-- BEGIN displayed -->
     <div id="{postrow.displayed.U_POST_ID}"></div>
-    <div class="post_row post--{postrow.displayed.U_POST_ID}" id="p{postrow.displayed.U_POST_ID}">
+    <div class="post post_row post--{postrow.displayed.U_POST_ID}" id="p{postrow.displayed.U_POST_ID}">
 
         <!-- Conteneur informations du message-->
         <div class="post_details">
@@ -69,7 +68,7 @@
                 <a href="{postrow.displayed.POST_URL}">{postrow.displayed.POST_SUBJECT}</a>
 			&nbsp;
                 <!-- Date du message -->
-                {postrow.displayed.POST_DATE_NEW}
+                <time>{postrow.displayed.POST_DATE_NEW}</time>
             </span>
               
                 <!-- Boutons d'édition de message -->

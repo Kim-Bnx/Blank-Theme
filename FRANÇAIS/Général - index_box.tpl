@@ -50,7 +50,7 @@
         
         <!-- BEGIN forumrow -->
         <!-- Affichage d'un forum -->
-        <div class="forum_row">
+        <div class="forum_row row">
                 <!-- Titre forum -->
                 <a href="{catrow.forumrow.U_VIEWFORUM}" class="forumtitle">{catrow.forumrow.FORUM_NAME}</a>
                 <br />
@@ -62,7 +62,7 @@
                 <div class="forum_desc">{catrow.forumrow.FORUM_DESC}</div>
 
                 
-                <div class="forum_lastpost-avatar">
+                <div class="forum_lastpost-avatar lastpostavatar">
                    <!-- Avatar du dernier posteur -->
                     <!-- BEGIN avatar -->
                     {catrow.forumrow.avatar.LAST_POST_AVATAR}
@@ -70,11 +70,11 @@
                 </div>
 
                 <!-- Conteneur dernier posteur -->
-                <div class="forum_lastpost">
+                <div class="forum_lastpost lastpost">
                   <span>
                      <!-- Dernier sujet -->
                       <!-- BEGIN switch_topic_title -->
-                      <a href="{catrow.forumrow.U_LATEST_TOPIC}" title="{catrow.forumrow.LATEST_TOPIC_TITLE}">{catrow.forumrow.LATEST_TOPIC_NAME}</a><br />
+                      <a href="{catrow.forumrow.U_LATEST_TOPIC}" title="{catrow.forumrow.LATEST_TOPIC_TITLE}" class="lastpost_link">{catrow.forumrow.LATEST_TOPIC_NAME}</a><br />
                       <!-- END switch_topic_title -->
                       
                       <!-- Auteur -->

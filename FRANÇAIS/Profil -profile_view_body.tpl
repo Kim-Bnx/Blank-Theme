@@ -1,24 +1,24 @@
-<!-- NOTE !!-->
-<!-- ACTIVEZ LE PROFIL SIMPLE : Utilisateurs & groupes › Profil › Options générales › Activer le profil avancé : non -->
+<!-- IMPORTANT!!-->
+<!-- ACTIVATE SIMPLE PROFILE: Users & Groups › Profiles › General options › Activate advanced profile: no -->
 
 <br/>
-<div class="container">
+<div class="container" id="wombat">
 
-    <!-- Pseudo de l'utlisateur -->
+    <!-- Username -->
     <h1 class="page-title">{USERNAME}</h1>
 
-    <!-- Contenu du profil -->
+    <!-- Profile contents -->
     <div class="user_profile">
 
         <!-- Avatar -->
-        <div class="profile_avatar" id="user_avatar">{AVATAR_IMG}</div>
+        <div class="profile_avatar" id="user_avatar"> {AVATAR_IMG}</div>
 
       
-        <!-- Contenu du profil -->
+        <!-- Profile info -->
         <div class="profile_infos">
 
             <div class="profile_contact right">
-                <!-- Lien-image de contact -->
+                <!-- Contact image link -->
                 <form action="{S_PROFILE_ACTION}" method="post" name="post">
                     <!-- BEGIN contact_field -->
                     <div id="field_id{contact_field.ID}">{contact_field.CONTENT}</div>
@@ -26,26 +26,26 @@
                 </form>
             </div>
 
-            <!-- Rang-->
+            <!-- Rank-->
             <strong>{POSTER_RANK}</strong><br />
 
-            <!-- Statut : en ligne -->
+            <!-- Status: online -->
             <!-- BEGIN switch_show_status -->
             {USER_ONLINE}
             <!-- END switch_show_status -->
 
 
             <br/>
-            <!-- CHAMPS DE PROFIL -->
+            <!-- PROFILE FIELDS -->
             <div class="profile_content">
 
-                <!-- Champ: dernière visite -->
+                <!-- "Last visited" field -->
                 <div class="profile_field">
                     <label>{L_LAST_VISITED} :</label>
                     <field>{LAST_VISIT_TIME}</field>
                 </div>
 
-               <!-- Champ: message privés -->
+               <!-- "Private messages" field -->
                 <!-- BEGIN switch_dhow_mp -->
                 <div class="profile_field">
                     <label>{L_PRIVATE_MSG} :</label>
@@ -53,27 +53,27 @@
                 </div>
                 <!-- END switch_dhow_mp -->
 
-                <!-- Autre champs -->
+                <!-- Other fields -->
                 <!-- BEGIN profile_field -->
                 <div class="profile_field" id="field_id{profile_field.ID}">
                     <label>{profile_field.LABEL}</label>
                     <field>{profile_field.CONTENT}
 
-                        <!-- Contenu du champs: message -->
+                        <!-- "Message" field contents -->
                         <!-- BEGIN profil_type_user_posts -->
-			<a rel="nofollow" href="/st/{PUSERNAME}" id="opentopics">{L_SEARCH_USER_POSTS} :</a><!-- sujets ouverts par -->
+                        <a rel="nofollow" href="/st/{PUSERNAME}" id="opentopics">{L_SEARCH_USER_POSTS} :</a><!-- topics opened by -->
 
                         <br />
-                        <a rel="nofollow" href="/sta/{PUSERNAME}" id="alltopics">{L_TOPICS}</a> <!-- tous les sujets -->
+                        <a rel="nofollow" href="/sta/{PUSERNAME}" id="alltopics">{L_TOPICS}</a> <!-- all topics -->
                       		&nbsp;-&nbsp;
-                        <a rel="nofollow" href="/spa/{PUSERNAME}" id="allposts">{L_POSTS}</a> <!-- tous les posts -->
+                        <a rel="nofollow" href="/spa/{PUSERNAME}" id="allposts">{L_POSTS}</a> <!-- all posts -->
                         <!-- END profil_type_user_posts -->
                     </field>
                 </div>
                 <!-- END profile_field -->
 
               
-              	<!-- Feuille de personnage -->
+              	<!-- Character sheet -->
                 <!-- BEGIN switch_rpg -->
                 <!-- BEGIN rpg_fields -->
                 <div class="profile_field">
@@ -87,14 +87,14 @@
 
 
             </div>
-            <!-- Fin des champs de profil -->
+            <!-- End of profile fields -->
 
         </div>
 
 
     </div>
 
-    <!-- Lien de modération du profil -->
+    <!-- Profile moderation links -->
     <!-- BEGIN switch_auth_user -->
     <div class="profile_admin">{ADMINISTRATE_USER}{BAN_USER}</div>
     <!-- END switch_auth_user -->

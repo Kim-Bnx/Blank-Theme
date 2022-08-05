@@ -113,26 +113,22 @@
 
 <!-- Changement de texte des informations du QEEL -->
 <script type="text/javascript">
-document.getElementById('last_user').innerHTML = document.getElementById('last_user').innerHTML.replace(/L'utilisateur enregistré le plus récent est/, " ");</script>
-
-<script type="text/javascript">
-document.getElementById('qeel_posts').innerHTML = document.getElementById('qeel_posts').innerHTML.replace(/Nos membres ont posté un total de /, " ");</script>
-
-<script type="text/javascript">
-document.getElementById('qeel_members').innerHTML = document.getElementById('qeel_members').innerHTML.replace(/Nous avons/, " ");</script>
-
-<script type="text/javascript">
-document.getElementById('total_users').innerHTML = document.getElementById('total_users').innerHTML.replace(/Il y a en tout/, " ");</script>
-
-<script type="text/javascript">
-document.getElementById('total_users').innerHTML = document.getElementById('total_users').innerHTML.replace(/utilisateur en ligne/, "connecté");</script>
-
-<script type="text/javascript">
-document.getElementById('online_users').innerHTML = document.getElementById('online_users').innerHTML.replace(/Utilisateurs enregistrés/, "En ligne");</script>
-
-<script type="text/javascript">
-document.getElementById('24hconnected').innerHTML = document.getElementById('24hconnected').innerHTML.replace(/Membres connectés au cours des 24 dernières heures/, "Connectés récemment");</script>
-
+$(function(){
+  $("#last_user").html($("#last_user").html().replace("L'utilisateur enregistré le plus récent est", ""));
+  
+  $("#qeel_posts").html($("#qeel_posts").html().replace("Nos membres ont posté un total de", ""));
+  
+  $("#qeel_members").html($("#qeel_members").html().replace("Nous avons", ""));
+  
+  $("#total_users").html($("#total_users").html().replace("Il y a en tout", ""));
+  $("#total_users").html($("#total_users").html().replace("utilisateur en ligne", "connecté"));
+  $("#total_users").html($("#total_users").html().replace("utilisateurs en ligne", "connectés"));
+  
+  $("#online_users").html($("#online_users").html().replace("Utilisateurs enregistrés", "En ligne"));
+  
+  $("#24hconnected").html($("#24hconnected").html().replace("Membres connectés au cours des 24 dernières heures :", "Connectés récemment"));
+});
+</script>
 
 
 <!-- Conteneur des infos CB -->
@@ -166,33 +162,6 @@ document.getElementById('24hconnected').innerHTML = document.getElementById('24h
 <!----------------------------------------------->
 <!-- CB (si affichée en bas) -------------->
 {CHATBOX_BOTTOM}
-
-
-<!----------------------------------------------->
-<!-- CONNEXION RAPIDE (bas) -------------->
-
-<!-- BEGIN switch_user_login_form_footer -->
-<div class="panel">
-    <form action="{S_LOGIN_ACTION}" method="post" name="form_login">
-        <div class="user_login_form center">
-            <!-- Nom utilisateur -->
-            <label>{L_USERNAME} : <input class="post" type="text" size="10" name="username" /></label>&nbsp;
-
-            <!-- Mot de passe -->
-            <label>{L_PASSWORD} : <input class="post" type="password" size="10" name="password" /></label>&nbsp;
-
-            <!-- Check : connexion automatique -->
-            <label>{L_AUTO_LOGIN} : <input class="radio" type="checkbox" name="autologin" {AUTOLOGIN_CHECKED} /></label>&nbsp;
-
-            <!-- Bouton connexion -->
-            {S_HIDDEN_FIELDS}<input class="mainoption button1" type="submit" name="login" value="{L_LOGIN}" />
-
-
-        </div>
-    </form>
-</div>
-<!-- END switch_user_login_form_footer -->
-
 
 
 

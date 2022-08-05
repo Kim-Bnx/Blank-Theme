@@ -2,7 +2,6 @@
 <!-- LISTE DES SUJETS -------------->
 <!-- BEGIN topics_list_box -->
 
-
 <!----------------------------------------------->
 <!-- AFFICHAGE D'UN SUJET -------------->
 <!-- BEGIN row -->
@@ -10,7 +9,7 @@
 
 
 <!-- Conteneur d'un sujet -->
-<div class="topicslist_row" <!-- BEGIN line_sticky --> style="margin-top:5px;"<!-- END line_sticky -->>
+<div class="topicslist_row row" <!-- BEGIN line_sticky --> style="margin-top:5px;"<!-- END line_sticky -->>
 
     <!-- Image d'un sujet -->
     <div class="topicslist-img">
@@ -69,7 +68,7 @@
 
 
     <!-- Avatar du dernier posteur-->
-    <div class="topicslist-avatar-lastpost">
+    <div class="topicslist-avatar-lastpost lastpostavatar">
         <!-- BEGIN avatar -->
         {topics_list_box.row.topic.avatar.LAST_POST_AVATAR}
         <!-- END avatar -->
@@ -77,7 +76,8 @@
 
 
     <!-- Dernier message -->
-    <div class="topicslist-lastpost">
+    <div class="topicslist-lastpost lastpost">
+      <span>
         <!-- Date du dernier message -->
         {topics_list_box.row.LAST_POST_TIME} &nbsp;
         <br />
@@ -85,6 +85,7 @@
         {topics_list_box.row.LAST_POST_AUTHOR} &nbsp;
         <!-- Image-lien pour aller au dernier message -->
         {topics_list_box.row.LAST_POST_IMG}
+      </span>
     </div>
 
 

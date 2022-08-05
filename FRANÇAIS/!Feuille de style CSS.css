@@ -1,84 +1,31 @@
-/*** CSS POUR LE BLANK THEME - MODERNBB 
- * !!!! DESACTIVEZ le CSS de base du forum (en cochant [OUI] en bas de la page) !!!!
- * 
- *** INDEX :
-
----- Structure du forum
--- Root
--- Toutes les pages
-
----- Généralités
--- Liens et textes
--- Boutons d'interaction et barre de texte
--- Editeur de texte
--- Paginations
--- Elements esthétiques
-
----- Entête du forum
--- Toolbar
--- Switcheroo (par Monomer)
--- Bannière
--- Barre de navigation 
--- Annonces défilantes
-
----- Page principale, index
--- Page d'accueil
--- Catégories
--- Qui est en ligne
-
----- Liste des sujets
--- Entête et footer de la liste
--- Liste des sujets
-
----- Affichage d'un sujet
--- Sujet
--- Sondage
--- Liens, textes, balises, ...
-
----- Membres
--- Page de profil 
--- Profils simplifiés des tags
--- Liste des membres
-
----- Messages privés
--- Liste des MPs
--- Affichage d'un MP
-
----- Pages annexes
--- Page d'envoi d'un message
--- Edition de profil
--- Page de recherche
--- Page de connexion
--- Elements flottants
-
----- Blogs
--- Liste des blogs
--- Affichage d'un blog
--- Commentaire d'un blog
-
-
----- Structure de Forumactif
--- Balise générales
--- Poubelle de FA
-*/
-
 /****** STRUCTURE DU FORUM ----------------------------------------------------------- 
  ****** Elements du forum qui définissent sa structure et sa hiérachie sur toutes les pages 
  ****** (ne les RENOMMEZ PAS, ils sont généraux aux pages Web ou à Forumactif) ------- ******/
 
 /*** ROOT 
  *** Tutoriel : geniuspandalab.tumblr.com/post/634694343906689024/cssroot ***/
+
+/* VARIABLE DU MODE DE BASE (ici clair) */
 :root {
-    --black: #000;
-    --dark: #333;
-    --light-dark: #5B5B5B;
-    --red: #D31141;
-    --light: #fff;
-    --lighter: #fafafa;
-    --grey: #F4F4F4;
-    --greyer: #E5E5E5;
+    --header: url('https://nsm09.casimages.com/img/2021/03/21//21032105561425394217327016.png');
+
+    --neutral: #fafbfc;
+    --neutralDark: #f2f4f9;
+    --neutralDarker: #dce3f4;
+
+    --contrast: #171938;
+    --contrastLight: #232657;
+    --contrastLighter: #c3c8f3;
+
+    --accentClr: #4B57C5;
+    --accentClrDark: #333c92;
+
+    --textColor: #232657;
+    --textColorAccent: #000;
 
     --border: 1px solid #E5E5E5;
+
+    --shadowBox: 0 0 20px #23265730;
 
     --little-size: 12px;
     --normal-size: 14px;
@@ -87,12 +34,152 @@
     --title-size: 22px;
 
     --font: 'Open Sans';
+
+     /* VARIABLES MESSENGER */
+    --FAM-pluginBackground: #fafbfc;
+    --FAM-chatBackground: #f2f4f9;
+    --FAM-textareaBackground: #fafbfc;
+    --FAM-msgBackground: #dce3f4;
+    --FAM-myMsgBackground: #fafbfc;
+    --FAM-quoteBackground: #8a9fd236;
+
+    --FAM-gradient: linear-gradient(-90deg, rgba(250, 251, 252,1) 20%, rgba(250, 251, 252,0) 100%);
+    --FAM-gradientTop: linear-gradient(180deg, rgba(242, 244, 249,1) 20%, rgba(242, 244, 249,0) 100%);
+    --FAM-gradientBot: linear-gradient(0deg, rgba(242, 244, 249,1) 20%, rgba(242, 244, 249,0) 100%);
+
+    --FAM-border: 1px solid #dce3f4;
+    --FAM--shadowBox: 0 0 20px var(--contrastLight);
+  
+    --FAM-sleepModeBackground: rgba(255, 255, 255, 0.6);
+    --FAM-newMsgAnimation: rgb(0, 0, 0,.3);
+
+    --FAM-accentClr: #4B57C5;
+    --FAM-secondClr: #333c92;
+    --FAM-fontClr: #232657;
+    --FAM-fontLightClr: #484a65;
+    --FAM-linkClr: #4B57C5;
+    --FAM-titleClr: #171938;
+    --FAM-buttonsClr: #171938;
+
+    --FAM-fontSize: 14px;
+    --FAM-titleFont: 'Open Sans';
+    --FAM-titleSize: 24px;
+
+    --FAM-light: white;
+    --FAM-dark: black;
+
+    --FAM-windowSize: 750px;
 }
+
+
+/* VARIABLES DU MODE INVERSE (ici sombre) */
+ [data-color-scheme="dark"] {
+     --header: url('https://images2.imgbox.com/1b/a5/4bb6Hgju_o.png');
+ 
+    --neutral: #1e212a;
+    --neutralDark: #181a21;
+    --neutralDarker: #313543;
+
+    --contrast: #e5e5f0;
+    --contrastLight: #F4F4F4;
+    --contrastLighter: #40485e;
+
+    --accentClr: #7583ff;
+    --accentClrDark: #333c92;
+
+    --textColor: #c7c5cd;
+    --textColorAccent: #e5e5f0;
+
+    --border: 1px solid #2b2e3b;
+
+    --shadowBox: 0 0 20px var(--neutralDark);
+
+    /* VARIABLES MESSENGER */
+    --FAM-pluginBackground: #1e212a;
+    --FAM-chatBackground: #181a21;
+    --FAM-textareaBackground: #1e212a;
+    --FAM-msgBackground: #0B0E17;
+    --FAM-myMsgBackground: #1e212a;
+
+    --FAM-quoteBackground: rgba(255,255,255,0.04);
+
+    --FAM-gradient: linear-gradient(-90deg, rgba(30,33,42,1) 20%, rgba(30,33,42,0) 100%);
+    --FAM-gradientTop: linear-gradient(180deg, rgba(24, 26, 33,1) 20%, rgba(24, 26, 33,0) 100%);
+    --FAM-gradientBot: linear-gradient(0deg, rgba(24, 26, 33,1) 20%, rgba(24, 26, 33,0) 100%);
+
+    --FAM-border: 1px solid #313543;
+    --FAM-shadow: 0 0 20px var(--neutralDark);
+  
+    --FAM-sleepModeBackground: rgba(0, 0, 0, 0.5);
+    --FAM-newMsgAnimation: rgb(255, 255, 255,.5);
+
+    --FAM-accentClr: #7583ff;
+    --FAM-secondClr: #333c92;
+    --FAM-fontClr: #c7c5cd;
+    --FAM-fontLightClr: #9a96a3;
+    --FAM-linkClr: #7583ff;
+    --FAM-titleClr: #f0f0f8;
+    --FAM-buttonsClr: #E5E5E5;
+ }
+
+ @media (prefers-color-scheme: dark) {
+   [data-color-scheme=dark] {
+     --header: url('https://images2.imgbox.com/1b/a5/4bb6Hgju_o.png');
+ 
+    --neutral: #1e212a;
+    --neutralDark: #181a21;
+    --neutralDarker: #313543;
+
+    --contrast: #e5e5f0;
+    --contrastLight: #F4F4F4;
+    --contrastLighter: #40485e;
+
+    --accentClr: #7583ff;
+    --accentClrDark: #333c92;
+
+    --textColor: #c7c5cd;
+    --textColorAccent: #e5e5f0;
+
+    --border: 1px solid #2b2e3b;
+
+    --shadowBox: 0 0 20px var(--neutralDark);
+
+    /* VARIABLES MESSENGER */
+    --FAM-pluginBackground: #1e212a;
+    --FAM-chatBackground: #181a21;
+    --FAM-textareaBackground: #1e212a;
+    --FAM-msgBackground: #0B0E17;
+    --FAM-myMsgBackground: #1e212a;
+
+    --FAM-quoteBackground: rgba(255,255,255,0.04);
+
+    --FAM-gradient: linear-gradient(-90deg, rgba(30,33,42,1) 20%, rgba(30,33,42,0) 100%);
+    --FAM-gradientTop: linear-gradient(180deg, rgba(24, 26, 33,1) 20%, rgba(24, 26, 33,0) 100%);
+    --FAM-gradientBot: linear-gradient(0deg, rgba(24, 26, 33,1) 20%, rgba(24, 26, 33,0) 100%);
+
+    --FAM-border: 1px solid #313543;
+    --FAM-shadow: 0 0 20px var(--neutralDark);
+    
+    --FAM-sleepModeBackground: rgba(0, 0, 0, 0.5);
+    --FAM-newMsgAnimation: rgb(255, 255, 255,.5);
+
+    --FAM-accentClr: #7583ff;
+    --FAM-secondClr: #333c92;
+    --FAM-fontClr: #c7c5cd;
+    --FAM-fontLightClr: #9a96a3;
+    --FAM-linkClr: #7583ff;
+    --FAM-titleClr: #f0f0f8;
+    --FAM-buttonsClr: #E5E5E5;
+   }
+ }
+
 
 /* S'applique à TOUS les éléments du forum*/
 * {
-    box-sizing: border-box;
-    /*évite que les éléments soient agrandis par le padding*/
+    box-sizing: border-box; /*évite que les éléments soient agrandis par le padding*/
+    /* SCROLLBAR CUSTOM POUR MOZILLA */
+    scrollbar-color: var(--contrastLight);
+    scrollbar-width: thin;
 }
 
 /*** ------------------------------- ***/
@@ -100,19 +187,17 @@
 
 /* FOND DU FORUM ---*/
 body {
-    background: var(--grey);
+    background: var(--neutralDark);
     font-family: var(--font);
     font-size: var(--normal-size);
+    color: var(--textColor);
     margin: 0 !important;
 }
 
 
 /* SCROLLBAR --- */
-
 /* Scrollbar entière */
-::-webkit-scrollbar {
-    width: px;
-}
+::-webkit-scrollbar {}
 
 /* Rail */
 ::-webkit-scrollbar-track {}
@@ -127,51 +212,91 @@ body {
     /*largeur forum*/
     margin: 20px auto;
     padding: 20px;
-    background: #fff;
+    background: var(--neutral);
     border-radius: 5px;
+}
+
+/* BANNIERE ---*/
+/* Mettre la bannière en fond permet de la changer selon le thème clair ou sombre */
+#header {
+    background-image: var(--header);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    width: 900px;
+    height: 330px;
+    display: block;
 }
 
 /* Conteneur de toutes les sous-sections
  * comme les encadrés d'options, de rappel, etc... */
 .panel {
-    background: var(--light);
+    background: var(--neutral);
     border: var(--border);
     border-radius: 5px;
     padding: 10px;
-    margin: 10px 0;
+    margin: 25px 0;
 }
 
-/* ASCENSEUR --- */
-
-/* Conteneur de l'ascenseur
- * Sert essentiellement à définir où le placer dans la page */
-.elevator {
+.sidebar {
     position: fixed;
-    bottom: 20px;
-    left: 10px;
-    width: 52px;
+    background-color: var(--neutral);
+    inset: 0;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 10px;
     z-index: 999;
 }
 
-/* Lien de renvoi haut/bas */
-.elevator a {
-    display: block;
-    padding: 5px 8px;
-    background: var(--grey);
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 10px;
+/* Conteneur de l'ascenseur
+ * Sert essentiellement à définir où le placer dans la page */
+ .sidebar_bottom {
+    width: 45px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
+/* Lien de renvoi haut/bas */
+.sidebar_bottom > a {
+    padding: 5px 8px;
+    background: var(--neutralDark);
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* BOUTON CHANGEMENT DE THEME ---*/
+@media (prefers-color-scheme: dark) {.color-scheme-toggle .dark{display: none}}
+@media (prefers-color-scheme: light) {.color-scheme-toggle .light{display: none}}
+.color-scheme-toggle,
+[data-color-scheme="light"] .color-scheme-toggle .dark,
+[data-color-scheme="dark"] .color-scheme-toggle .light {display: block;width: 100%;}
+
+[data-color-scheme="dark"] .color-scheme-toggle .dark,
+[data-color-scheme="light"] .color-scheme-toggle .light {display: none}
 
 
+
+.color-scheme-toggle {
+    background-color: var(--neutralDark);
+    padding: 5px 8px;
+    font-size: 36px;
+    text-align: center;
+    border-radius: 5px;
+    color: var(--textColor);
+}
+
+.color-scheme-toggle:hover {
+    color: var(--accentClr);
+}
 
 
 /****** ------------------------------------------------------------------------------
  ****** GÉNÉRALITÉS ------------------------------------------------------------------ 
  ****** Sélecteurs généraux s'appliquant à plusieurs reprises sur tout le forum ******/
-
-
 
 /*** ----------------------------------- ***/
 /*** LIENS ET TEXTE -------------------- ***/
@@ -180,18 +305,18 @@ body {
 a {
     font-weight: 600;
     text-decoration: none;
-    color: var(--black);
+    color: var(--textColorAccent);
 }
 
 /*liens au survol*/
 a:hover {
-    color: var(--light-dark);
+    color: var(--accentClr);
 }
 
 /* Emoji mis par défaut de FA
  * Les réduire les rend moins horribles à voir */
 .emojione {
-    width: 15px !important
+    width: 19px !important
 }
 
 
@@ -200,7 +325,7 @@ a:hover {
 /* Utilisé pour des titres de pages */
 h1,
 h1.page-title {
-    color: var(--dark);
+    color: var(--contrastLight);
     margin: 10px 0 20px;
     font-size: var(--title-size);
     font-weight: 700;
@@ -219,7 +344,7 @@ h2,
 /* Utilisé pour des titres de sous-sections, petit encadré, ...*/
 h3,
 .h3 {
-    color: var(--dark);
+    color: var(--contrastLight);
     padding-bottom: 10px;
     margin: 0;
     font-size: var(--medium-size);
@@ -235,10 +360,11 @@ h3,
 input[type="text"],
 input[type="password"],
 input.inputbox {
-    border: var(--border);
+    border: none;
     border-radius: 5px;
-    background: var(--grey);
+    background: var(--neutralDark);
     font-size: var(--normal-size);
+    color: var(--contrastLight);
     padding: 2px 6px;
 }
 
@@ -247,30 +373,27 @@ input.inputbox {
  * Envoyer, prévisualiser, sauvegarder, aller,... */
 input[type="submit"],
 input[type="button"],
-button[type="submit"],
-.button2 {
+input[type="hidden"],
+input[type="reset"] {
     font-size: var(--normal-size);
     padding: 2px 8px !important;
     border-radius: 5px;
-    background: var(--dark);
-    color: var(--lighter);
-    font-weight: 700;
+    background: var(--neutralDarker);
+    color: var(--contrastLight);
+    font-weight: 600;
     border: none;
 }
 
-input[type="submit"]:hover {
-    background: var(--greyer);
-    color: var(--black)
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input[type="hidden"]:hover,
+input[type="reset"]:hover {
+    color: var(--accentClr)
 }
 
-.submit-buttons {
-    text-align: center;
-}
+.submit-buttons {text-align: center;}
 
-.quickmod {
-    margin-bottom: 10px;
-}
-
+.quickmod {margin-bottom: 20px;}
 
 /* MENUS DEROULANTS --- */
 select {
@@ -279,27 +402,32 @@ select {
     border-radius: 5px;
     font-size: var(--normal-size);
     padding: 1px 4px;
+    color: var(--textColor);
 }
 
+option {
+    background: var(--neutral);
+    border: var(--border);
+}
 
 
 /*** ------------------------------- ***/
 /*** EDITEUR DE TEXTE -------------- ***/
-
-
 /* Editeur de texte */
-.sceditor-container {}
+.sceditor-container {
+    border: var(--border)!important
+}
 
 /* Barre d'outils de l'éditeur de texte*/
 div.sceditor-toolbar {
-    background: var(--light) !important;
-    border-bottom: var(--border) !important;
+    background: var(--neutral)!important;
+    border-bottom: var(--border)!important;
 }
 
 /* Conteneur des groupes d'outils */
 div.sceditor-group {
-    background: var(--grey) !important;
-    border-bottom: var(--border) !important;
+    background: var(--neutralDark)!important;
+    border-bottom: var(--border)!important;
 }
 
 /* Bouton d'un outil */
@@ -313,12 +441,26 @@ a.sceditor-button {
 /* Conteneur de la zone de texte */
 .sceditor-container iframe,
 .sceditor-container textarea {
+    background-color: var(--neutral)!important;
     /*ne pas supprimer*/
     width: 100% !important;
     margin: 0 !important;
     padding: 5px !important;
     /*ne pas supprimer*/
     min-height: 250px !important;
+}
+
+/*Boîte Smiley*/
+body#sce_smilies_body {
+    background: transparent!important;
+}
+
+
+/* Autre champs de texte */
+textarea {
+    background: var(--neutralDark);
+    border: var(--border);
+    color: var(--textColor)!important;
 }
 
 
@@ -333,17 +475,14 @@ a.sceditor-button {
 }
 
 /*survol des liens uniques des pages*/
-.pagination span a:hover {
-    font-weight: 700
-}
+.pagination span a:hover {font-weight: 600}
 
 /*lien actif : page sur laquelle vous vous trouvez */
 .pagination span strong {
-    background-color: var(--grey);
+    background-color: var(--neutralDark);
     border-radius: 3px;
     padding: 1px 4px;
 }
-
 
 /*suppression de l'image-lien "aller à la page suivante" */
 .page-topic span a:last-child,
@@ -357,7 +496,7 @@ a.sceditor-button {
 
 /* Contenur général qui sert généralement de fond et/ou de contour*/
 .container {
-    background: var(--grey);
+    background: var(--neutralDark);
     padding: 10px;
     border-radius: 5px;
 }
@@ -366,7 +505,7 @@ a.sceditor-button {
 .separator {
     padding-bottom: 5px;
     margin-bottom: 5px;
-    border-bottom: 1px solid var(--grey);
+    border-bottom: 1px solid var(--neutralDark);
     clear: both;
     height: 1px;
     width: 100%;
@@ -387,7 +526,7 @@ a.sceditor-button {
     object-position: center;
     border-radius: 5px;
     margin-right: 10px;
-    background: var(--grey);
+    background: var(--neutralDark);
 }
 
 
@@ -410,7 +549,7 @@ a.sceditor-button {
     padding: 10px;
     border: var(--border);
     border-radius: 5px;
-    margin: 10px 0;
+    margin: 25px 0;
     clear: both;
 }
 
@@ -422,7 +561,7 @@ a.sceditor-button {
 /* Lien spécial mis en avant */
 .specials_links a,
 a.specials_links {
-    background: var(--grey);
+    background: var(--neutralDark);
     padding: 2px 6px;
     border-radius: 5px;
 }
@@ -471,8 +610,7 @@ a.specials_links:empty {
     position: relative;
     margin-top: 5px;
     margin-right: 5px;
-    background: var(--light);
-    border: var(--border);
+    background: var(--neutral);
     border-radius: 5px;
     height: 40px;
     display: flex;
@@ -507,7 +645,7 @@ a.specials_links:empty {
 /* liens "bienvenue" et "notification" [AU CLIC] */
 #fa_right.welcome #fa_menu #fa_welcome,
 #fa_toolbar > #fa_right.notification > #fa_notifications {
-    background: var(--grey);
+    background: var(--neutralDark);
     border-radius: 5px;
 }
 
@@ -516,7 +654,7 @@ a.specials_links:empty {
 ul#fa_menulist,
 ul#notif_list {
     border: var(--border);
-    background: var(--light);
+    background: var(--neutral);
     border-radius: 5px;
     right: 0;
     left: initial !important;
@@ -576,7 +714,7 @@ ul#notif_list {
     position: relative;
     padding: 5px;
     padding-right: 20px;
-    border-top: 1px solid var(--grey);
+    border-top: 1px solid var(--neutralDark);
 }
 
 #notif_list li:nth-last-child(2) {
@@ -586,15 +724,15 @@ ul#notif_list {
 
 /* Notifications non lues */
 #notif_list .unread {
-    background: var(--grey);
+    background: var(--neutralDark);
     font-weight: bold;
 }
 
 /* Bouton suppresion d'une notification */
 #fa_toolbar #fa_right #notif_list li a.delete {
     position: absolute;
-    top: 3px;
-    right: 0;
+    top: 8px;
+    right: 5px;
 }
 
 /* Croix du bouton suppression */
@@ -609,7 +747,7 @@ ul#notif_list {
 
 /* Lien "voir toutes les notifications" */
 #notif_list .see_all {
-    background: var(--grey);
+    background: var(--neutralDark);
     border-radius: 5px;
     margin-top: 5px;
     text-align: center;
@@ -641,9 +779,6 @@ ul#notif_list {
     left: -45px;
     width: 40px;
     height: 40px;
-    border-radius: 5px;
-    border: var(--border);
-    background: var(--light);
     display: grid;
     place-items: center;
 }
@@ -652,53 +787,9 @@ ul#notif_list {
 .fa_avatar img {
     object-fit: cover;
     object-position: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 3px;
-}
-
-
-
-/* STRUCTURE DE LA TOOLBAR 
- * Il est conseillé de ne rien modifier pour un bon fonctionnement de la toolbar ---*/
-
-#fa_right #fa_menu ul,
-#fa_right.notification #fa_menu ul,
-#fa_right #fa_notifications #notif_unread,
-#notif_list hr {
-    display: none;
-}
-
-#fa_toolbar #live_notif .fa_notification .content {
-    display: inline-block;
-}
-
-#fa_right.welcome #fa_menulist {
-    display: block;
-}
-
-#fa_right.notification #notif_list {
-    display: flex;
-}
-
-#fa_toolbar #fa_right #fa_notifications.unread #notif_unread {
-    display: inline;
-}
-
-#fa_usermenu table {
-    width: 100%;
-}
-
-#fa_usermenu table tr {
-    display: flex;
-    justify-content: center;
-}
-
-.fa_fix {
-    position: fixed !important;
-    position: absolute;
-    top: 0;
-    right: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
 }
 
 
@@ -707,70 +798,27 @@ ul#notif_list {
 /*** Gestionnaire de multicompte --- ***/
 
 :root {
-    --gap-size: 16px;
     --ease: cubic-bezier(0.4, 0.0, 0.2, 1);
     --ease-bounce: cubic-bezier(0.43, 0.09, 0.38, 2.56);
 }
 
 /* BARRE SWITCHEROO --- */
-.switcheroo {}
-
-.switcheroo[position="static"] {
-    position: relative;
-}
-
-/* si barre EN HAUT */
-.switcheroo[position="top"] {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-}
-
-/* si barre EN BAS */
-.switcheroo[position="bottom"] {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 100;
-}
-
-/* si barre A L'HORIZOTALE */
-.switcheroo[direction="horizontal"] {
-    width: 100%;
-}
-
-/* si barre A LA VERTICALE */
-.switcheroo[direction="vertical"] {
-    height: 100%;
+/* BARRE --- */
+.switcheroo {
+    color: var(--textColor);
+    margin-top: 60px;
 }
 
 /* Positionnement des ronds */
 .switcheroo__squircles {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0;
     padding: 0;
     list-style: none;
-    padding: var(--gap-size);
-    gap: var(--gap-size);
+    gap: 15px;
 }
-
-.switcheroo[direction="horizontal"] .switcheroo__squircles {
-    flex-direction: row;
-}
-
-.switcheroo[direction="vertical"] .switcheroo__squircles {
-    flex-direction: column;
-}
-
-/* BARRE --- */
-.switcheroo {
-    color: var(--color-text);
-    background-color: var(--light);
-    border: var(--border);
-    font-size: 16px;
-}
-
 
 /* AFFICHAGE DES COMPTES ---*/
 
@@ -779,28 +827,35 @@ ul#notif_list {
     position: relative;
     display: grid;
     place-items: center;
-    background-color: var(--grey);
-    width: 40px;
-    height: 40px;
+    background-color: var(--neutralDark);
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     cursor: pointer;
+    outline: 5px solid transparent;
     transition: border-radius 128ms var(--ease);
 }
 
 /* Rond au survol */
 .switcheroo__squircle:hover {
-    border-radius: 6px;
-    background: var(--greyer)
+    outline-color: var(--neutralDarker);
+    border-radius: 8px;
 }
 
-/* Contenenur de l'avatar */
-.switcheroo__avatar {}
+.switcheroo__squircle:hover img {
+    border-radius: 8px;
+}
 
+/* Conteneur de l'avatar */
+.switcheroo__avatar {
+    width: 100%;
+    aspect-ratio: 1/1;
+}
 
 /* Image de l'avatar */
 .switcheroo__avatar img {
-    width: 40px;
-    height: 40px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
@@ -808,54 +863,24 @@ ul#notif_list {
     position: relative;
 }
 
-/* Image de l'avatar au survol */
-.switcheroo__avatar img:hover {
-    border-radius: 5px;
-}
-
 /* Avatar du compte connecté */
 .switcheroo__squircle.active,
 .switcheroo__squircle.active img {
-    border-radius: 6px;
+    outline-color: var(--neutralDark);
     cursor: default;
 }
 
-
-/* Indicateur de l'avatar survolé */
-.switcheroo__squircle:before {
-    content: "";
-    display: block;
-    background-color: var(--grey);
-    border: var(--border);
-    border-radius: 50%;
-    height: 48px;
-    width: 48px;
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-    top: -5px;
-    bottom: 0;
-    right: 0;
-    left: -5px;
-    z-index: -1;
-    transform 128ms var(--ease),
-    opacity 64ms var(--ease);
+/* AJOUTER UN COMPTE ---*/
+/* button : ajouter un compte */
+.switcheroo__squircle--button {
+    transition: border-radius 128ms var(--ease);
+    color: var(--contrastLight);
 }
 
+/* icon plus */
+.switcheroo__squircle--button i {font-size: 19px;}
 
-/* Indicateur du compte sélectionné/actif */
-.switcheroo__squircle.active:before {
-    opacity: 1;
-    border-radius: 8px;
-}
-
-.switcheroo__squircle:hover:before {
-    border-radius: 8px;
-    opacity: 1;
-    transform 128ms var(--ease),
-    opacity 64ms var(--ease);
-}
-
+.switcheroo__squircle--button:hover {color: var(--accentClr);}
 
 /* Bouton de suppression */
 .switcheroo__delete {
@@ -867,12 +892,12 @@ ul#notif_list {
     top: -7px;
     right: -7px;
     border-radius: 50%;
-    background-color: var(--red);
+    background-color: var(--accentClr);
     transform: scale(0);
     opacity: 1;
     transition: transform 128ms var(--ease), opacity 64ms var(--ease);
     cursor: pointer;
-    color: var(--light);
+    color: var(--neutral);
     line-height: 0;
 }
 
@@ -881,119 +906,50 @@ ul#notif_list {
     transform: scale(1);
 }
 
-
-
 /* TOOLTIP - INFOBULLE DU PSEUDO ---*/
 
 /* Conteneur du pseudo */
 .switcheroo__popper {
-    background-color: var(--dark);
-    padding: 0.68rem 1rem;
+    background-color: var(--neutralDarker);
+    padding: 0.30rem 1rem;
     position: absolute;
     width: -webkit-max-content;
     width: max-content;
-    border-radius: 4px;
+    border-radius: 5px;
     z-index: 0;
     opacity: 0;
     transition: opacity 64ms var(--ease), transform 128ms var(--ease-bounce);
     pointer-events: none;
-    color: #fff;
-}
-
-/* Conteneur du pseudo: si vertical */
-.switcheroo[direction="vertical"] .switcheroo__popper {
+    color: var(--textColor);
     left: 155%;
     top: 50%;
     transform-origin: left;
     transform: translateY(-50%) scale(0.98);
 }
 
-/* Conteneur du pseudo : si horizontal */
-.switcheroo[direction="horizontal"] .switcheroo__popper {
-    top: 155%;
-    left: 50%;
-    transform-origin: top;
-    transform: translateX(-50%) scale(0.98);
-}
-
 /* Flèche tooltip */
 .switcheroo__popper:before {
     content: "";
     position: absolute;
-    width: 24px;
-    height: 24px;
-    background-color: var(--dark);
+    width: 20px;
+    height: 20px;
+    background-color: var(--neutralDarker);
     z-index: -1;
-}
-
-/* Flèche tooltip : si vertical */
-.switcheroo[direction="vertical"] .switcheroo__popper:before {
-    left: -2px;
+    left: -3px;
     top: 50%;
     transform: translateY(-50%) rotate(-45deg);
+    border-radius: 2px;
 }
 
-/* Flèche tooltip : si horizontal */
-.switcheroo[direction="horizontal"] .switcheroo__popper:before {
-    left: 50%;
-    top: -2px;
-    transform: translateX(-50%) rotate(-45deg);
-}
-
-
-/* Positionnement tooltip au survol */
-.switcheroo[direction="vertical"] .switcheroo__squircle:hover .switcheroo__popper {
+.switcheroo__squircle:hover .switcheroo__popper {
     opacity: 1;
     transform: translateY(-50%) scale(1);
 }
 
-.switcheroo[direction="horizontal"] .switcheroo__squircle:hover .switcheroo__popper {
-    opacity: 1;
-    transform: translateX(-50%) scale(1);
-}
 
-
-
-/* LOGO --- */
-.switcheroo__logo {
-    /* display: none */
-    /* à ajouter si vous voulez supprimer le logo*/
-}
-
-/* DIVIDER : barre de séparation --- */
-.switcheroo__divider {
-    /* display: none */
-    /* à ajouter si vous voulez supprimer le logo*/
-
-    background-color: var(--greyer);
-    border-radius: 3px;
-    transform: scale(0.8);
-}
-
-/* Divider : si vertical */
-.switcheroo[direction="vertical"] .switcheroo__divider {
-    width: 100%;
-    height: 2px;
-}
-
-/* Divider : si horizontal */
-.switcheroo[direction="horizontal"] .switcheroo__divider {
-    width: 2px;
-}
-
-
-/* AJOUTER UN COMPTE ---*/
-
-/* button : ajouter un compte */
-.switcheroo__squircle--button {
-    transition: border-radius 128ms var(--ease);
-    color: var(--dark);
-}
-
-.switcheroo__squircle--button:hover {
-    color: var(--light);
-    font-weight: bold;
-}
+/* LOGO --- retirez display:none pour retrouver le logo */
+.switcheroo__logo,
+.switcheroo__divider {display: none}
 
 
 /* MODAL : FENETRE DE CONNEXION --- */
@@ -1022,24 +978,19 @@ ul#notif_list {
     padding: 30px;
     transition: 0.2s opacity ease;
     transform: translate(-50%, -50%);
-    border-radius: 5px;
-    background: var(--grey);
-    color: var(--dark);
+    border-radius: 10px;
+    background: var(--neutral);
+    padding: 50px;
+    box-shadow: var(--shadowBox);
 }
 
-/* Formulaire */
-.switcheroo__form {
-    padding: 48px;
-    background: var(--light);
-    border-radius: 5px;
-}
 
 /* Champs à remplir */
 .switcheroo__form-row {
     display: flex;
     flex-flow: column;
     align-items: flex-start;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 
 /* Nom du champ */
@@ -1052,36 +1003,33 @@ ul#notif_list {
 
 /* Zone de texte */
 .switcheroo__form-input {
-    padding: 6px;
-    font-size: 16px;
+    padding: 6px!important;
     border-radius: 4px;
     width: 100%;
-    background-color: var(--light);
-    border: var(--border) !important;
-    border-bottom: 3px solid var(--greyer) !important;
-    color: var(--dark);
+    background-color: var(--neutral);
+    color: var(--contrastLight);
     cursor: text;
 }
 
 /* Bouton de connexion */
 .switcheroo__form-button {
     border-radius: 8px;
-    padding: 4px 6px;
+    padding: 4px 10px 5px;
     border: none;
     outline: none;
     box-shadow: none;
     text-transform: uppercase;
     font-size: 14px;
-    align-self: flex-end;
-    background-color: var(--light);
-    border: var(--border);
+    align-self: center;
+    background-color: var(--accentClr);
     cursor: pointer;
+    color: var(--neutral);
+    font-weight: 600;
+    margin-top: 10px;
 }
 
 .switcheroo__form-button:hover {
-    border: 1px solid transparent;
-    background: var(--dark);
-    color: var(--light);
+    background: var(--contrastLight);
 }
 
 .monomer-modal.monomer-open,
@@ -1091,37 +1039,28 @@ ul#notif_list {
 
 /* Fermer la boîte de connexion */
 .monomer-close {
-    font-size: 20px;
-    display: grid;
-    place-items: center;
-    width: 24px;
-    height: 24px;
+    font-size: 16px;
+    line-height: 12px;
+    width: 18px;
+    height: 18px;
     position: absolute;
-    top: -7px;
-    right: -7px;
-    padding: 5px;
+    top: 5px;
+    right: 5px;
     cursor: pointer;
-    color: #fff;
+    color: var(--textColor);
     border: 0;
     outline: none;
-    background: var(--red);
-    border-radius: 50%;
+    background: var(--contrastLighter);
+    border-radius: 4px;
     padding: 0;
+    padding-left: 1px;
 }
 
 .monomer-close:hover {
-    background: var(--dark);
-    font-weight: 700;
+    background: var(--contrastLight);
 }
 
 
-
-/*** ------------------------------- ***/
-/*** BANNIERE ---------------------- ***/
-
-#header {}
-
-#header img {}
 
 
 /*** ------------------------------- ***/
@@ -1129,7 +1068,7 @@ ul#notif_list {
 
 /* Conteneur de la barre de nav */
 .navbar {
-    background: var(--grey);
+    background: var(--neutralDark);
     border-radius: 5px;
     margin-top: 10px;
     padding: 10px;
@@ -1148,27 +1087,20 @@ ul#notif_list {
 .navbar a[href^="/calendar"],
 /*calendrier*/
 .navbar a[href^="/groups"]
-
 /*groupes*/
-    {
-    display: none
-}
+    { display: none}
 
 /* liens de navigation */
-a.mainmenu {
-    padding: 5px;
-}
+a.mainmenu {padding: 5px;}
 
 /* Lien navigation au survol*/
 a.mainmenu:hover {
-    background: var(--light);
+    background: var(--neutral);
     border-radius: 5px;
 }
 
 /* Image des liens */
-a.mainmenu img {
-    display: none
-}
+a.mainmenu img {display: none}
 
 
 /*** ------------------------------- ***/
@@ -1181,8 +1113,6 @@ a.mainmenu img {
     margin: 10px 0;
     padding: 4px 8px;
 }
-
-
 
 
 /****** ------------------------------------------------------------------------------
@@ -1199,10 +1129,10 @@ a.mainmenu img {
 /*** CATEGORIES -------------------- ***/
 
 .category {
-    background: var(--grey);
+    background: var(--neutralDark);
     border-radius: 10px;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 
 /* Titre d'une catégorie */
@@ -1219,7 +1149,7 @@ a.mainmenu img {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 10px;
-    background: var(--light);
+    background: var(--neutral);
     padding: 10px;
     border-radius: 5px;
 }
@@ -1236,11 +1166,17 @@ a.forumtitle {
     font-size: var(--large-size);
 }
 
+.forum-img {
+    width: 70px;
+    height: 70px;
+    background-color: var(--neutralDark);
+}
+
 .forum_desc {
     max-height: 65px;
     overflow: auto;
-    width: 60%;
-    margin: 0 10px;
+    width: 55%;
+    margin: 0 30px 0 15px;
     align-self: center;
 }
 
@@ -1250,7 +1186,7 @@ a.forumtitle {
 }
 
 .forum_lastpost-avatar img {
-    background: var(--grey);
+    background: var(--neutralDark);
     width: 60px;
     height: 60px;
     object-fit: cover;
@@ -1266,7 +1202,7 @@ a.forumtitle {
 }
 
 .forum_details {
-    border-top: 1px solid var(--grey);
+    border-top: 1px solid var(--neutralDark);
     padding-top: 10px;
     margin-top: 10px;
     width: 100%;
@@ -1297,7 +1233,7 @@ a.forumtitle {
 /*** QUI EST EN LIGNE -------------- ***/
 
 .qeel {
-    background: var(--grey);
+    background: var(--neutralDark);
     border-radius: 5px;
     padding: 10px;
     display: grid;
@@ -1307,7 +1243,7 @@ a.forumtitle {
 }
 
 .qeel > div {
-    background: var(--light);
+    background: var(--neutral);
     padding: 15px 10px;
 }
 
@@ -1333,20 +1269,19 @@ a.forumtitle {
 /* groupes*/
 a.groups {
     display: block;
-    background: var(--grey);
+    background: var(--neutralDark);
     border-radius: 5px;
     text-align: center;
     padding: 2px 0;
     margin-bottom: 5px;
+    opacity: 1;
 }
 
 a.groups:hover {
-    background: var(--lighter)
+    opacity: .7;
 }
 
-a.groups:last-child {
-    margin-bottom: 0
-}
+a.groups:last-child {margin-bottom: 0}
 
 
 .qeel-middle {}
@@ -1417,14 +1352,15 @@ a.groups:last-child {
 /* BOUTONS DE MESSAGE : Répondre, Nouveau,... ---* 
  * (réutilisé dans l'affichage d'un sujet (viewtopic_body) et les MP (privmsgs_body) */
 .buttons {
-    background: var(--grey);
+    background: var(--neutralDark);
     padding: 1px 8px;
     margin-right: 5px;
     border-radius: 5px;
+    opacity: 1;
 }
 
 .buttons:hover {
-    background: var(--lighter);
+    opacity: .7;
 }
 
 /* BOUTONS : modérer les sujets de ce forum */
@@ -1434,7 +1370,7 @@ a.groups:last-child {
 }
 
 #moderation_forum_tools a {
-    background: var(--grey);
+    background: var(--neutralDark);
     border-radius: 5px;
     padding: 2px 8px;
     font-size: var(--normal-size);
@@ -1447,7 +1383,7 @@ a.groups:last-child {
 /*** LISTE DES SUJETS -------------- ***/
 
 .topicslist_row {
-    background: var(--light);
+    background: var(--neutral);
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
@@ -1465,7 +1401,7 @@ a.groups:last-child {
 .topicslist-img {
     width: 50px;
     height: 50px;
-    background: var(--grey);
+    background: var(--neutralDark);
 }
 
 .topicslist_infos {
@@ -1475,7 +1411,14 @@ a.groups:last-child {
 
 /*titre du sujet*/
 .topictitle {
-    font-size: var(--medium-size)
+    font-size: var(--medium-size);
+  /* permet de raccourir les titres trop long ainsi : "Titre du suj..." */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: 430px;
+    white-space: nowrap;
+      vertical-align: bottom;
 }
 
 /* icône de type de message ( exemple : -18 ans, sujet résolu, ... ) */
@@ -1501,7 +1444,7 @@ a.groups:last-child {
     object-position: center;
     width: 50px;
     height: 50px;
-    background: var(--grey);
+    background: var(--neutralDark);
 }
 
 .topicslist-lastpost {
@@ -1509,7 +1452,7 @@ a.groups:last-child {
 }
 
 .topicslist-description {
-    border-top: 1px solid var(--grey);
+    border-top: 1px solid var(--neutralDark);
     padding-top: 5px;
     width: 100%;
 }
@@ -1538,7 +1481,7 @@ a.groups:last-child {
     width: 30px;
     border-radius: 100%;
     margin-left: -8px;
-    border: 2px solid var(--grey);
+    border: 2px solid var(--neutralDark);
     background-size: cover;
     background-position: center;
 }
@@ -1554,17 +1497,37 @@ a.groups:last-child {
     margin-left: 8px;
 }
 
+.poster-more-list {
+    display: none;
+}
+
+.poster-more {
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.poster-more:hover .poster-more-list {
+    display: block;
+    position: absolute;
+    top: 29px;
+    width: 150px;
+    background: var(--neutralDarker);
+    padding: 10px;
+    border-radius: 5px;
+}
+
 
 /*** ------------------------------- ***/
 /*** SUJET ------------------------- ***/
 
 
 .post_row {
-    background: var(--light);
+    background: var(--neutral);
     display: grid;
     grid-template-rows: max-content auto;
-    grid-template-columns: min-content auto;
-    border-bottom: 1px solid var(--grey);
+    grid-template-columns: min-content 1fr;
+    border-bottom: 1px solid var(--neutralDark);
 }
 
 div.post_row:nth-of-type(2) {
@@ -1581,7 +1544,7 @@ div.post_row:last-of-type {
     padding: 10px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid var(--grey);
+    border-bottom: 1px solid var(--neutralDark);
     width: 100%;
 }
 
@@ -1605,7 +1568,7 @@ ul.profile-icons li {
 
 /*hover d'un bouton d'édition*/
 ul.profile-icons li:hover {
-    background: var(--grey);
+    background: var(--neutralDark);
 }
 
 
@@ -1623,7 +1586,8 @@ ul.profile-icons li:hover {
 .rep-button,
 .rep-button:active,
 .rep-button:focus {
-    background: var(--grey);
+    background: var(--neutralDark);
+    color: var(--textColor);
     border: none;
     padding: 3px 5px;
     border-radius: 5px;
@@ -1632,7 +1596,7 @@ ul.profile-icons li:hover {
 
 /*Bouton au survol*/
 .rep-button:hover {
-    background: var(--greyer)
+    background: var(--var(--contrastLighter))
 }
 
 /* Texte "j'aime" */
@@ -1642,14 +1606,14 @@ button.rep-button .like_text {}
 button.rep-button .rep-nb {
     margin-left: 5px;
     padding: 0 3px;
-    background: var(--light);
+    background: var(--neutral);
     border-radius: 3px;
 }
 
 
 .post_profile {
     padding: 10px;
-    border-right: 1px solid var(--grey);
+    border-right: 1px solid var(--neutralDark);
 }
 
 .post_pseudo {
@@ -1664,26 +1628,20 @@ a.fa-mention {}
 .online {
     display: inline-block;
     position: relative;
-    background-color: #93F037;
+    background-color: var(--neutralDarker);
     border-radius: 5px;
     padding: 0 5px;
     margin: 0 auto;
 }
 
-.online:empty {
-    display: none
-}
+.online:empty {display: none}
 
-.post_message {
-    padding: 10px;
-}
+.post_message {padding: 25px;}
 
 
 /* REPONSE RAPIDE --- */
 /*supression de la mention "réponse rapide" */
-.quickreply div.h3 {
-    display: none
-}
+.quickreply div.h3 {display: none}
 
 /*centrer la réponse rapide*/
 .quickreply {
@@ -1693,24 +1651,21 @@ a.fa-mention {}
 
 
 /* Retire le cadre de la réponse rapide pour les invités */
-#quickreply_content:empty {
-    display: none
-}
-
+#quickreply_content:empty {display: none}
 
 
 /*** ------------------------------- ***/
 /*** SONDAGE ----------------------- ***/
 
 .poll {
-    background: var(--light);
+    background: var(--neutral);
     border-radius: 5px;
     margin-bottom: 10px;
 }
 
 .head_poll {
     padding: 10px;
-    border-bottom: 1px solid var(--grey);
+    border-bottom: 1px solid var(--neutralDark);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1723,7 +1678,7 @@ a.fa-mention {}
 
 .poll_option {
     padding: 10px 20px 0 10px;
-    border-right: 1px solid var(--grey);
+    border-right: 1px solid var(--neutralDark);
     text-align: right;
 }
 
@@ -1736,7 +1691,7 @@ a.fa-mention {}
 .poll_send {
     margin-left: 220px;
     padding: 20px 10px 20px 20px;
-    border-left: 1px solid var(--grey);
+    border-left: 1px solid var(--neutralDark);
 }
 
 .poll_vote:nth-child(2),
@@ -1763,7 +1718,7 @@ a.fa-mention {}
 
 /* Contenu code, spoiler et hide*/
 .codebox dd {
-    background: var(--grey);
+    background: var(--neutralDark);
     border-radius: 5px;
     padding: 5px
 }
@@ -1781,7 +1736,7 @@ a.fa-mention {}
 }
 
 .selectCode:hover {
-    color: var(--light-dark);
+    color: var(--neutralDarker);
 }
 
 div.cont_code {
@@ -1834,7 +1789,7 @@ blockquote cite a {
 /*** PAGE DE PROFIL ---------------- ***/
 
 .user_profile {
-    background: var(--light);
+    background: var(--neutral);
     border-radius: 5px;
     display: grid;
     grid-template-columns: max-content auto;
@@ -1915,6 +1870,53 @@ blockquote cite a {
 
 
 /*** ------------------------------- ***/
+/*** WOMBAT PROFILS EN POP UP ---- ***/
+
+ /* Fond atténué */
+.wombat-overlay {
+    position: fixed;
+    z-index: 990;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    transition: 0.2s opacity ease;
+    background: var(--neutral);
+}
+
+/* effet de transition du fond atténué */
+.wombat-overlay.open {
+    opacity: .5;
+    visibility: visible;
+}
+
+/* Fenêtre du popup */
+.wombat-aside {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    z-index: 999;
+    transition: 0.2s all ease;
+    visibility: hidden;
+    opacity: 0;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: var(--shadowBox);
+    border-radius: 10px;
+    height: max-content;
+    transform: translateX(-20%);
+}
+
+/* effet de transition pour la fenêtre */
+.wombat-aside.open {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+}
+
+
+/*** ------------------------------- ***/
 /*** PROFILS SIMPLIFIÉS DES TAGS ---- ***/
 
 /* Supression de la flèche peu esthétique*/
@@ -1974,7 +1976,7 @@ blockquote cite a {
     grid-template-columns: 95px auto;
     grid-gap: 10px;
     padding: 10px;
-    background: var(--light);
+    background: var(--neutral);
     border-radius: 5px;
 }
 
@@ -2022,7 +2024,7 @@ blockquote cite a {
 
 /* Affichage d'un MP dans la liste */
 .mp_row {
-    background: var(--light);
+    background: var(--neutral);
     border-radius: 5px;
     display: grid;
     grid-template-columns: 55px auto;
@@ -2037,7 +2039,7 @@ blockquote cite a {
 /*** AFFICHAGE D'UN MESSAGE PRIVÉ -- ***/
 
 .message {
-    background: var(--light);
+    background: var(--neutral);
     border-radius: 5px;
     display: grid;
     grid-template-rows: max-content auto;
@@ -2046,7 +2048,7 @@ blockquote cite a {
 
 .message_infos {
     grid-column: 1 / span 2;
-    border-bottom: 1px solid var(--grey);
+    border-bottom: 1px solid var(--neutralDark);
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -2059,23 +2061,18 @@ blockquote cite a {
 
 .message_profil {
     padding: 10px;
-    border-right: 1px solid var(--grey);
+    border-right: 1px solid var(--neutralDark);
     text-align: center;
 }
 
 .message_content {
-    padding: 10px;
+    padding: 25px;
 }
-
-
-
-
 
 
 
 /****** ------------------------------------------------------------------------------
  ****** PAGES ANNEXES ---------------------------------------------------------- ******/
-
 
 /*** ------------------------------- ***/
 /*** PAGE D'ENVOI D'UN MESSAGE ----- ***/
@@ -2090,7 +2087,7 @@ blockquote cite a {
 
 /* Prévisualisation d'un message */
 #preview {
-    background: var(--light);
+    background: var(--neutral);
     padding: 10px;
     border: var(--border);
     border-radius: 5px;
@@ -2116,14 +2113,14 @@ blockquote cite a {
 
 /* Onglet selectionné */
 #tabs li.activetab {
-    background: var(--grey);
+    background: var(--neutralDark);
     border: var(--border);
     border-radius: 5px;
 }
 
 /* onglet au survol */
 #tabs li:hover {
-    background: var(--grey);
+    background: var(--neutralDark);
     border-radius: 5px;
     border: var(--border);
 }
@@ -2143,10 +2140,7 @@ div#tabs li:nth-child(5) {
     font-size: var(--little-size);
 }
 
-
-
 /* EDITER SIGNATURE ---*/
-
 #parent_editor_simple > #smiley-box {
     float: left;
     /* float: right; -- pour smileys à droite */
@@ -2171,7 +2165,6 @@ div#tabs li:nth-child(5) {
 }
 
 
-
 /*** ------------------------------- ***/
 /*** PAGES DE RECHERCHES ----------- ***/
 
@@ -2183,7 +2176,7 @@ div#tabs li:nth-child(5) {
     grid-template-columns: 200px auto;
     border-radius: 5px;
     margin: 10px 0;
-    background: var(--light);
+    background: var(--neutral);
 }
 
 .post_search > div {
@@ -2218,14 +2211,12 @@ form[name=form_login] .content {
 }
 
 
-
-
 /*** ------------------------------- ***/
 /*** ELEMENTS FLOTTANTS ------------ ***/
 
 /* Fenêtre popup "recherche" */
 .overview {
-    background: var(--light);
+    background: var(--neutral);
     border-radius: 5px;
     border: var(--border);
     padding: 10px;
@@ -2258,21 +2249,11 @@ form[name=form_login] .content {
     margin-left: -225px;
     top: 50%;
     margin-top: -125px;
-    background-color: var(--light);
+    background-color: var(--neutral);
     padding: 10px;
     border: var(--border);
     border-radius: 5px;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 /****** ------------------------------------------------------------------------------
@@ -2281,9 +2262,8 @@ form[name=form_login] .content {
 /*** ------------------------------- ***/
 /*** LISTE DES BLOGS --------------- ***/
 
-
 .bloglist {
-    background: var(--light);
+    background: var(--neutral);
     border-radius: 5px;
     display: grid;
     grid-template-columns: 65px auto;
@@ -2295,7 +2275,7 @@ form[name=form_login] .content {
 .bloglist_date {
     grid-row: 1 / span 2;
     padding: 10px;
-    border-right: 1px solid var(--grey);
+    border-right: 1px solid var(--neutralDark);
     line-height: 22px;
     text-align: center;
 }
@@ -2328,7 +2308,7 @@ form[name=form_login] .content {
 /***  AFFICHAGE D'UN BLOG ---------- ***/
 
 .blog_post {
-    background: var(--light);
+    background: var(--neutral);
     display: grid;
     grid-template-rows: auto auto;
     border-radius: 5px;
@@ -2338,7 +2318,7 @@ form[name=form_login] .content {
     padding: 10px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid var(--grey);
+    border-bottom: 1px solid var(--neutralDark);
 }
 
 .blog_author {
@@ -2348,7 +2328,6 @@ form[name=form_login] .content {
 
 /*** ------------------------------- ***/
 /*** COMMENTAIRES D'UN BLOG -------- ***/
-
 
 .blog_comment {
     border: var(--border);
@@ -2384,172 +2363,4 @@ form[name=form_login] .content {
 
 .comment_content {
     margin-left: 50px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/****** ------------------------------------------------------------------------------
- ****** STRUCTURE DE FORUMACTIF ------------------------------------------------------ 
-
- ****** Elements de base qui servent à construire la structure de la page web --------
- ****** Il y a peu de chances que vous deviez toucher cette partie du CSS -------------- ******/
-
-
-/*** ------------------------------- ***/
-/* BALISES GENERALES --------------- ***/
-
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-fieldset {
-    border: none;
-    padding: 0;
-    margin: 0;
-}
-
-dl {
-    display: grid;
-    grid-template-columns: 220px auto;
-    grid-gap: 15px
-}
-
-dd {
-    margin: 0;
-}
-
-dt {
-    margin: 0
-}
-
-dt label {
-    font-weight: bold
-}
-
-button,
-input {
-    border: none
-}
-
-button,
-select,
-input {
-    font-family: var(--font);
-    cursor: pointer;
-}
-
-/* Structure page de connexion */
-
-.fld_connexion dl {
-    display: grid;
-    grid-row-gap: 15px;
-    grid-template-columns: 150px auto;
-}
-
-.fld_connexion dl:nth-of-type(2) dd:last-of-type {
-    grid-column: 1 / span 2;
-}
-
-.fld_connexion dl:nth-of-type(3) {
-    margin: 0;
-}
-
-.fld_connexion dl:nth-of-type(n+3) {
-    display: block;
-}
-
-.invisible {
-    display: none;
-    visibility: hidden;
-}
-
-.visible {
-    display: block;
-    visibility: visible;
-}
-
-
-/* Indicateur complexité du mot de passe */
-#cont_pwd {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    margin-left: 5px;
-}
-
-.pwd_img {
-    padding: 2px 6px;
-    display: none;
-    border-radius: 3px;
-}
-
-#pwd_good {
-    background-color: #4CAF50;
-    color: #FFF;
-}
-
-#pwd_middle {
-    background-color: #FFCC00;
-    color: #000;
-}
-
-#pwd_bad {
-    background-color: #F04040;
-    color: #FFF;
-}
-
-
-
-
-/*** ------------------------------- ***/
-/*** POUBELLE DE FORUMACTIF -------- ***/
-
-#find_username br,
-#users_here br,
-#main-content > p,
-.adminlink br,
-.corners-top,
-.corners-bottom {
-    display: none;
-}
-
-#find_username .panel {
-    border: none;
-    margin: 0
-}
-
-.adminlink {
-    clear: both
-}
-
-#cp-main#cp-main#cp-main,
-table,
-.quickreply div#textarea_content {
-    width: 100% !important;
-}
-
-.panel .panel {
-    background: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
-    border-radius: 0;
-}
-
-.social_btn {
-    display: none;
 }

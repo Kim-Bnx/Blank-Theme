@@ -18,12 +18,6 @@
 </div>
 
 
-<!-- Ascenseur -->
-<div class="elevator">
-  <a href="#top">Top</a>
-  <a href="#bottom">Bot</a>
-</div>
-
 <!-------------------------------->
 <!-------------------------------->
 
@@ -33,7 +27,7 @@
 
 <!-- Conteneur du bas de page, ne pas retirer l'ID -->
 <div id="page-footer">
-  
+
     <!-- Liens : Panneau d'admin et modifier forum/profil -->
     <div class="specials_links adminlink">
       <center>{ADMIN_LINK}</center>
@@ -54,4 +48,3 @@
 </div>
 <!-- Fin de bas de page -->
 <!-- END html_validation -->
-            
