@@ -31,7 +31,6 @@
 	{META}
 	{META_FB_LIKE}
 	<meta name="title" content="{SITENAME_TITLE}{PAGE_TITLE}"/>
-      <meta name="description" content="Thème de base pour Forumactif. Codes en libre-service et explications détaillées sur l'installation des templates et du CSS."/>
 	{T_HEAD_STYLESHEET}
 	{CSS}
 	<link rel="search" type="application/opensearchdescription+xml" href="/improvedsearch.xml" title="{SITENAME}"/>
