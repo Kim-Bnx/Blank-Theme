@@ -13,7 +13,7 @@
 		cleanUp: true,
           
           // option to move a field, leave blank to disable
-          move: ['field', 'field'], // field's name (example : 'posts') 
+          move: ['field', 'field'], // field's name in LOWERCASE and without special caracters (example : 'message') and cut the two words field by a dashed (example : 'faceclaim-credits')
           moveTo: '.class' // element where the fields will be moved
 	},
 

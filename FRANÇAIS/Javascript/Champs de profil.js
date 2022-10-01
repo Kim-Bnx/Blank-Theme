@@ -13,7 +13,7 @@
 		cleanUp: true,
           
           // Option pour déplacer un champs dans un autre élément, laissez vide pour désactiver 
-          move: ['champ', 'champ'], // Nom du champs (exemple : 'message') 
+          move: ['champ', 'champ'], // Nom du champs en MINISCULE et SANS ACCENT (exemple : 'message') et séparer les champs à deux mots par un tiret (exemple : 'etat-civil')
           moveTo: '.class' // élément dans lequel les champs seront déplacés
 	},
 
