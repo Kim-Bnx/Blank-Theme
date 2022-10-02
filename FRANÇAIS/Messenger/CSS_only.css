@@ -28,7 +28,7 @@
     height: 100%;
     width: 90%;
     max-width: var(--FAM-windowSize);
-    left: 65px;
+    left: 0;
     z-index: 99;
     visibility: visible;
     opacity: 1;
@@ -37,6 +37,7 @@
     transition-duration: 700ms;
     grid-template-columns: 100%;
     box-shadow: var(--shadowBox);
+    padding-left: 65px;
 }
 
 
