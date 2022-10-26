@@ -201,8 +201,8 @@ dd {margin: 0;}
 dt {margin: 0}
 dt label {font-weight: bold}
 button, input {border: none}
-button, select, input:is([type="submit"], [type="reset"], [type="checkbox"], [type="radio"]) {font-family: var(--font);cursor: pointer;}
-input:not([type="submit"], [type="reset"], [type="checkbox"], [type="radio"]) {font-family: var(--font);cursor: text;}
+button, select, input{font-family: var(--font);cursor: pointer;}
+input:is([type="text"], [type="passeword"]){cursor: text;}
 
 /*** ----------------------------- ***/
 /*** STRUCTURE DE LA TOOLBAR ----- ***/ 
