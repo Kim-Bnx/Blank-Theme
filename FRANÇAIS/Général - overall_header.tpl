@@ -1,8 +1,8 @@
 <!-- BLANK THEME ---->
-<!-- VERSION 3.00 - MAJ 05/08/22 ---->
+<!-- VERSION 3.01 - MAJ 26/10/22 ---->
 <!-- par Geniuspanda / https://code-lab.tumblr.com/ ---->    
 	    
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="{S_CONTENT_DIRECTION}" id="min-width" lang="{L_LANG_HTML}" xml:lang="{L_LANG_HTML}" {NAMESPACE_FB_LIKE} {NAMESPACE_FB} {NAMESPACE_BBCODE}>
 
 <head>
@@ -201,7 +201,8 @@ dd {margin: 0;}
 dt {margin: 0}
 dt label {font-weight: bold}
 button, input {border: none}
-button, select, input {font-family: var(--font);cursor: text;}
+button, select, input:is([type="submit"], [type="reset"], [type="checkbox"], [type="radio"]) {font-family: var(--font);cursor: pointer;}
+input:not([type="submit"], [type="reset"], [type="checkbox"], [type="radio"]) {font-family: var(--font);cursor: text;}
 
 /*** ----------------------------- ***/
 /*** STRUCTURE DE LA TOOLBAR ----- ***/ 
