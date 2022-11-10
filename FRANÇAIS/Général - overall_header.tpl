@@ -217,7 +217,7 @@ input:is([type="text"], [type="passeword"]){cursor: text;}
 #fa_toolbar #fa_right #fa_notifications.unread #notif_unread {display: inline;}
 #fa_usermenu table {width: 100%;}
 #fa_usermenu table tr {display: flex;justify-content: center;}
-.fa_fix {position: fixed !important; position: absolute;top: 0; right: 0;}
+.fa_fix {position: fixed !important; z-index: 999;;top: 0; right: 0;}
 
 /*** --------------------------------- ***/
 /*** STRUCTURE DE LA PAGE DE CONNEXION ***/
