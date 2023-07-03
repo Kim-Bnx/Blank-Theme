@@ -201,7 +201,7 @@ dd {margin: 0;}
 dt {margin: 0}
 dt label {font-weight: bold}
 button, input {border: none}
-button, select, input {font-family: var(--font);cursor: pointer;}
+button, select, input {font-family: var(--font);cursor: text;}
 
 /*** ----------------------------- ***/
 /*** STRUCTURE DE LA TOOLBAR ----- ***/ 
