@@ -104,7 +104,7 @@
     </div>
 
     <!-- Derniers connectés au cours de ces Xh -->
-    <div class="qeel-right" id="24hconnected">
+    <div class="qeel-right" id="last_connected">
         {L_CONNECTED_MEMBERS}<br />
     </div>
 </div>
@@ -113,7 +113,6 @@
 
 <!-- Changement de texte des informations du QEEL -->
 <script type="text/javascript">
-$(function(){
   $("#last_user").html($("#last_user").html().replace("L'utilisateur enregistré le plus récent est", ""));
   
   $("#qeel_posts").html($("#qeel_posts").html().replace("Nos membres ont posté un total de", ""));
@@ -126,8 +125,7 @@ $(function(){
   
   $("#online_users").html($("#online_users").html().replace("Utilisateurs enregistrés", "En ligne"));
   
-  $("#24hconnected").html($("#24hconnected").html().replace("Membres connectés au cours des 24 dernières heures :", "Connectés récemment"));
-});
+  $("#last_connected").html($("#last_connected").html().replace("Membres connectés au cours des 24 dernières heures :", "Connectés récemment"));
 </script>
 
 
