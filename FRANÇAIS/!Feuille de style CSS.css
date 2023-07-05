@@ -1712,6 +1712,7 @@ a.fa-mention {}
     display: block;
     width: 90%;
     margin: 0 auto;
+    position: relative;
 }
 
 /* Contenu code, spoiler et hide*/
@@ -1727,14 +1728,22 @@ a.fa-mention {}
     font-size: var(--little-size);
 }
 
-/* Bouton "sélectionner le" code */
-.selectCode {
-    float: right;
-    cursor: pointer;
+/*retire la mention "code" du bloc*/
+#codeBox dt {
+    height: 0;
+    font-size: 0;
 }
 
-.selectCode:hover {
-    color: var(--neutralDarker);
+/* bouton "copier" */
+.copyCode {
+    font-size: 12px;
+    font-weight: normal;
+    position: absolute;
+    top: 5px;
+    right: 13px;
+    font-family: monospace;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 div.cont_code {
