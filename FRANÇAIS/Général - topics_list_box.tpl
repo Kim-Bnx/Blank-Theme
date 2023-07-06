@@ -7,9 +7,14 @@
 <!-- BEGIN row -->
 <!-- BEGIN topic -->
 
+<!-- BEGIN line_sticky -->
+<div class="topic_separator"></div> <!-- Ligne qui séparent les annonces et les notes des autres sujets (à activer dans "message > configuration") -->
+<!-- END line_sticky -->
+
 
 <!-- Conteneur d'un sujet -->
-<div class="topicslist_row row" <!-- BEGIN line_sticky --> style="margin-top:5px;"<!-- END line_sticky -->>
+<div class="topicslist_row row {topics_list_box.row.FOLDER_CLASSNAME} {topics_list_box.row.TOPIC_READ_STATUS}">
+
 
     <!-- Image d'un sujet -->
     <div class="topicslist-img">

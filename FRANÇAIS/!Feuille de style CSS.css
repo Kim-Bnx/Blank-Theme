@@ -1455,7 +1455,13 @@ a.groups:last-child {margin-bottom: 0}
     width: 100%;
 }
 
-
+/* ligne qui séparent les annonces et les notes des autres sujets (à activer dans "message > configuration") */
+.topic_separator {
+    height: 5px;
+    background: var(--neutral);
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
 
 
 /****** ------------------------------------------------------------------------------
