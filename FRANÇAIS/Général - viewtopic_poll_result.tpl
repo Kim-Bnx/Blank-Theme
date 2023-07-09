@@ -34,6 +34,12 @@
                     <strong>{poll_option.POLL_OPTION_RESULT}</strong>&nbsp;
                     <!-- Total en pourcentage -->
                     ({poll_option.POLL_OPTION_PERCENT})
+                  
+                    <!-- Liste des votants -->
+                    <!-- BEGIN option_voters -->
+                    <br/>
+          	    <div class="option_voters_list">{poll_option.option_voters.POLL_OPTION_VOTERS}</div>
+     		    <!-- END option_voters -->
 
                 </div>
             <!-- END poll_option -->
@@ -52,10 +58,17 @@
 
             <!-- Annuler vote -->
             <!-- BEGIN cancel_vote -->
-            <a href="{U_CANCEL_VOTE}">{L_CANCEL_VOTE}</a>
+            <a href="{U_CANCEL_VOTE}" class="specials_links">{L_CANCEL_VOTE}</a>
             <!-- END cancel_vote -->
 
             <br />
+          
+            <!-- Liste des votants -->
+            {ALL_POLL_VOTERS_LIST} <br/>
+          
+            <!-- BEGIN switch_back_to_vote -->
+            <a class="specials_links" href="{switch_back_to_vote.U_BACK_TO_VOTE}">{switch_back_to_vote.L_BACK}</a>
+            <!-- END switch_back_to_vote -->
 
             <!-- Cacher les résultats -->
             <!-- BEGIN switch_hide_result -->

@@ -94,10 +94,24 @@
 
     </div>
 
-    <!-- Profile moderation links -->
-    <!-- BEGIN switch_auth_user -->
-    <div class="profile_admin">{ADMINISTRATE_USER}{BAN_USER}</div>
-    <!-- END switch_auth_user -->
+    <!-- Liens de modération -->
+    <div class="profile_admin">
+    
+        <!-- Bouton "suivre le membre" -->
+        <!-- BEGIN switch_follow_member -->
+        <button onclick="doFollowAction(this);" data-id="{CUR_USER_ID}" class="followBtn {C_CLASS} ion-android-notifications{C_ICLASS}">
+            {CUR_FOLLOW_TEXT}
+        </button>
+        <!-- END switch_follow_member -->
+      
+      &nbsp;
+      
+      	<!-- Bouton d'administration du membre --> 
+        <!-- BEGIN switch_auth_user -->
+        {ADMINISTRATE_USER}{BAN_USER}
+        <!-- END switch_auth_user -->
+    
+    </div>
 
 
 </div>

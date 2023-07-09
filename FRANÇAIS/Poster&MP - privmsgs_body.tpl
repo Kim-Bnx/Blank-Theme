@@ -52,7 +52,7 @@
 
             <div class="mp_infos">
                 <!-- Titre du MP -->
-                <a href="{listrow.U_READ}" class="topictitle">{listrow.SUBJECT}</a><br />
+                <a href="{listrow.U_READ}" class="topictitle {listrow.MSG_UNANSWERED}">{listrow.SUBJECT}</a><br />
                 <!-- Expéditeur et date -->
                 <span>{listrow.FROM} - {listrow.DATE}</span>
               

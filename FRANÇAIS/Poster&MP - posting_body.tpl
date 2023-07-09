@@ -174,15 +174,19 @@
                 <input class="button2" type="submit" name="preview" value="{L_PREVIEW}" tabindex="5" />&nbsp;
                 <!-- END switch_preview -->
                 <!-- BEGIN switch_draft -->
-                &nbsp;<input class="button2" type="submit" name="draft" value="{L_DRAFT}" tabindex="7" accesskey="d" />&nbsp;
+                &nbsp;<input class="button2 {BTN_DRAFT_CLASS}" type="submit" name="draft" value="{L_DRAFT}" title="{L_DRAFT_TITLE}" tabindex="7" accesskey="d" {switch_draft.DISABLED_DRAFT} />&nbsp;
                 <!-- END switch_draft -->
                 <!-- BEGIN switch_publish -->
                 &nbsp;<input class="button2" type="submit" name="publish" value="{L_PUBLISH}" tabindex="8" accesskey="p" />&nbsp;
                 <!-- END switch_publish -->
-                &nbsp;<input class="button1" type="submit" name="post" value="{L_SUBMIT}" tabindex="6" accesskey="s" />
+                &nbsp;<input class="button1" type="submit" name="post" value="{L_SUBMIT}" title="{L_SUBMIT_TITLE}" tabindex="6" accesskey="s" {DISABLED_SUBMIT} />
                 <!-- BEGIN switch_signature -->
                 &nbsp;<input type="hidden" name="submit" value="{L_SUBMIT}" />
                 <!-- END switch_signature -->
+                <!-- BEGIN switch_warning_msg -->
+                <br/>
+                <span class="info">{switch_warning_msg.WARNING_CONTENT}</span>
+                <!-- END switch_warning_msg -->
             </fieldset>
 
     </div>

@@ -1380,6 +1380,15 @@ a.groups:last-child {margin-bottom: 0}
 /*** ------------------------------- ***/
 /*** LISTE DES SUJETS -------------- ***/
 
+/* Bloc de description du forum */
+.forum-page_desc {
+    margin: 0 0 20px;
+    background: var(--neutral);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Conteneur sujet dans la liste */
 .topicslist_row {
     background: var(--neutral);
     border-radius: 5px;
@@ -1462,6 +1471,30 @@ a.groups:last-child {margin-bottom: 0}
     margin-bottom: 10px;
     border-radius: 5px;
 }
+
+/* Bouton "trier les sujets" */
+#sort-topics {
+    position: relative;
+    display: inline;
+    background: var(--neutralDark);
+    margin: 10px 0;
+  }
+  
+  .sort-form {
+    width: max-content;
+    background: var(--neutral);
+    border: 1px solid var(--neutralDarker);
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    top: 110%;
+    right: 0;
+    display: none
+  }
+  
+  .expanded ~ .sort-form {
+    display: block;
+  }
 
 
 /****** ------------------------------------------------------------------------------
@@ -1638,6 +1671,51 @@ a.fa-mention {}
     margin: 0 auto;
 }
 
+/* RECOMPENSES --- */
+/* Conteneur des récompenses */
+#list_awards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+/* Récompense */
+.award {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    background-image: var(--award-image);
+    background-size: cover;
+    background-position: center;
+    border-radius: 100%;
+    pointer: cursor;
+}
+
+.award:hover .award_tooltiptext {
+  display: block;
+}
+
+/* Bloc description de la récompenses */
+.award_tooltiptext {
+  width: max-content;
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 25px;
+  background-color: var(--neutral);
+  border: 1px solid var(--neutralDark);
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 11px;
+}
+
+/* titre de la récompenses*/
+.award_tooltiptext_title {
+  font-weight: 600;
+}
+
+
 .online:empty {display: none}
 
 .post_message {padding: 25px;}
@@ -1703,6 +1781,10 @@ a.fa-mention {}
     padding-top: 20px;
 }
 
+.votes-users-list {
+    justify-content: start;
+    margin: 20px 0 0;
+}
 
 /*** ------------------------------- ***/
 /*** TEXTES, BALISES, ETC ---------- ***/
@@ -1857,6 +1939,23 @@ blockquote cite a {
     margin: 10px 0 0;
 }
 
+/* Bouton "suivre le membre" */
+.followBtn {
+    background: var(--neutral);
+    border: 1px solid var(--neutralDark);
+    border-radius: 5px;
+    font-weight: 600;
+    margin: 0;
+    font-size: 14px;
+}
+
+.followBtn::before {
+    top: 1px;
+    position: relative;
+    color: var(--accentClr);
+    margin-right: 5px;
+}
+
 
 /* Bouton édition d'un champ de profil */
 .ajax-profil_edit {
@@ -1964,6 +2063,8 @@ blockquote cite a {
     position: absolute;
     bottom: 8px;
     right: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .preview_contacts a {

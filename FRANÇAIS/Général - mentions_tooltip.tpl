@@ -16,12 +16,22 @@
             <!-- BEGIN switch_rank_info -->
             {switch_rank_info.L_RANK}: {switch_rank_info.RANK_TITLE}<br />
             <!-- END switch_rank_info -->
+     
             
             <!-- Message -->
             {L_POSTS}: <b>{POSTS}</b>
 
            <!-- Image de contact -->
             <div class="preview_contacts right">
+              
+                <!-- Bouton "suivre le membre" -->
+                <!-- BEGIN switch_followers -->
+                <button onclick="doFollowAction(this);" data-id="{CUR_USER_ID}" class="followBtn {C_FOLLOW} ion-android-notifications{C_FOLLOW_ICON}">
+                    {L_FOLLOW_TXT}
+                </button>
+                <!-- END switch_followers -->
+              
+              
                 <!-- BEGIN switch_button_tooltip_PROFILE -->
                 <a href="{switch_button_tooltip_PROFILE.URL}" title="{switch_button_tooltip_PROFILE.LANG}">
                     <img src="{switch_button_tooltip_PROFILE.IMAGE}" alt="{switch_button_tooltip_PROFILE.LANG}" />

@@ -36,7 +36,14 @@
             <!-- Voir les résultats -->
             &nbsp;&nbsp;<a href="{U_VIEW_RESULTS}">{L_VIEW_RESULTS}</a>
 
-            <br />
+            <br /><br />
+          
+            <!-- Mention "sondage publique" -->
+            <!-- BEGIN warning_public_votes -->
+            <i>{warning_public_votes.L_WARNING_PUBLIC_VOTES}</i>
+            <br/>
+            <!-- END warning_public_votes -->
+          
             <!-- Sondage terminé -->
             {L_VOTE_EXPIRE}
         </div>

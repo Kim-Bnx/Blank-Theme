@@ -148,6 +148,12 @@
                 <!-- END profile_field -->
                 <!-- Fin de champs de profil -->
 
+                <!-- Récompenses -->
+                <div {postrow.displayed.AWARDS_SHOW} id="list_awards">
+                	{postrow.displayed.AWARDS}
+                </div>
+                <div class="award_more"></div>
+
                 <!-- Champs de profil de la feuille de personnage -->
                 {postrow.displayed.POSTER_RPG}
 

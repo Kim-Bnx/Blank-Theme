@@ -6,7 +6,7 @@
 
     <!-- Affichage d'un message simplifié -->
     <!-- BEGIN postrow -->
-    <div class="panel">
+    <div class="panel {postrow.ROW_CLASS}{postrow.CURRENT_MSG}">
 
         <div>
             <!-- Avatar -->
@@ -21,6 +21,10 @@
 
     </div>
     <!-- END postrow -->
+
+    <div class="pagination">
+        {PM_PAGINATION}
+    </div>
 </div>
 
             
