@@ -84,23 +84,21 @@
             </div>
             <!-- END switch_profile_fields -->
 
+
+            <!-- LISTES DES RECCOMPENSES -->
             <!-- BEGIN switch_awards -->
             <h1 class="page-title">{switch_informations_menu.switch_awards.L_AWARDS}</h1>
             <div class="panel" style="overflow: visible">
-               <fieldset>
-                  <dl>
-                     <dt id="list_awards" style="width: 100%; text-align: center">{switch_informations_menu.switch_awards.AWARDS_LIST}</dt>
-                  </dl>
-                  <dl>
-                     <dt style="width: 100%; text-align: center">
-                        <input id="awards_order" type="hidden" name="awards_order" value="" />
-                        <input style="cursor: pointer" id="sort_awards" class="button1" type="button" name="order" value="{switch_informations_menu.switch_awards.L_SORT}" />
-                     </dt>
-                  </dl>
-               </fieldset>
+                <div id="list_awards" style="width: 100%; text-align: center">{switch_informations_menu.switch_awards.AWARDS_LIST}</div>
+
+                <center>
+                    <input id="awards_order" type="hidden" name="awards_order" value="" />
+                    <input style="cursor: pointer" id="sort_awards" class="button1" type="button" name="order" value="{switch_informations_menu.switch_awards.L_SORT}" />
+                </center>
             </div>
                 {switch_informations_menu.switch_awards.SCRIPT_SORT_AWARDS}
             <!-- END switch_awards -->
+            
 
             <!-- BEGIN switch_register_not_display -->
             <div class="panel">
