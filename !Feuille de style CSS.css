@@ -531,17 +531,9 @@ textarea {
 
 
 /* Permet d'aligner un élément à droite ou à gauche */
-.right {
-    float: right
-}
-
-.left {
-    float: left
-}
-
-.clear {
-    clear: both
-}
+.right {float: right}
+.left {float: left}
+.clear {clear: both}
 
 /* Barre de gestion 
  * Contient des boutons ou des liens spéciaux */
@@ -1120,9 +1112,6 @@ a.mainmenu img {display: none}
 
 /* PAGE D'ACCUEIL ---*/
 .introduction {}
-
-
-
 
 
 /*** ------------------------------- ***/
@@ -1715,7 +1704,6 @@ a.fa-mention {}
   font-weight: 600;
 }
 
-
 .online:empty {display: none}
 
 .post_message {padding: 25px;}
@@ -1955,7 +1943,6 @@ blockquote cite a {
     color: var(--accentClr);
     margin-right: 5px;
 }
-
 
 /* Bouton édition d'un champ de profil */
 .ajax-profil_edit {
@@ -2369,112 +2356,3 @@ form[name=form_login] .content {
     border-radius: 5px;
 }
 
-
-/****** ------------------------------------------------------------------------------
- ****** BLOGS ------------------------------------------------------------------------ ******/
-
-/*** ------------------------------- ***/
-/*** LISTE DES BLOGS --------------- ***/
-
-.bloglist {
-    background: var(--neutral);
-    border-radius: 5px;
-    display: grid;
-    grid-template-columns: 65px auto;
-    grid-template-rows: 60px auto;
-    margin-bottom: 10px;
-}
-
-
-.bloglist_date {
-    grid-row: 1 / span 2;
-    padding: 10px;
-    border-right: 1px solid var(--neutralDark);
-    line-height: 22px;
-    text-align: center;
-}
-
-.blog_daymonth {
-    font-size: 16px;
-    font-weight: 700;
-}
-
-.blog_year {
-    font-size: 18px;
-}
-
-.bloglist_infos {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-}
-
-.bloglist_details {
-    text-align: right
-}
-
-.bloglist_resum {
-    padding: 0 10px 10px;
-}
-
-
-/*** ------------------------------- ***/
-/***  AFFICHAGE D'UN BLOG ---------- ***/
-
-.blog_post {
-    background: var(--neutral);
-    display: grid;
-    grid-template-rows: auto auto;
-    border-radius: 5px;
-}
-
-.blog_details {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid var(--neutralDark);
-}
-
-.blog_author {
-    flex-grow: 100;
-}
-
-
-/*** ------------------------------- ***/
-/*** COMMENTAIRES D'UN BLOG -------- ***/
-
-.blog_comment {
-    border: var(--border);
-    padding: 10px;
-    border-radius: 5px;
-    margin: 5px auto 10px;
-}
-
-.comment_avatar {
-    margin-right: 10px;
-    float: left;
-}
-
-.comment_avatar img {
-    object-fit: cover;
-    object-position: center;
-    border-radius: 5px;
-    width: 40px;
-    height: 40px;
-    margin: 0;
-}
-
-.comment_details {
-    height: 40px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.comment_details .left {
-    flex-grow: 100;
-}
-
-.comment_content {
-    margin-left: 50px;
-}
