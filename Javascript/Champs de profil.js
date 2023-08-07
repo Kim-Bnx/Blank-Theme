@@ -22,8 +22,8 @@
         // LE DEPLACER :
         // La class de l'élément dans lequel les champs seront déplacés
 
-        moveTab: ['champ', 'champ'], //-- cibler un champ
-        moveToTab: '.class', //-- le déplacer
+        move: ['champ', 'champ'], //-- cibler un champ
+        moveTo: '.class', //-- le déplacer
 
     },
 
