@@ -39,13 +39,12 @@
     <!-- Conteneur liste des forums -->
     <div class="forums">
 
-        <!-- END tablehead -->
-
+<!-- END tablehead -->
 
 
         <!-- BEGIN forumrow -->
         <!-- Affichage d'un forum -->
-        <div class="forum row">
+        <div class="forum row {catrow.forumrow.FOLDER_CLASSNAME}">
             <!-- Titre forum -->
             <a href="{catrow.forumrow.U_VIEWFORUM}" class="forumtitle">{catrow.forumrow.FORUM_NAME}</a>
 
@@ -88,8 +87,7 @@
                 <span id="subforum">{catrow.forumrow.L_LINKS}{catrow.forumrow.LINKS}</span>
 
                 <!-- Compteur sujets et message -->
-                <span class="forum_stats">{catrow.forumrow.TOPICS} {L_TOPICS}&nbsp; • &nbsp;{catrow.forumrow.POSTS}
-                    {L_POSTS}</span>
+                <span class="forum_stats">{catrow.forumrow.TOPICS}&nbsp;{L_TOPICS}&nbsp; • &nbsp;{catrow.forumrow.POSTS}&nbsp;{L_POSTS}</span>
             </div>
 
         </div>
