@@ -83,7 +83,7 @@ $(document).ready(function() {
   
   
   
-<!-- Wombat.js -->
+<!-- WOMBAT plugin -->
 <script src="https://cdn.jsdelivr.net/gh/caezd/wombat/dist/wombat.min.js"></script>
 <!-- Script qui permet d'initialiser le plugin -->
 <script>
@@ -117,52 +117,42 @@ $(document).ready(function() {
   
 </script>
 
-
-<script>(function () {
-    var html = document.documentElement;
-    var themeControls = document.querySelector("[data-theme-controls]");
-    var toggle = themeControls.querySelector(".color-scheme-toggle");
-    var prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
-    var mode = !html.dataset.colorScheme
-            ? prefersDark.matches
-                ? "dark"
-                : "light"
-            : html.dataset.colorScheme;
-
-    var setToggleLabel = function () {
+<!-- EDISON plugin -->
+<script>
+(function () {
+    const html = document.documentElement;
+    const themeControls = document.querySelector("[data-theme-controls]");
+    const toggle = themeControls.querySelector(".color-scheme-toggle");
+    
+    const setToggleLabel = function () {
+    	let mode = html.dataset.colorScheme;
         toggle.setAttribute(
             "title",
             "Activer le mode " + (mode === "dark" ? "clair" : "sombre")
         );
     };
 
-    var setColorScheme = function (value) {
+    const setColorScheme = function (value) {
         html.dataset.colorScheme = value;
         localStorage.setItem("color-scheme", value);
         setToggleLabel();
     };
 
-    var init = function () {
+    const init = function () {
         setToggleLabel();
-        setColorScheme(mode);
     };
 
     toggle.addEventListener("click", function () {
-        if (!html.dataset.colorScheme && prefersDark.matches) {
-            setColorScheme("light");
-            updateColorSchemeStatus("light");
-            return;
-        }
-
-        var scheme = html.dataset.colorScheme === "dark" ? "light" : "dark";
-
+        const scheme = html.dataset.colorScheme === "dark" ? "light" : "dark";
         setColorScheme(scheme);
     });
 
     init();
 
-    })();
+})();
 </script>
+
+
 </body>
 </html>
             

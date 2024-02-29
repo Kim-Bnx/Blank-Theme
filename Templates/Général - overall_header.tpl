@@ -262,18 +262,18 @@ input:is([type="text"], [type="passeword"]){cursor: text;}
 	<!------------------------------------->
 	<!-- INITIALISATION DU PLUGIN EDISON -->    
     <script>
-    (function () {
-		const html = document.documentElement;
-		const userThemePreference = window.matchMedia("(prefers-color-scheme: dark)").matches;
-		const colorScheme = localStorage.getItem('color-scheme');
-	
-		if (!colorScheme && userThemePreference) {
-		html.setAttribute('data-color-scheme', 'dark');
-		}
-
-		colorScheme && html.setAttribute('data-color-scheme', colorScheme);
-	})();
-	</script>
+        (function () {
+          const html = document.documentElement;
+          const userThemePreference = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          const colorScheme = localStorage.getItem('color-scheme');
+        
+          if (!colorScheme && userThemePreference) {
+	    html.setAttribute('data-color-scheme', 'dark');
+          }
+    
+          colorScheme && html.setAttribute('data-color-scheme', colorScheme);
+        })();
+    </script>
 
 </head>
 
