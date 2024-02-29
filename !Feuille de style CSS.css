@@ -7,6 +7,7 @@
 
 /* VARIABLE DU MODE DE BASE (ici clair) */
 :root {
+    color-scheme: light;
     --header: url('https://nsm09.casimages.com/img/2021/03/21//21032105561425394217327016.png');
 
     --neutral: #fafbfc;
@@ -74,6 +75,7 @@
 
 /* VARIABLES DU MODE INVERSE (ici sombre) */
  [data-color-scheme="dark"] {
+    color-scheme: dark;
      --header: url('https://images2.imgbox.com/1b/a5/4bb6Hgju_o.png');
  
     --neutral: #1e212a;
@@ -120,57 +122,6 @@
     --FAM-linkClr: #7583ff;
     --FAM-titleClr: #f0f0f8;
     --FAM-buttonsClr: #E5E5E5;
- }
-
- @media (prefers-color-scheme: dark) {
-   [data-color-scheme=dark] {
-     --header: url('https://images2.imgbox.com/1b/a5/4bb6Hgju_o.png');
- 
-    --neutral: #1e212a;
-    --neutralDark: #181a21;
-    --neutralDarker: #313543;
-
-    --contrast: #e5e5f0;
-    --contrastLight: #F4F4F4;
-    --contrastLighter: #40485e;
-
-    --accentClr: #7583ff;
-    --accentClrDark: #333c92;
-
-    --textColor: #c7c5cd;
-    --textColorAccent: #e5e5f0;
-
-    --border: 1px solid #2b2e3b;
-
-    --shadowBox: 0 0 20px var(--neutralDark);
-
-    /* VARIABLES MESSENGER */
-    --FAM-pluginBackground: #1e212a;
-    --FAM-chatBackground: #181a21;
-    --FAM-textareaBackground: #1e212a;
-    --FAM-msgBackground: #0B0E17;
-    --FAM-myMsgBackground: #1e212a;
-
-    --FAM-quoteBackground: rgba(255,255,255,0.04);
-
-    --FAM-gradient: linear-gradient(-90deg, rgba(30,33,42,1) 20%, rgba(30,33,42,0) 100%);
-    --FAM-gradientTop: linear-gradient(180deg, rgba(24, 26, 33,1) 20%, rgba(24, 26, 33,0) 100%);
-    --FAM-gradientBot: linear-gradient(0deg, rgba(24, 26, 33,1) 20%, rgba(24, 26, 33,0) 100%);
-
-    --FAM-border: 1px solid #313543;
-    --FAM-shadow: 0 0 20px var(--neutralDark);
-    
-    --FAM-sleepModeBackground: rgba(0, 0, 0, 0.5);
-    --FAM-newMsgAnimation: rgb(255, 255, 255,.5);
-
-    --FAM-accentClr: #7583ff;
-    --FAM-secondClr: #333c92;
-    --FAM-fontClr: #c7c5cd;
-    --FAM-fontLightClr: #9a96a3;
-    --FAM-linkClr: #7583ff;
-    --FAM-titleClr: #f0f0f8;
-    --FAM-buttonsClr: #E5E5E5;
-   }
  }
 
 

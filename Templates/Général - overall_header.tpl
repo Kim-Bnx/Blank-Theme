@@ -259,19 +259,21 @@ input:is([type="text"], [type="passeword"]){cursor: text;}
 	</script>
 	<!-- END google_analytics_code -->
 
-<!------------------------------------->
-<!-- INITIALISATION DU PLUGIN EDISON -->    
-<script>
-(function () {
-    const html = document.documentElement;
-    const theme = localStorage.getItem('theme');
-    const colorScheme = localStorage.getItem('color-scheme');
-  
-    html.removeAttribute("data-no-js");
-    colorScheme && html.setAttribute('data-color-scheme', colorScheme);
-    theme && html.setAttribute('data-theme', theme);
-})();
-</script>
+	<!------------------------------------->
+	<!-- INITIALISATION DU PLUGIN EDISON -->    
+    <script>
+    (function () {
+		const html = document.documentElement;
+		const userThemePreference = window.matchMedia("(prefers-color-scheme: dark)").matches;
+		const colorScheme = localStorage.getItem('color-scheme');
+	
+		if (!colorScheme && userThemePreference) {
+		html.setAttribute('data-color-scheme', 'dark');
+		}
+
+		colorScheme && html.setAttribute('data-color-scheme', colorScheme);
+	})();
+	</script>
 
 </head>
 

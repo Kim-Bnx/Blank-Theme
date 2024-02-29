@@ -118,25 +118,21 @@ $(document).ready(function() {
 </script>
 
 
-  <script>(function () {
+<script>(function () {
     var html = document.documentElement;
     var themeControls = document.querySelector("[data-theme-controls]");
     var toggle = themeControls.querySelector(".color-scheme-toggle");
     var prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
-
-
-    var setToggleLabel = function () {
-        let mode;
-
-        mode = !html.dataset.colorScheme
+    var mode = !html.dataset.colorScheme
             ? prefersDark.matches
                 ? "dark"
                 : "light"
             : html.dataset.colorScheme;
 
+    var setToggleLabel = function () {
         toggle.setAttribute(
             "title",
-            "Enable" + (mode === "dark" ? "light" : "dark") + "mode"
+            "Activer le mode " + (mode === "dark" ? "clair" : "sombre")
         );
     };
 
@@ -148,6 +144,7 @@ $(document).ready(function() {
 
     var init = function () {
         setToggleLabel();
+        setColorScheme(mode);
     };
 
     toggle.addEventListener("click", function () {
@@ -164,7 +161,8 @@ $(document).ready(function() {
 
     init();
 
-    })();</script>
+    })();
+</script>
 </body>
 </html>
             
