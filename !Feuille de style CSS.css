@@ -422,6 +422,17 @@ a.sceditor-button {
 	/*ne pas retirer*/
 }
 
+/* Bouton d'un outil au survol ou actif*/
+.sceditor-button.active,
+.sceditor-button:active,
+.sceditor-button:hover,
+.sceditor-button.hover {
+	background: var(--neutral) !important;
+	box-shadow: none !important;
+	border: none !important;
+	outline: 1px solid var(--neutralDarker);
+}
+
 /* Conteneur de la zone de texte */
 .sceditor-container iframe,
 .sceditor-container textarea {
@@ -435,6 +446,7 @@ a.sceditor-button {
 }
 
 /*Boîte Smiley*/
+html#sceditor_smilies,
 body#sce_smilies_body {
 	background: transparent !important;
 }
@@ -1652,7 +1664,7 @@ a.fa-mention {
 	background-size: cover;
 	background-position: center;
 	border-radius: 100%;
-	pointer: cursor;
+	cursor: pointer;
 }
 
 .award:hover .award_tooltiptext {
