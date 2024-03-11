@@ -1,6 +1,5 @@
 <!-- BLANK THEME ---->
-<!-- VERSION 3.01 - MAJ 26/10/22 ---->
-<!-- par Geniuspanda / https://code-lab.tumblr.com/ ---->    
+<!-- VERSION 3.3 - MAJ 11/03/24 ---->
 	    
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="{S_CONTENT_DIRECTION}" id="min-width" lang="{L_LANG_HTML}" xml:lang="{L_LANG_HTML}" {NAMESPACE_FB_LIKE} {NAMESPACE_FB} {NAMESPACE_BBCODE}>
