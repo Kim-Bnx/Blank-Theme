@@ -236,6 +236,7 @@ input:is([type="text"], [type="passeword"]){cursor: text;}
 
 /*** ------------------------------- ***/
 /*** POUBELLE DE FORUMACTIF -------- ***/
+#p0 {display: none}
 #find_username br,#users_here br, #main-content > p, .adminlink br, .corners-top, .corners-bottom { display: none;}
 #find_username .panel {border: none;margin: 0}
 .adminlink { clear: both}
