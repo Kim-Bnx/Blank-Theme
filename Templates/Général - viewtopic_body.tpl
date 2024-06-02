@@ -124,8 +124,8 @@
 
             <!-- En ligne -->
             <center>
-                <div class="{postrow.displayed.ONLINE_IMG_NEW}"> <!-- VOIR CSS .online -->
-                	{postrow.displayed.ONLINE_IMG_NEW}<!-- Textuel -->
+                <div class="presence {postrow.displayed.ONLINE_IMG_NEW}">
+                	En ligne
                 </div>
             </center>
 

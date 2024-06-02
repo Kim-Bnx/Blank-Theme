@@ -9,7 +9,7 @@
 /* VARIABLE DU MODE DE BASE (ici clair) */
 :root {
 	color-scheme: light;
-	--header: url("https://nsm09.casimages.com/img/2021/03/21//21032105561425394217327016.png");
+	--header: url('https://images2.imgbox.com/e5/fb/TTqPoDcu_o.png');
 
 	--neutral: #fafbfc;
 	--neutralDark: #f2f4f9;
@@ -88,7 +88,7 @@
 /* VARIABLES DU MODE INVERSE (ici sombre) */
 [data-color-scheme="dark"] {
 	color-scheme: dark;
-	--header: url("https://images2.imgbox.com/1b/a5/4bb6Hgju_o.png");
+	--header: url('https://images2.imgbox.com/89/30/IXFzrs0y_o.png');
 
 	--neutral: #1e212a;
 	--neutralDark: #181a21;
@@ -1639,7 +1639,9 @@ a.fa-mention {
 }
 
 /* Mention "en ligne" */
-.online {
+.presence {display: none}
+
+.presence.online {
 	display: inline-block;
 	position: relative;
 	background-color: var(--neutralDarker);
