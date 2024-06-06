@@ -514,6 +514,16 @@ body#sce_smilies_body {
   width: 100%;
 }
 
+hr {
+  border: none;
+  border-top: var(--border);
+}
+
+/* Titre d'un toggle */
+summary {
+  cursor: pointer;
+}
+
 /* Conteneur moins large (les historiques des messages essentiellement) */
 .wrapped {
   width: 80%;
