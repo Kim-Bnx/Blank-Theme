@@ -152,14 +152,6 @@
                         </div>
                     </div>
                 </div> 
-              
-                <!-- BEGIN edit_reason -->
-                <br />
-                <dl>
-                    <dt><label><span style="font-size:11px">{edit_reason.L_EDIT_REASON}</span></label></dt>
-                    <dd><input class="inputbox medium" style="width:63%" type="text" name="edit_reason" value="{edit_reason.EDIT_REASON}" maxlength="255" /></dd>
-                </dl>
-                <!-- END edit_reason -->
 
                 <div class="clear"></div>
             </fieldset>
