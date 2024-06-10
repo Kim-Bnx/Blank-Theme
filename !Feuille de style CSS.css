@@ -359,7 +359,7 @@ input:is([type="text"],[type="password"], .inputbox), textarea {
 input:is([type="submit"], [type="button"], [type="hidden"], [type="reset"]),
 .button {
   font-size: var(--normal-size);
-  padding: 2px 8px !important;
+  padding: 10px 15px !important;
   border-radius: 5px;
   background: var(--neutralDarker);
   color: var(--contrastLight);

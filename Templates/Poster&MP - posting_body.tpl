@@ -188,8 +188,8 @@
     <!-- SECTION : DÉS -------------->
 
     <!-- BEGIN switch_roll_dice -->
-    <h3>{ROLL_DICE_TITLE}</h3>
     <div class="panel">
+    <h3>{ROLL_DICE_TITLE}</h3>
         <script type="text/javascript">
             function add_dice(dice_number, dice, number) {
                 var content = document.getElementById('post_dice').innerHTML;
@@ -234,8 +234,8 @@
     <!----------------------------------------------->
     <!-- SECTION : OPTION DU MESSAGE -------------->
     
-    <h3>{L_OPTIONS}</h3>
     <div class="panel">
+    <h3>{L_OPTIONS}</h3>
         <!-- BEGIN switch_topic_modif -->
         <fieldset class="fields1">
             <!-- BEGIN switch_icon_checkbox -->
