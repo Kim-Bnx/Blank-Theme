@@ -86,7 +86,7 @@
 				this.showPersona();
 			}
 			// PERSONA CREATE-EDITION
-			else if (this.checkCategory() || this.jsonify(this.EDITOR_VALUE)) {
+			if (this.checkCategory() || this.jsonify(this.EDITOR_VALUE)) {
 				this.displayPersonaTools();
 				this.displayPersonaForm();
 			}
