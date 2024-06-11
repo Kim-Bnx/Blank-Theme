@@ -89,8 +89,6 @@
 			else if (this.checkCategory() || this.jsonify(this.EDITOR_VALUE)) {
 				this.displayPersonaTools();
 				this.displayPersonaForm();
-			} else {
-				return;
 			}
 		},
 
