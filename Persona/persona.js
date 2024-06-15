@@ -84,7 +84,7 @@
 
 			this.FORM;
 
-			if (this.checkCategory() && !window.location.href.includes("mode=newtopic")) {
+			if (this.checkCategory() && window.location.href.includes("mode=newtopic")) {
 				this.FORM = document.querySelector(`[data-persona-name="${this.options.name}"]`);
 			} else if (this.jsonify(this.EDITOR_VALUE)) {
 				const formName = this.jsonify(this.EDITOR_VALUE).name;
