@@ -67,29 +67,75 @@
 	 */
 	Plugin.prototype = {
 		init: function () {
-			this.CATEGORY = this.options.category;
-
-			this.FORM = document.querySelector(`[data-persona-name="${this.options.name}"]`);
-
-			this.FORM_INPUTS = this.FORM ? Array.from(this.FORM.querySelectorAll("input, select, textarea")) : null;
-
-			this.EDITOR_CONTAINER = document.querySelector(this.options.textEditorContainer);
-			this.editorElement = this.EDITOR_CONTAINER ? this.EDITOR_CONTAINER.querySelector("textarea#text_editor_textarea") : null;
-			this.EDITOR_VALUE = this.editorElement ? this.editorElement.value : null;
-
 			this.postElement = document.querySelector(".persona");
 			this.postContent = this.postElement ? this.postElement.innerHTML : null;
 			this.POST_JSON = this.jsonify(this.postContent);
 
 			// SHOW HTML
-			if (this.POST_JSON) {
+			if (this.POST_JSON && this.POST_JSON.name == this.options.name) {
 				this.showPersona();
 			}
+
+			this.CATEGORY = this.options.category;
+
+			this.EDITOR_CONTAINER = document.querySelector(this.options.textEditorContainer);
+			this.editorElement = this.EDITOR_CONTAINER ? this.EDITOR_CONTAINER.querySelector("textarea#text_editor_textarea") : null;
+			this.EDITOR_VALUE = this.editorElement ? this.editorElement.value : null;
+
+			this.FORM;
+
+			if (this.checkCategory()) {
+				this.FORM = document.querySelector(`[data-persona-name="${this.options.name}"]`);
+			} else if (this.jsonify(this.EDITOR_VALUE)) {
+				const formName = this.jsonify(this.EDITOR_VALUE).name;
+				this.FORM = document.querySelector(`[data-persona-name="${formName}"]`);
+			}
+			this.FORM_INPUTS = this.FORM ? Array.from(this.FORM.querySelectorAll("input, select, textarea")) : null;
+
+			console.log(this.FORM);
+
 			// PERSONA CREATE-EDITION
-			if (this.checkCategory() || this.jsonify(this.EDITOR_VALUE)) {
-				this.displayPersonaTools();
+			if (this.checkCategory() || (this.jsonify(this.EDITOR_VALUE) && this.jsonify(this.EDITOR_VALUE).name === this.options.name)) {
 				this.displayPersonaForm();
 			}
+		},
+
+		showPersona: function () {
+			function decodeAllData(data) {
+				if (typeof data === "string") {
+					return this.decodeData(data);
+				} else if (typeof data === "object" && data !== null) {
+					for (const [key, value] of Object.entries(data)) {
+						data[key] = decodeAllData.call(this, value);
+					}
+				}
+				return data;
+			}
+
+			// Call the recursive function on the top-level object
+			this.POST_JSON = decodeAllData.call(this, this.POST_JSON);
+
+			if (this.POST_JSON && this.POST_JSON.name == this.options.name) {
+				this.postElement.innerHTML = this.options.personaHTML(this.POST_JSON);
+				this.options.personaScript(this.postElement);
+			}
+
+			this.postElement.classList.add("loaded");
+		},
+
+		// Encodage du post
+		encodeData: function (str) {
+			return str.replace(/</g, "%3C").replace(/>/g, "%3E").replace(/"/g, "%22");
+		},
+
+		decodeData: function (str) {
+			return decodeURIComponent(str.replace(/\n/g, "<br />"));
+		},
+		encodeFA: function (str) {
+			if (!str) return;
+			return str.replace(/(<(?:img)\b[^>]*>)/gm, (match) => {
+				return this.encodeData(match);
+			});
 		},
 
 		/**
@@ -156,7 +202,8 @@
 		displayPersonaForm: function () {
 			// Affiche le générateur
 			this.FORM.style.display = "block";
-			// Hide the text editor
+			this.displayPersonaTools();
+
 			this.EDITOR_CONTAINER.style.display = "none";
 
 			// Update les informations dans l'éditeur en "direct"
@@ -409,21 +456,6 @@
 			this.generateData();
 		},
 
-		// Encodage du post
-		encodeData: function (str) {
-			return str.replace(/</g, "%3C").replace(/>/g, "%3E").replace(/"/g, "%22");
-		},
-
-		decodeData: function (str) {
-			return decodeURIComponent(str.replace(/\n/g, "<br />"));
-		},
-		encodeFA: function (str) {
-			if (!str) return;
-			return str.replace(/(<(?:img)\b[^>]*>)/gm, (match) => {
-				return this.encodeData(match);
-			});
-		},
-
 		previewImage: function (image) {
 			const previewElement = image;
 			const imageName = image.getAttribute("data-preview");
@@ -529,27 +561,6 @@
 					existingAlert.remove();
 				}
 			}
-		},
-
-		showPersona: function () {
-			function decodeAllData(data) {
-				if (typeof data === "string") {
-					return this.decodeData(data);
-				} else if (typeof data === "object" && data !== null) {
-					for (const [key, value] of Object.entries(data)) {
-						data[key] = decodeAllData.call(this, value);
-					}
-				}
-				return data;
-			}
-
-			// Call the recursive function on the top-level object
-			this.POST_JSON = decodeAllData.call(this, this.POST_JSON);
-
-			this.postElement.innerHTML = this.options.personaHTML(this.POST_JSON);
-			this.options.personaScript(this.postElement);
-
-			this.postElement.classList.add("loaded");
 		},
 
 		/**
