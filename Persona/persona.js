@@ -115,10 +115,8 @@
 			// Call the recursive function on the top-level object
 			this.POST_JSON = decodeAllData.call(this, this.POST_JSON);
 
-			if (this.POST_JSON && this.POST_JSON.name == this.options.name) {
-				this.postElement.innerHTML = this.options.personaHTML(this.POST_JSON);
-				this.options.personaScript(this.postElement);
-			}
+			this.postElement.innerHTML = this.options.personaHTML(this.POST_JSON);
+			this.options.personaScript(this.postElement);
 
 			this.postElement.classList.add("loaded");
 		},
