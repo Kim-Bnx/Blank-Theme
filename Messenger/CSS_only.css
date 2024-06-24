@@ -872,9 +872,8 @@ a.FAM-attachment-thumb {
     background-color: var(--FAM-pluginBackground);
 }
 
-.FAM-topic:nth-of-type(4) .FAM-topic-name {
-    display: block;
-}
+.FAM-forum + .FAM-topic > .FAM-topic-name,
+.FAM-pagination + .FAM-topic > .FAM-topic-name {display: block;}
 
 .FAM-chat-avatar {
     grid-row: 2;
