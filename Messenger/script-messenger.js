@@ -1,4 +1,5 @@
-// PLACEMENT : sur toutes les pages// by Ange tuteur https://fmdesign.forumotion.com/t1378-forumactif-messenger-instant-message-application-for-forumotion
+// PLACEMENT : sur toutes les pages
+// by Ange tuteur https://fmdesign.forumotion.com/t1378-forumactif-messenger-instant-message-application-for-forumotion
 
 !window.FAM &&
 	(function () {
