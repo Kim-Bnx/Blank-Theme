@@ -1359,28 +1359,25 @@
 				about: {
 					open: function (noHistory) {
 						FAM.page.setup("about", noHistory);
-
-						FAM.request = $.get("https://raw.githubusercontent.com/gp-kim/Blank-Theme/main/Messenger/pages/about.html", function (data) {
-							FAM.cache.content.innerHTML =
-								'<div id="FAM-about">' +
-								'<div id="FAM-service-title" class="FAM-title">' +
-								'<a href="https://github.com/SethClydesdale/forumactif-messenger">' +
-								"<b>Forum</b>actif <b>Messenger</b>" +
-								"</a> <br><br>" +
-								"</div>" +
-								'<div id="FAM-about-info">' +
-								'<p>Made by <a href="https://github.com/SethClydesdale">Seth Clydesdale (AngeTuteur)</a></p>' +
-								"<p>" +
-								"And the awesome " +
-								'<a href="https://github.com/SethClydesdale/forumactif-messenger/graphs/contributors">Forumactif Messenger Community</a>' +
-								"</p>" +
-								"<p>" +
-								"Redesign by Kim for the " +
-								'<a href="https://blankthemerpg.forumactif.com/">Blank Theme</a>' +
-								"</p>" +
-								"</div>" +
-								"</div>";
-						});
+						FAM.cache.content.innerHTML =
+							'<div id="FAM-about">' +
+							'<div id="FAM-service-title" class="FAM-title">' +
+							'<a href="https://github.com/SethClydesdale/forumactif-messenger">' +
+							"<b>Forum</b>actif <b>Messenger</b>" +
+							"</a> <br><br>" +
+							"</div>" +
+							'<div id="FAM-about-info">' +
+							'<p>Made by <a href="https://github.com/SethClydesdale">Seth Clydesdale (AngeTuteur)</a></p>' +
+							"<p>" +
+							"And the awesome " +
+							'<a href="https://github.com/SethClydesdale/forumactif-messenger/graphs/contributors">Forumactif Messenger Community</a>' +
+							"</p>" +
+							"<p>" +
+							"Redesign by Kim for the " +
+							'<a href="https://blankthemerpg.forumactif.com/">Blank Theme</a>' +
+							"</p>" +
+							"</div>" +
+							"</div>";
 					},
 				},
 
@@ -1807,7 +1804,6 @@
 					$(document).on("mousedown", function (e) {
 						// drop down should be the first element in the arrays, other elements are those that should be excluded
 						var close = [
-								[FAM.cache.toolbar.querySelector("#FAM-menu"), FAM.cache.toolbar.querySelector("#FAM-menu-toggle")],
 								[FAM.cache.actions.querySelector("#FAM-emoji-list"), FAM.cache.actions.querySelector("#FAM-emoji")],
 								[FAM.cache.actions.querySelector("#FAM-attach-options"), FAM.cache.actions.querySelector("#FAM-attachment")],
 							],
