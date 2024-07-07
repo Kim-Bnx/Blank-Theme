@@ -36,53 +36,6 @@
   --title-size: 22px;
 
   --font: "Open Sans";
-
-  /* VARIABLES MESSENGER */
-  --FAM-pluginBackground: #fafbfc;
-  --FAM-chatBackground: #f2f4f9;
-  --FAM-textareaBackground: #fafbfc;
-  --FAM-msgBackground: #dce3f4;
-  --FAM-myMsgBackground: #fafbfc;
-  --FAM-quoteBackground: #8a9fd236;
-
-  --FAM-gradient: linear-gradient(
-    -90deg,
-    rgba(250, 251, 252, 1) 20%,
-    rgba(250, 251, 252, 0) 100%
-  );
-  --FAM-gradientTop: linear-gradient(
-    180deg,
-    rgba(242, 244, 249, 1) 20%,
-    rgba(242, 244, 249, 0) 100%
-  );
-  --FAM-gradientBot: linear-gradient(
-    0deg,
-    rgba(242, 244, 249, 1) 20%,
-    rgba(242, 244, 249, 0) 100%
-  );
-
-  --FAM-border: 1px solid #dce3f4;
-  --FAM--shadowBox: 0 0 20px var(--contrastLight);
-
-  --FAM-sleepModeBackground: rgba(255, 255, 255, 0.6);
-  --FAM-newMsgAnimation: rgb(0, 0, 0, 0.3);
-
-  --FAM-accentClr: #4b57c5;
-  --FAM-secondClr: #333c92;
-  --FAM-fontClr: #232657;
-  --FAM-fontLightClr: #484a65;
-  --FAM-linkClr: #4b57c5;
-  --FAM-titleClr: #171938;
-  --FAM-buttonsClr: #171938;
-
-  --FAM-fontSize: 14px;
-  --FAM-titleFont: "Open Sans";
-  --FAM-titleSize: 24px;
-
-  --FAM-light: white;
-  --FAM-dark: black;
-
-  --FAM-windowSize: 750px;
 }
 
 /* VARIABLES DU MODE INVERSE (ici sombre) */
@@ -107,45 +60,6 @@
   --border: 1px solid #2b2e3b;
 
   --shadowBox: 0 0 20px var(--neutralDark);
-
-  /* VARIABLES MESSENGER */
-  --FAM-pluginBackground: #1e212a;
-  --FAM-chatBackground: #181a21;
-  --FAM-textareaBackground: #1e212a;
-  --FAM-msgBackground: #0b0e17;
-  --FAM-myMsgBackground: #1e212a;
-
-  --FAM-quoteBackground: rgba(255, 255, 255, 0.04);
-
-  --FAM-gradient: linear-gradient(
-    -90deg,
-    rgba(30, 33, 42, 1) 20%,
-    rgba(30, 33, 42, 0) 100%
-  );
-  --FAM-gradientTop: linear-gradient(
-    180deg,
-    rgba(24, 26, 33, 1) 20%,
-    rgba(24, 26, 33, 0) 100%
-  );
-  --FAM-gradientBot: linear-gradient(
-    0deg,
-    rgba(24, 26, 33, 1) 20%,
-    rgba(24, 26, 33, 0) 100%
-  );
-
-  --FAM-border: 1px solid #313543;
-  --FAM-shadow: 0 0 20px var(--neutralDark);
-
-  --FAM-sleepModeBackground: rgba(0, 0, 0, 0.5);
-  --FAM-newMsgAnimation: rgb(255, 255, 255, 0.5);
-
-  --FAM-accentClr: #7583ff;
-  --FAM-secondClr: #333c92;
-  --FAM-fontClr: #c7c5cd;
-  --FAM-fontLightClr: #9a96a3;
-  --FAM-linkClr: #7583ff;
-  --FAM-titleClr: #f0f0f8;
-  --FAM-buttonsClr: #e5e5e5;
 }
 
 /* S'applique à TOUS les éléments du forum*/
@@ -223,6 +137,13 @@ body {
   justify-content: space-between;
   padding: 15px 10px;
   z-index: 999;
+}
+
+/* Conteneur de switcheroo */
+.sidebar_top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px
 }
 
 /* Conteneur de l'ascenseur
@@ -807,7 +728,6 @@ ul#notif_list {
 /* BARRE --- */
 .switcheroo {
   color: var(--textColor);
-  margin-top: 60px;
 }
 
 /* Positionnement des ronds */

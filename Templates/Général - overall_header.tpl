@@ -1,15 +1,15 @@
 <!-- BLANK THEME ---->
-<!-- VERSION 3.3 - MAJ 11/03/24 ---->
+<!-- VERSION 3.5 - MAJ 07/07/24 ---->
 	    
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="{S_CONTENT_DIRECTION}" id="min-width" lang="{L_LANG_HTML}" xml:lang="{L_LANG_HTML}" {NAMESPACE_FB_LIKE} {NAMESPACE_FB} {NAMESPACE_BBCODE}>
 
 <head>
-    <!--   INSTALLATION DE NOUVELLE POLICE D'ECRITURE -->
+    <!-- INSTALLATION DE NOUVELLE POLICE D'ECRITURE -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
       
-    <!--   INSTALLATION DE FONT ICON -->
+    <!-- INSTALLATION DE FONT ICON -->
     <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
 
@@ -176,73 +176,63 @@
 
 	{GREETING_POPUP}
 
-<!----------------->
-<!-- CSS EXTERNE -->
-<style type="text/css">
-<!-- BEGIN switch_ticker_new -->
-	.jcarousel-skin-tango .jcarousel-item {text-align: center;width: 10px;}
-	.jcarousel-skin-tango .jcarousel-item-horizontal {margin-right: {switch_ticker.SPACING}px;}
-	.jcarousel-skin-tango .jcarousel-item-vertical {margin-bottom: {switch_ticker.SPACING}px;}
-<!-- END switch_ticker_new -->
-          
-/****** ----------------------------------------------------------
- ****** STRUCTURE DE FORUMACTIF ---------------------------------- 
- ****** Elements de base qui servent à construire la page --------
- ****** Il y a peu de chances que vous deviez toucher cette partie du CSS ******/
- 
-/*** ------------------------------- ***/
-/* BALISES GENERALES --------------- ***/
 
-ul {list-style-type: none;padding: 0;margin: 0;}
-fieldset {border: none;padding: 0;margin: 0;}
-dl {display: grid;grid-template-columns: 220px auto;grid-gap: 15px}
-dd {margin: 0;}
-dt {margin: 0}
-dt label {font-weight: bold}
-button, input {border: none}
-button, select, input{font-family: var(--font);cursor: pointer;}
-input:is([type="text"], [type="passeword"]){cursor: text;}
+	<!-- CSS Forumactif -->
+	<style type="text/css">
+	<!-- BEGIN switch_ticker_new -->
+		.jcarousel-skin-tango .jcarousel-item {text-align: center;width: 10px;}
+		.jcarousel-skin-tango .jcarousel-item-horizontal {margin-right: {switch_ticker.SPACING}px;}
+		.jcarousel-skin-tango .jcarousel-item-vertical {margin-bottom: {switch_ticker.SPACING}px;}
+	<!-- END switch_ticker_new -->
 
-/*** ----------------------------- ***/
-/*** STRUCTURE DE LA TOOLBAR ----- ***/ 
- *** Il est conseillé de ne rien modifier pour un bon fonctionnement de la toolbar ***/
-#fa_right #fa_menu ul,
-#fa_right.notification #fa_menu ul,
-#fa_right #fa_notifications #notif_unread {display: none}
-#notif_list hr {display: none}
-#fa_toolbar #live_notif .fa_notification .content {display: inline-block;}
-#fa_right.welcome #fa_menulist {display: block;}
-#fa_right.notification #notif_list {display: flex;}
-#fa_toolbar #fa_right #fa_notifications.unread #notif_unread {display: inline;}
-#fa_usermenu table {width: 100%;}
-#fa_usermenu table tr {display: flex;justify-content: center;}
-.fa_fix {position: fixed !important; z-index: 999;;top: 0; right: 0;}
+	/* Il y a peu de chances que vous deviez toucher cette partie du CSS */
+	/* BALISES GENERALES -*/
+	ul {list-style-type: none;padding: 0;margin: 0;}
+	fieldset {border: none;padding: 0;margin: 0;}
+	dl {display: grid;grid-template-columns: 220px auto;grid-gap: 15px}
+	dd {margin: 0;}
+	dt {margin: 0}
+	dt label {font-weight: bold}
+	button, input {border: none}
+	button, select, input{font-family: var(--font);cursor: pointer;}
+	input:is([type="text"], [type="passeword"]){cursor: text;}
 
-/*** --------------------------------- ***/
-/*** STRUCTURE DE LA PAGE DE CONNEXION ***/
-.fld_connexion dl {display: grid;rid-row-gap: 15px; grid-template-columns: 150px auto;}
-.fld_connexion dl:nth-of-type(2) dd:last-of-type {grid-column: 1 / span 2;}
-.fld_connexion dl:nth-of-type(3) {margin: 0;}
-.fld_connexion dl:nth-of-type(n+3) {display: block;}
-.invisible {display: none;visibility: hidden;} .visible {display: block;visibility: visible;}
+	/* STRUCTURE DE LA TOOLBAR */ 
+	#fa_right #fa_menu ul,
+	#fa_right.notification #fa_menu ul,
+	#fa_right #fa_notifications #notif_unread {display: none}
+	#notif_list hr {display: none}
+	#fa_toolbar #live_notif .fa_notification .content {display: inline-block;}
+	#fa_right.welcome #fa_menulist {display: block;}
+	#fa_right.notification #notif_list {display: flex;}
+	#fa_toolbar #fa_right #fa_notifications.unread #notif_unread {display: inline;}
+	#fa_usermenu table {width: 100%;}
+	#fa_usermenu table tr {display: flex;justify-content: center;}
+	.fa_fix {position: fixed !important; z-index: 999;;top: 0; right: 0;}
 
-/* Indicateur complexité du mot de passe */
-#cont_pwd {display: flex;align-items: center;height: 100%;margin-left: 5px;}
-.pwd_img { padding: 2px 6px;display: none;border-radius: 3px;}
-#pwd_good {background-color: #4CAF50;color: #FFF;}
-#pwd_middle {background-color: #FFCC00;color: #000;}
-#pwd_bad {background-color: #F04040;color: #FFF;}
+	/* STRUCTURE DE LA PAGE DE CONNEXION */
+	.fld_connexion dl {display: grid;rid-row-gap: 15px; grid-template-columns: 150px auto;}
+	.fld_connexion dl:nth-of-type(2) dd:last-of-type {grid-column: 1 / span 2;}
+	.fld_connexion dl:nth-of-type(3) {margin: 0;}
+	.fld_connexion dl:nth-of-type(n+3) {display: block;}
+	.invisible {display: none;visibility: hidden;} .visible {display: block;visibility: visible;}
 
-/*** ------------------------------- ***/
-/*** POUBELLE DE FORUMACTIF -------- ***/
-#p0 {display: none}
-#find_username br,#users_here br, #main-content > p, .adminlink br, .corners-top, .corners-bottom { display: none;}
-#find_username .panel {border: none;margin: 0}
-.adminlink { clear: both}
-#cp-main#cp-main#cp-main, table, .quickreply div#textarea_content {width: 100% !important;}
-.panel .panel { background: transparent;border: none; padding: 0;margin: 0; border-radius: 0;}
-.social_btn {display: none;}
-</style>
+	/* Indicateur complexité du mot de passe */
+	#cont_pwd {display: flex;align-items: center;height: 100%;margin-left: 5px;}
+	.pwd_img { padding: 2px 6px;display: none;border-radius: 3px;}
+	#pwd_good {background-color: #4CAF50;color: #FFF;}
+	#pwd_middle {background-color: #FFCC00;color: #000;}
+	#pwd_bad {background-color: #F04040;color: #FFF;}
+
+	/* POUBELLE DE FORUMACTIF */
+	#p0 {display: none}
+	#find_username br,#users_here br, #main-content > p, .adminlink br, .corners-top, .corners-bottom { display: none;}
+	#find_username .panel {border: none;margin: 0}
+	.adminlink { clear: both}
+	#cp-main#cp-main#cp-main, table, .quickreply div#textarea_content {width: 100% !important;}
+	.panel .panel { background: transparent;border: none; padding: 0;margin: 0; border-radius: 0;}
+	.social_btn {display: none;}
+	</style>
 
 	{HOSTING_JS}
 

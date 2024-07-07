@@ -1,5 +1,4 @@
-// PLACEMENT : sur toutes les pages
-// by Ange tuteur https://fmdesign.forumotion.com/t1378-forumactif-messenger-instant-message-application-for-forumotion
+// PLACEMENT : sur toutes les pages// by Ange tuteur https://fmdesign.forumotion.com/t1378-forumactif-messenger-instant-message-application-for-forumotion
 
 !window.FAM &&
 	(function () {
@@ -1713,8 +1712,7 @@
 						return;
 					}
 
-					var button = document.createElement("A"),
-						chat = document.createElement("DIV"),
+					var chat = document.createElement("DIV"),
 						audio = document.createElement("AUDIO"),
 						frag = document.createDocumentFragment(),
 						embed = FAM.config.embed ? document.querySelector(FAM.config.embed) : null;
@@ -1746,24 +1744,8 @@
 						"</div>";
 					frag.appendChild(chat);
 
-					// create button if the chat is not embedded
-					if (!FAM.config.embed) {
-						button.id = "FAM-button";
-						button.title = FAM.lang.tooltip_openFAM;
-						button.innerHTML = '<i class="bi bi-chat-fill"></i>';
-						button.onclick = FAM.toggle;
-						frag.appendChild(button);
-					}
-
-					// setup audio element for notifications
-					audio.src = FAM.config.sound_notif_file;
-
-					if (audio.canPlayType) {
-						audio.id = "FAM-audio-notif";
-						frag.appendChild(audio);
-					} else {
-						audio = null;
-					}
+					var button = document.querySelector("#FAM-button-open");
+					button.onclick = FAM.toggle;
 
 					// cache nodes
 					FAM.cache = {

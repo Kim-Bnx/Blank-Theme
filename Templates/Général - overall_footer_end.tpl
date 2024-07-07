@@ -58,8 +58,10 @@ $(document).ready(function() {
 <!-- BARRE LATERALE GAUCHE POUR PLUGIN -->  
 
 <div class="sidebar">
-	<!-- Barre switcheroo -->
-	<nav id="switcheroo" class="switcheroo"></nav>
+  	<div class="sidebar_top">
+            <!-- Barre switcheroo -->
+            <nav id="switcheroo" class="switcheroo"></nav>
+  	</div>
   
   	<div class="sidebar_bottom">
           
