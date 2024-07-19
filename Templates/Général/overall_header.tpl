@@ -249,6 +249,9 @@
 	</script>
 	<!-- END google_analytics_code -->
 
+	<!-- DESACTIVE EMOJIONE -->
+    <script>$(function() {$('img.emojione').each(function() { $(this).after( $(this).attr('alt') ).remove(); }); });</script>
+
 	<!------------------------------------->
 	<!-- INITIALISATION DU PLUGIN EDISON -->    
     <script>
