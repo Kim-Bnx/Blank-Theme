@@ -72,11 +72,27 @@
             </span>
               
                 <!-- Boutons d'édition de message -->
-                <ul class="profile-icons ">
-                    <li>{postrow.displayed.QUOTE_IMG}</li>
-                    <li>{postrow.displayed.EDIT_IMG}</li>
-                    <li>{postrow.displayed.DELETE_IMG}</li>
-                    <li>{postrow.displayed.IP_IMG}</li>
+                <ul class="profile-icons">
+                    <li class="btn-quote">
+                        <a href="{postrow.displayed.QUOTE_URL}">
+                            Citer
+                        </a>
+                    </li>
+                    <li class="btn-edit">
+                        <a href="{postrow.displayed.EDIT_URL}">
+                            Editer
+                        </a>
+                    </li>
+                    <li class="btn-delete">
+                        <a href="{postrow.displayed.DELETE_URL}">
+                            Supprimer
+                        </a>
+                    </li>
+                    <li class="btn-ip">
+                        <a href="{postrow.displayed.IP_URL}">
+                            IP
+                        </a>
+                    </li>
                 </ul>
           
                 <!-- Conteneur du bouton like -->

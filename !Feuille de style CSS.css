@@ -1513,9 +1513,7 @@ ul.profile-icons li {
   border-radius: 5px;
 }
 /* Cache les boutons pour les invités */
-ul.profile-icons li:empty {
-  display: none;
-}
+.profile-icons a[href=""] { display:none }
 
 /*hover d'un bouton d'édition*/
 ul.profile-icons li:hover {
