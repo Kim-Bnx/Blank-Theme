@@ -47,9 +47,14 @@
                 <!-- Boutons d'édition -->
                 <ul class="mp-icons">
                     <!-- BEGIN switch_quote -->
-                    <li>{QUOTE_PM_IMG}</li>
+                    <li class="btn-quote">
+                      	<a href="/privmsg?mode=quote">Citer</a>
+                    </li>
                     <!-- END switch_quote -->
-                    <li>{EDIT_PM_IMG}</li>
+                  
+                    <li class="btn-edit">
+                    	<a href="/privmsg?mode=edit">Editer</a>
+                    </li>
                 </ul>
 
             </div>
@@ -133,4 +138,13 @@
 </script>
 <!-- END switch_image_resize -->
 
-            
+<!-- Bouton editer/citer text -->
+<script type="text/javascript">
+const post = document.querySelector('input[type="hidden"][name="mark[]"][value]').value;
+    
+const quoteBtn = document.querySelector('a[href="/privmsg?mode=quote"]');
+if('{QUOTE_PM_IMG}' && quoteBtn) { quoteBtn.href = '/privmsg?mode=quote&p=' + post} else {quoteBtn?.remove();}
+
+const editBtn = document.querySelector('a[href="/privmsg?mode=edit"]');
+if('{EDIT_PM_IMG}' && editBtn) { editBtn.href = '/privmsg?mode=edit&p=' + post } else {editBtn.remove();}
+</script>
