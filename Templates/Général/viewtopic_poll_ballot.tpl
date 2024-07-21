@@ -8,7 +8,7 @@
 
             <!-- Fermer le sondage -->
             <span class="right">
-                {CLOSE_POLL}
+                <a href="/post&mode=close">Clore le sondage</a>
             </span>
 
         </div>
@@ -51,4 +51,12 @@
 </div>
 </form>
 
-            
+<!-- Bouton d'annulation du sondage -->
+<script type="text/javascript">
+if('{CLOSE_POLL}') {
+    let closeHref = '{CLOSE_POLL}';
+    closeHref = new DOMParser().parseFromString(closeHref, "text/html");
+    closeHref = closeHref.querySelector('a').href;
+    document.querySelector('a[href="/post&mode=close"]').href = closeHref;
+} else { document.querySelector('a[href="/post&mode=close"]').remove()}
+</script>
