@@ -21,12 +21,12 @@
   
         <!-- Boutons : nouveau -->
         <!-- BEGIN switch_user_authpost -->
-        <a class="buttons" href="{U_POST_NEW_TOPIC}" rel="nofollow"><img class="newtopic_button" src="{POST_IMG}" class="{POST_IMG_CLASS}" alt="{L_POST_NEW_TOPIC}" /></a>&nbsp;
+        <a class="buttons" href="{U_POST_NEW_TOPIC}" rel="nofollow" title="{T_POST_NEW_TOPIC}">{L_POST_NEW_TOPIC}</a>&nbsp;
         <!-- END switch_user_authpost -->
 
         <!-- Bouton : répondre -->
         <!-- BEGIN switch_user_authreply -->
-        <a class="buttons" href="{U_POST_REPLY_TOPIC}"><img class="reply_button" src="{REPLY_IMG}" class="i_reply" alt="{L_POST_REPLY_TOPIC}" /></a>
+        <a class="buttons" href="{U_POST_REPLY_TOPIC}" title="{T_POST_REPLY_TOPIC}">{L_POST_REPLY_TOPIC}</a>
         <!-- END switch_user_authreply -->
   
         <!-- Pagination -->

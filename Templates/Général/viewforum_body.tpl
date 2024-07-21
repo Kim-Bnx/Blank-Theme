@@ -29,8 +29,7 @@
 
     <!-- Boutons : nouveau, répondre, verrouillé -->
     <!-- BEGIN switch_user_authpost -->
-    <a class="buttons" href="{U_POST_NEW_TOPIC}" accesskey="n" rel="nofollow"><img class="newtopic_button"
-            src="{POST_IMG}" class="{POST_IMG_ID}" alt="{L_POST_NEW_TOPIC}" /></a>
+    <a class="buttons" href="{U_POST_NEW_TOPIC}" accesskey="n" rel="nofollow">Nouveau sujet</a>
     <!-- END switch_user_authpost -->
 
     <!-- Lien Surveiller ce forum -->
@@ -99,8 +98,7 @@
 
     <!-- Bouton : nouveau -->
     <!-- BEGIN switch_user_authpost -->
-    <a class="buttons" href="{U_POST_NEW_TOPIC}" accesskey="n" rel="nofollow"><img class="newtopic_button"
-            src="{POST_IMG}" class="{POST_IMG_ID}" alt="{L_POST_NEW_TOPIC}" /></a>
+    <a href="{U_POST_NEW_TOPIC}" accesskey="n" rel="nofollow" title="{T_POST_NEW_TOPIC}" class="buttons">{L_POST_NEW_TOPIC}</a>
     <!-- END switch_user_authpost -->
 
 

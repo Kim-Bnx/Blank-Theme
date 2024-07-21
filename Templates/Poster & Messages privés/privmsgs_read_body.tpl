@@ -20,7 +20,7 @@
       
        <!-- Bouton: répondre -->
        <!-- BEGIN switch_post_reply -->
-       <a href="{REPLY_PM_URL}" rel="nofollow" title="{REPLY_PM_IMG}" class="replypm_button buttons">{REPLY_PM_IMG}</a>
+       <a href="{REPLY_PM_URL}" rel="nofollow" title="{REPLY_PM_IMG}" class="replypm_button buttons">Répondre au message</a>
         <!-- END switch_post_reply -->
     </div>
 
