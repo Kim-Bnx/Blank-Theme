@@ -22,18 +22,11 @@
     <!----------------------------------------------->
     <!-- BARRE DE GESTION -------------->
     <div class="links_bar">
+        <!-- Bouton "nouveau" -->
+        <a href="/privmsg?mode=post" class="newpm_button buttons">Nouveau message privé</a>
 
-          <!-- Bouton "nouveau" -->
-          <a href="/privmsg?mode=post" class="newpm_button buttons">Nouveau message privé</a>
-
-
-        <!-- Montrer tous les messsages -->
-        <span class="right">
-            {L_DISPLAY_MESSAGES}:&nbsp;
-            <select name="msgdays">{S_SELECT_MSG_DAYS}</select>&nbsp;
-            <input class="button2" type="submit" name="submit_msgdays" value="{L_GO}" />
-        </span>
-
+        <!-- Pagination -->
+        <span class="pagination right">{PAGINATION} {PAGE_NUMBER}</span>
     </div>
 
 
@@ -42,6 +35,14 @@
 
     <!-- Conteneur-->
     <div class="container">
+
+    <!-- Filtrer tous les messsages -->
+        <div class="right">
+            {L_DISPLAY_MESSAGES}:&nbsp;
+            <select name="msgdays">{S_SELECT_MSG_DAYS}</select>&nbsp;
+            <input class="button2" type="submit" name="submit_msgdays" value="Filtrer" />
+        </div>
+        <div class="clear"></div>
 
         <!-- Début d'un message privé -->
         <!-- BEGIN listrow -->

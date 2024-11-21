@@ -2059,7 +2059,7 @@ blockquote cite a {
   grid-template-columns: 55px auto;
   grid-gap: 10px;
   align-items: center;
-  margin-bottom: 10px;
+  margin: 10px 0;
   padding: 10px;
 }
 
