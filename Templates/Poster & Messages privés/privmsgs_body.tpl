@@ -38,7 +38,6 @@
 
     <!-- Filtrer tous les messsages -->
         <div class="right">
-            {L_DISPLAY_MESSAGES}:&nbsp;
             <select name="msgdays">{S_SELECT_MSG_DAYS}</select>&nbsp;
             <input class="button2" type="submit" name="submit_msgdays" value="Filtrer" />
         </div>
