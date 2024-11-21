@@ -24,9 +24,6 @@
     <div class="links_bar">
         <!-- Bouton "nouveau" -->
         <a href="/privmsg?mode=post" class="newpm_button buttons">Nouveau message privé</a>
-
-        <!-- Pagination -->
-        <span class="pagination right">{PAGINATION} {PAGE_NUMBER}</span>
     </div>
 
 
