@@ -24,7 +24,7 @@
     <div class="links_bar">
 
           <!-- Bouton "nouveau" -->
-          <span class="newpm_button buttons">Nouveau message privé</span>
+          <a href="/privmsg?mode=post" class="newpm_button buttons">Nouveau message privé</a>
 
 
         <!-- Montrer tous les messsages -->
@@ -109,7 +109,7 @@
 
 <div class="links_bar">
     <!-- Bouton "Nouveau" -->
-    <span class="newpm_button buttons">Nouveau message privé</span>
+    <a href="/privmsg?mode=post" class="newpm_button buttons">Nouveau message privé</a>
   
     <!-- Pagination -->
     <span class="pagination right">{PAGINATION} {PAGE_NUMBER}</span>
