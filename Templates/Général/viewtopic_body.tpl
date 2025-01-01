@@ -18,7 +18,6 @@
 <!-- BARRE DE GESTION -------------->
 
 <div class="links_bar">
-  
         <!-- Boutons : nouveau -->
         <!-- BEGIN switch_user_authpost -->
         <a class="buttons" href="{U_POST_NEW_TOPIC}" rel="nofollow" title="{T_POST_NEW_TOPIC}">{L_POST_NEW_TOPIC}</a>&nbsp;
@@ -33,8 +32,6 @@
         <span class="pagination right">
             {PAGINATION}
         </span>
-         
-  
 </div>
 
 <!----------------------------------------------->
