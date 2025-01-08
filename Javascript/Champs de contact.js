@@ -26,7 +26,6 @@ const contactFields_list = [
 ];
 
 /**
- * Function that uses the provided data to edit the targeted element
  * Fonction utilitaire qui utilise les données fournies pour modifier l'élément ciblé
  * @param {{text: string, action: string}} data
  * @param {HTMLObjectElement} target
@@ -48,7 +47,16 @@ function customContactField(customFields, selector) {
     listByUrl[customFields[i].urlImg] = customFields[i];
   }
 
-  document.querySelectorAll(selector).forEach((field, i) => {
+  const allFields = document.querySelectorAll(selector);
+  if (!allFields.length) {
+    console.log(
+      "%c ⚠️ Script des champs de contact personnalisé : Aucun champ de profil n'a été trouvé sur cette page. Vérifiez le sélecteur contactFields_selectorInTopic dans la configuration du script.",
+      blankError
+    );
+    return;
+  }
+
+  allFields.forEach((field, i) => {
     const fieldImg = field.querySelector("img");
     if (!fieldImg) console.error("Il n'y a aucune image dans le champs :" + field);
 
@@ -70,12 +78,19 @@ function customContactField(customFields, selector) {
 }
 
 /**
- * Customize the contact fields in the profile page
  * Personnalise les champs de contact dans la page de profil
  * @param {{selector, text, action}[]} liste - The contact fields list
  */
 function customContactField_inProfile(customFields, selector) {
   const contactField = document.querySelector(contactFields_selectorinProfile);
+  if (!contactField) {
+    console.log(
+      "%c ⚠️ Script des champs de contact personnalisé : Aucun champ de profil n'a été trouvé sur cette page. Vérifiez les sélecteurs contactFields_selectorinProfile.",
+      blankError
+    );
+    return;
+  }
+
   const contactEmail = contactField.querySelector('.contact a[href^="/profile?mode=email&u"]');
   if (contactEmail) contactEmail.remove();
 
@@ -89,7 +104,6 @@ function customContactField_inProfile(customFields, selector) {
 }
 
 /**
- * Script executed after page loading
  * Script exécuté après le chargement de la page
  */
 document.addEventListener("DOMContentLoaded", () => {
