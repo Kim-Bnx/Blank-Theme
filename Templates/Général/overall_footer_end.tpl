@@ -89,11 +89,15 @@ $(document).ready(function() {
 <script src="https://cdn.jsdelivr.net/gh/caezd/wombat/dist/wombat.min.js"></script>
 <!-- Script qui permet d'initialiser le plugin -->
 <script>
-(function() {
-	new Wombat({
-        allowGuests: true
+  new Wombat({
+      afterLoad: function(aside, overlay) {
+  	/* Personnalisation des champs de contact du profil */
+          try { customContactField_inProfile(contactFields_list, contactFields_inProfile + " a"); }
+          catch { console.log("%c ⚠️ Erreur profils Wombat : Il manque le script de personnalisation des champs de contact", blankError)};
+
+          /* D'autres scripts peuvent être ajoutés en plus de celui là !*/
+      }
   });
-})();
 </script>
   
 

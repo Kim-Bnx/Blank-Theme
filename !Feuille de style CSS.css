@@ -1814,18 +1814,10 @@ blockquote cite a {
 .profile_infos {
 }
 
-.profile_contact form {
+.profile_contact {
   display: flex;
-}
-
-.profile_contact form > div {
-  margin-left: 5px;
-}
-
-/* Suppression des cases vides de contact qui affichent " - " 
- * nth-child(n+4) supprime toutes les cases après la quatrième */
-.profile_contact form div:nth-child(n + 4) {
-  display: none;
+  gap: 5px;
+  float: right;
 }
 
 .profile_content {

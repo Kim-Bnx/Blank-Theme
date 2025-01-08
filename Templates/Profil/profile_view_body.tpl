@@ -17,14 +17,12 @@
         <!-- Profile info -->
         <div class="profile_infos">
 
-            <div class="profile_contact right">
-                <!-- Contact image link -->
-                <form action="{S_PROFILE_ACTION}" method="post" name="post">
-                    <!-- BEGIN contact_field -->
-                    <div id="field_id{contact_field.ID}">{contact_field.CONTENT}</div>
-                    <!-- END contact_field -->
-                </form>
-            </div>
+            <!-- Contact image link -->
+            <form action="{S_PROFILE_ACTION}" method="post" name="post" class="profile_contact">
+                <!-- BEGIN contact_field -->
+                <div id="field_id{contact_field.ID}">{contact_field.CONTENT}</div>
+                <!-- END contact_field -->
+            </form>
 
             <!-- Rank-->
             <strong>{POSTER_RANK}</strong><br />

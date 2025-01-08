@@ -175,8 +175,7 @@
             <br />
 
             <!-- Lien de contact -->
-            <div class="profil_contact">
-                {postrow.displayed.PROFILE_IMG} &nbsp; <!-- Profil -->
+            <div class="post_contact">
                 {postrow.displayed.PM_IMG} &nbsp; <!-- MP -->
                 <!-- Autre contact-->
                 <!-- BEGIN contact_field -->
