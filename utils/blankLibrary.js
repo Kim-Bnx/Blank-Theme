@@ -1,1 +1,1 @@
-const blankError = "color: white; background: #4B57C5; border-radius: 5px ";
+const blankError = "background-color: #5566ff42; padding: 5px; border-radius: 5px";

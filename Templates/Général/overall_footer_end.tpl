@@ -158,6 +158,7 @@ $(document).ready(function() {
 })();
 </script>
 
+<script src="https://cdn.jsdelivr.net/gh/Kim-Bnx/Blank-Theme@main/utils/blankLibrary.js"></script>
 
 </body>
 </html>
