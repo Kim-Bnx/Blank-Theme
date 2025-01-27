@@ -270,7 +270,7 @@
 
 </head>
 
-<body id="phpbb">
+<body id="blanktheme">
 
     <!-- Structure du forum -->
     <div class="main_forum">
