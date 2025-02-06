@@ -1585,8 +1585,6 @@ a.fa-mention {
 }
 
 /* RECOMPENSES --- */
-.notif_ward{display: none;}/* Ne pas retirer */
-
 /* Conteneur des récompenses */
 #list_awards {
   display: flex;

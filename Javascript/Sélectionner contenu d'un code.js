@@ -15,7 +15,7 @@ $.getScript('https://cdn.jsdelivr.net/clipboard.js/1.5.16/clipboard.min.js', fun
   $(function() {
     $('code').closest('.codebox').attr('id','codeBox');
     
-    var a = $('.codebox dt').not('.spoiler > dt, .hidecode > dt'),
+    var a = $('.codebox:not(.spoiler, .hidecode) dd'),
         i = 0,
         j = a.length;
  
@@ -23,7 +23,7 @@ $.getScript('https://cdn.jsdelivr.net/clipboard.js/1.5.16/clipboard.min.js', fun
       $('head').append('<style type="text/css">.fae_copy-code{float:right;cursor:pointer;}.fae_copy-code:hover{text-decoration:underline}</style>');
  
       for (; i < j; i++) {
-        a[i].insertAdjacentHTML('beforeend', '<div class="copyCode">' + fae_copyCode.copy + '</div>');
+        a[i].insertAdjacentHTML('afterbegin', '<div class="copyCode">' + fae_copyCode.copy + '</div>');
       }
  
       new Clipboard('.copyCode',{
