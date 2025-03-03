@@ -197,19 +197,6 @@
 	button, select, input{font-family: var(--font);cursor: pointer;}
 	input:is([type="text"], [type="passeword"]){cursor: text;}
 
-	/* STRUCTURE DE LA TOOLBAR */ 
-	#fa_right #fa_menu ul,
-	#fa_right.notification #fa_menu ul,
-	#fa_right #fa_notifications #notif_unread {display: none}
-	#notif_list hr {display: none}
-	#fa_toolbar #live_notif .fa_notification .content {display: inline-block;}
-	#fa_right.welcome #fa_menulist {display: block;}
-	#fa_right.notification #notif_list {display: flex;}
-	#fa_toolbar #fa_right #fa_notifications.unread #notif_unread {display: inline;}
-	#fa_usermenu table {width: 100%;}
-	#fa_usermenu table tr {display: flex;justify-content: center;}
-	.fa_fix {position: fixed !important; z-index: 999;;top: 0; right: 0;}
-
 	/* STRUCTURE DE LA PAGE DE CONNEXION */
 	.fld_connexion dl {display: grid;rid-row-gap: 15px; grid-template-columns: 150px auto;}
 	.fld_connexion dl:nth-of-type(2) dd:last-of-type {grid-column: 1 / span 2;}
@@ -271,6 +258,73 @@
 </head>
 
 <body id="phpbb">
+
+	<!-- NOTIFFI : https://blankthemerpg.forumactif.com/t203-notiffi -->  
+	<!-- BEGIN switch_user_logged_in -->
+	<!-- Bouton pour ouvrir le panneau des notifications -->
+	<div id="notiffi_button">
+		<span class="ntf_button-text">Notifications</span>
+		<template class="unread_count" type="template/potion" data-name="unread_notifs">[count]</template>
+	</div>
+	
+	<!-- Panneau des notifications -->
+	<div id="notiffi_panel">
+		<!-- Conteneur des notifications -->
+		<template class="all_notifications" type="template/potion" data-name="all_notifs">
+			
+			<!-- Panneau si vide de notification -->
+			[isEmpty]
+				<div class="no_notification">[text]</div>
+			[/isEmpty]
+			
+			<!-- Notification -->
+			[notifs]
+			<div class="notification [type] [read]" data-notif-id="[id]">
+				<div class="notif_details">
+				<div class="notif_avatar">[avatar]</div>
+				<div class="notif_icon">[icon]</div>
+				</div>
+				<div class="notif_content">
+					<div class="notif_text">[text]</div>
+					<div class="notif_time">[time]</div>
+				</div>
+				<button @click="deleteNotif" class="notif_close"><i class="bi bi-x"></i></button>
+			</div>
+			[/notifs]
+			
+		</template>
+		<!-- Fin du conteneur des notifications -->
+		
+		<!-- Conteneur des actions -->
+		<div class="notiffi_manage">
+			<!-- Lien vers la page de gestion des notifications dans le profil --> 
+			<a class="notiffi_see_all" href="/profile?mode=editprofile&page_profil=notifications">Voir toutes les notifications</a>
+			
+			<!-- Bouton d'action -->
+			<div class="notiffi_actions">
+				<button id="notiffi_mark_as_read">Marquer comme lu</button>
+				<button id="notiffi_delete_all">Tout supprimer</button>
+			</div>
+		</div>
+		<!-- Fin du couteur des actions -->
+	</div>
+	<!-- Fin du panneau des notifications -->
+	
+	<!-- Popup d'alerte d'une nouvelle notification -->
+	<template type="template/potion" data-name="alert_notif">
+		<div class="notification alert [alert.type]">
+				<div class="notif_details">
+				<div class="notif_avatar">[alert.avatar]</div>
+				</div>
+				<div class="notif_content">
+					<div class="notif_text">[alert.text]</div>
+				</div>
+				<button id="alert_dismiss" class="alert_close"><i class="bi bi-x"></i></button>
+			</div>
+	</template>
+	<!-- Fin du popup -->
+	<!-- END switch_user_logged_in -->
+	<!-- NOTIFFIN --> 
 
     <!-- Structure du forum -->
     <div class="main_forum">

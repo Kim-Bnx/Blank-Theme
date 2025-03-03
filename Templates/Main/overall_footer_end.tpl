@@ -85,7 +85,7 @@ $(document).ready(function() {
   
   
   
-<!-- WOMBAT plugin -->
+<!-- WOMBAT plugin : https://blankthemerpg.forumactif.com/t74-wombat -->
 <script src="https://cdn.jsdelivr.net/gh/caezd/wombat/dist/wombat.min.js"></script>
 <!-- Script qui permet d'initialiser le plugin -->
 <script>
@@ -101,7 +101,7 @@ $(document).ready(function() {
 </script>
   
 
-<!-- SWITCHEROO plugins -->
+<!-- SWITCHEROO plugin : https://blankthemerpg.forumactif.com/t36-switcheroo -->
 <!-- Monomer.js et Switcheroo.js -->
 <script src="https://cdn.jsdelivr.net/gh/caezd/switcheroo@1.1-beta/monomer.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/caezd/switcheroo@1.1-beta/switcheroo.js"></script>
@@ -123,7 +123,7 @@ $(document).ready(function() {
   
 </script>
 
-<!-- EDISON plugin -->
+<!-- EDISON plugin : https://blankthemerpg.forumactif.com/t77-edison -->
 <script>
 (function () {
     const html = document.documentElement;
@@ -157,6 +157,11 @@ $(document).ready(function() {
 
 })();
 </script>
+
+<!-- NOTIFFIN plugin : https://blankthemerpg.forumactif.com/t203-notiffi -->
+<script src="https://cdn.jsdelivr.net/gh/Kim-Bnx/Notiffi@main/notiffi/notiffi.min.js"></script>
+<!-- Initialisation de Notiffi -->
+script>Notiffi.init()</script>
 
 </body>
 </html>

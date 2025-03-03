@@ -64,7 +64,8 @@
 
 /* S'applique à TOUS les éléments du forum*/
 * {
-  box-sizing: border-box; /*évite que les éléments soient agrandis par le padding*/
+  box-sizing: border-box;
+  /*évite que les éléments soient agrandis par le padding*/
   /* SCROLLBAR CUSTOM POUR MOZILLA */
   scrollbar-color: var(--contrastLight);
   scrollbar-width: thin;
@@ -84,16 +85,13 @@ body {
 
 /* SCROLLBAR --- */
 /* Scrollbar entière */
-::-webkit-scrollbar {
-}
+::-webkit-scrollbar {}
 
 /* Rail */
-::-webkit-scrollbar-track {
-}
+::-webkit-scrollbar-track {}
 
 /* Poignée */
-::-webkit-scrollbar-thumb {
-}
+::-webkit-scrollbar-thumb {}
 
 /* STRUCTURE PRINCIPALE ---*/
 .main_forum {
@@ -157,7 +155,7 @@ body {
 }
 
 /* Lien de renvoi haut/bas */
-.sidebar_bottom > a {
+.sidebar_bottom>a {
   padding: 5px 8px;
   background: var(--neutralDark);
   border-radius: 5px;
@@ -170,11 +168,13 @@ body {
     display: none;
   }
 }
+
 @media (prefers-color-scheme: light) {
   .color-scheme-toggle .light {
     display: none;
   }
 }
+
 .color-scheme-toggle,
 [data-color-scheme="light"] .color-scheme-toggle .dark,
 [data-color-scheme="dark"] .color-scheme-toggle .light {
@@ -260,19 +260,20 @@ h3,
 /*** BOUTONS D'INTERACTION ET BARRE DE TEXTE ***/
 
 /* CHAMPS DE TEXTE ---*/
-input:is([type="text"],[type="password"], .inputbox), textarea {
+input:is([type="text"], [type="password"], .inputbox),
+textarea {
   border: none;
   border-radius: 5px;
   background: var(--neutralDark);
   font-size: var(--normal-size);
-  color: var(--contrastLight)!important;
+  color: var(--contrastLight) !important;
   padding: 8px 10px;
 }
 
 /* Au focus */
-:focus:is(input:is([type="text"],[type="password"], .inputbox), textarea) {
-    outline: none;
-    border: 1px solid var(--accentClr);
+:focus:is(input:is([type="text"], [type="password"], .inputbox), textarea) {
+  outline: none;
+  border: 1px solid var(--accentClr);
 }
 
 /* BOUTONS D'INTERACTION --- *
@@ -289,19 +290,19 @@ input:is([type="submit"], [type="button"], [type="hidden"], [type="reset"]),
 }
 
 /* Au survol */
-:hover:is(input:is([type="submit"], [type="button"], [type="hidden"], [type="reset"]), .button){
+:hover:is(input:is([type="submit"], [type="button"], [type="hidden"], [type="reset"]), .button) {
   color: var(--accentClr);
 }
 
 /* Boutons désactivés */
 :disabled:is(input:is([type="submit"], [type="button"], [type="hidden"], [type="reset"]), .button) {
-    opacity: .5;
-    filter: saturate(1);
-    cursor: not-allowed;
+  opacity: .5;
+  filter: saturate(1);
+  cursor: not-allowed;
 }
 
 :disabled:hover:is(input:is([type="submit"], [type="button"], [type="hidden"], [type="reset"]), .button) {
-    color: inherit;
+  color: inherit;
 }
 
 .submit-buttons {
@@ -322,7 +323,9 @@ select {
   color: var(--textColor);
 }
 
-select:focus-visible { outline: 1px solid var(--accentClr);}
+select:focus-visible {
+  outline: 1px solid var(--accentClr);
+}
 
 
 /*** ------------------------------- ***/
@@ -376,7 +379,9 @@ a.sceditor-button {
   min-height: 250px !important;
 }
 
-.sceditor-container textarea:focus { outline: none }
+.sceditor-container textarea:focus {
+  outline: none
+}
 
 /*Boîte Smiley*/
 html#sceditor_smilies,
@@ -389,8 +394,7 @@ body#sce_smilies_body {
 /*** ------------------------------- ***/
 /*** PAGINATIONS -------------------- ***/
 
-.pagination {
-}
+.pagination {}
 
 /*lien unique vers les pages numérotées*/
 .pagination span a {
@@ -467,9 +471,11 @@ summary {
 .right {
   float: right;
 }
+
 .left {
   float: left;
 }
+
 .clear {
   clear: both;
 }
@@ -507,212 +513,268 @@ a.specials_links:empty {
  ****** ENTETE DU FORUM --------------------------------------------------------------
  ****** Tous les éléments qui s'affichent en tête de toutes les pages ---------------- ******/
 
-/*** ------------------------------- ***/
-/*** TOOLBAR ----------------------- ***/
-
-/* Toute la toolbar */
+/* Notiffi CSS */
+/* Cache la toolbar défaut */
 #fa_toolbar {
-  font-size: var(--little-size);
-  font-family: var(--font);
+  display: none
 }
 
-/* Supression de la barre de recherche, des boutons sociaux et des flèches */
-#fa_search,
-#fa_share,
-#fa_hide {
-  display: none;
-}
-
-/* Logo Forumactif : 
- * ATTENTION, il est techniquement interdit de supprimer de logo de FA. 
- * Techniquement. Faites-en donc ce que vous voulez. */
-#fa_left {
-  display: none;
-}
-
-/* Conteneur du lien de bienvenue et notification */
-#fa_right {
-  position: relative;
-  margin-top: 5px;
-  margin-right: 5px;
+/* Bouton de notification */
+#notiffi_button {
+  cursor: pointer;
   background: var(--neutral);
-  border-radius: 5px;
-  height: 40px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
-  padding: 5px;
+  gap: 10px;
+  padding: 5px 10px;
+  position: fixed;
+  z-index: 99;
+  top: 10px;
+  right: 10px;
+  height: 35px;
 }
 
-/* LIENS DE LA TOOLBAR ---*/
-
-/* Tous les liens : connexion, s'enregistrer, bienvenue (pseudo), notification*/
-#fa_welcome,
-#fa_notifications,
-#fa_right a.rightHeaderLink[href*="/login"],
-#fa_right a.rightHeaderLink[href*="/register"] {
-  cursor: pointer;
-  padding: 4px 6px;
-}
-
-/* Lien "Connexion" */
-#fa_right a.rightHeaderLink[href*="/login"] {
-}
-
-/* Lien "S'enregistrer" */
-#fa_right a.rightHeaderLink[href*="/register"] {
-}
-
-/* Lien "Bienvenue (pseudo)" */
-#fa_welcome {
-}
-
-/* Lien "notification"*/
-#fa_notifications {
-}
-
-/* liens "bienvenue" et "notification" [AU CLIC] */
-#fa_right.welcome #fa_menu #fa_welcome,
-#fa_toolbar > #fa_right.notification > #fa_notifications {
-  background: var(--neutralDark);
-  border-radius: 5px;
-}
-
-/* MENU bienvenue [ET] liste des notifications */
-ul#fa_menulist,
-ul#notif_list {
-  border: var(--border);
-  background: var(--neutral);
-  border-radius: 5px;
-  right: 0;
-  left: initial !important;
-  top: 45px;
-  z-index: 999;
-  position: absolute;
-  display: none;
-}
-
-/* MENU BIENVENUE ---*/
-/* conteneur */
-#fa_menulist {
-  width: 350px;
-}
-
-/* Colonne gauche du menu de bienvenue avec avatar */
-#fa_usermenu {
-  float: left;
-  padding: 15px;
-  text-align: center;
-  min-height: 250px;
-}
-
-/* Image de l'avatar dans le menu de bienvenue */
-#fa_usermenu img {
-  object-fit: cover;
-  object-position: center;
-  width: 120px;
-  height: 120px;
-  display: block;
-  margin-bottom: 10px;
-}
-
-/* Liens du menu de bienvenue */
-#fa_menulist li {
-  margin: 10px 0;
-}
-
-/* Séparateur du menu de bienvenue */
-#fa_toolbar #fa_right .fa_separator {
-  margin: 5px 0 5px 150px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-/* LISTE DES NOTIFICATIONS ---*/
-/* conteneur*/
-#notif_list {
-  width: 380px;
-  padding: 5px;
-  flex-direction: column-reverse;
-}
-
-/* Ligne d'une notification */
-#notif_list li {
+/* Conteneur du nombre de notification non lues REMPLI */
+.unread_count {
   position: relative;
-  padding: 5px;
-  padding-right: 20px;
-  border-top: 1px solid var(--neutralDark);
-}
-
-#notif_list li:nth-last-child(2) {
-  border-top: none;
-}
-
-/* Notifications non lues */
-#notif_list .unread {
-  background: var(--neutralDark);
-  font-weight: bold;
-}
-
-/* Bouton suppresion d'une notification */
-#fa_toolbar #fa_right #notif_list li a.delete {
-  position: absolute;
-  top: 8px;
-  right: 5px;
-}
-
-/* Croix du bouton suppression */
-#fa_toolbar #fa_right #notif_list li a.delete:before {
-  content: "\f12a";
-  display: inline-block;
-  font-family: "Ionicons";
-  font-style: normal;
-  font-weight: normal;
-  color: #ff4f42;
-}
-
-/* Lien "voir toutes les notifications" */
-#notif_list .see_all {
-  background: var(--neutralDark);
+  background: var(--neutralDarker);
   border-radius: 5px;
-  margin-top: 5px;
-  text-align: center;
-  order: -1;
-}
-
-/* POPUP NOTIFICATION ---*/
-
-/* Placement du pop-up de nouvelle notification */
-#fa_toolbar #live_notif {
-  position: absolute;
-  top: 45px;
-  right: 0px !important;
-}
-
-/* Stylisation du pop-up */
-#fa_toolbar #live_notif .fa_notification {
-  border-radius: 5px;
-  background: rgba(0, 0, 0, 0.2);
-  padding: 5px;
-}
-
-/* AVATAR TOOLBAR ---*/
-/* Conteneur de l'avatar toolbar */
-.fa_avatar {
-  position: absolute;
-  top: -1px;
-  left: -45px;
-  width: 40px;
-  height: 40px;
+  width: 25px;
   display: grid;
   place-items: center;
+  font-weight: 600;
+  font-size: 12px;
+  scale: 1;
+  opacity: 1;
+  aspect-ratio: 1;
+  transition: scale ease-out .2s;
 }
 
-/* Image de l'avatar */
-.fa_avatar img {
-  object-fit: cover;
-  object-position: center;
-  width: 40px;
-  height: 40px;
+/* Conteneur du nombre de notification non lues VIDE */
+.unread_count:empty {
+  position: absolute;
+  scale: 0;
+  opacity: 0;
+  transition: all ease-out .2s;
+}
+
+
+
+/* Menu des notifications FERMÉ */
+#notiffi_panel {
+  --menuSize: 500px;
+  /* taille du Menu */
+  width: var(--menuSize);
+  position: fixed;
+  z-index: 98;
+  top: 0;
+  height: 100%;
+  right: calc(var(--menuSize) * -1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: start;
+  background: var(--neutral);
+  border-left: 1px solid var(--neutralDark);
+  padding: 15px;
+  padding-top: 50px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease .7s;
+}
+
+/* Menu des notifications OUVERT */
+#notiffi_panel.open {
+  right: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Conteneur des notifications */
+.all_notifications {
+  width: 100%;
+  overflow: auto;
+  max-height: 100%;
+  background: var(--neutralDark);
+  padding: 10px;
+  border-radius: 10px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  /* Désactive la barre de défilement dans le contenenur */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Conteneur des notifications VIDE */
+.no_notification {
+  text-align: center;
+  font-style: italic;
+}
+
+/* Conteneur du footer du menu
+  (voir toutes les notifications, marquer comme lu, tout supprimer) */
+.notiffi_manage {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Conteneur des bouton d'action des notifications */
+.notiffi_actions {
+  display: grid;
+  justify-items: end;
+  gap: 5px;
+
+  /* Bouton d'action */
+  button {
+    padding: 2px 10px;
+    background: var(--neutralDark);
+    border-radius: 5px;
+
+    &:hover {
+      color: var(--accentClr)
+    }
+  }
+}
+
+/* Apparence d'une notification */
+.notification {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 5px;
+  padding: 10px;
   border-radius: 5px;
+  border: 1px solid transparent;
+  transition: border .2s;
+  animation: notiffiFadeIn 0.3s ease-in-out;
+
+  /* Notification au survol */
+  &:hover {
+    border-color: var(--neutralDarker);
+  }
+}
+
+/* Animation d'apparition des notifications */
+@keyframes notiffiFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apparence d'une notification NON LUE */
+.notification.unread {
+  background-color: var(--neutral);
+}
+
+/* Conteneur des détails de la notification (avatar, icone) */
+.notif_details {
+  position: relative;
+  align-self: start;
+}
+
+/* Conteneur de l'avatar */
+.notif_avatar {
+  background: var(--neutral);
+  height: 35px;
+  border-radius: 5px;
+  aspect-ratio: 1;
+
+  /* Image de l'avatar */
+  & img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+  }
+}
+
+/* Icone du type de la notification */
+.notif_icon {
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  background: var(--neutral);
+  width: 18px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  font-size: 10px;
+}
+
+/* Icone lorsque la notification est non lue */
+.notification.unread .notif_icon {
+  color: var(--neutral);
+  background: var(--accentClr);
+}
+
+/* Conteneur du texte et la date de la notification */
+.notif_content {
+  width: 100%;
+}
+
+/* Date de la notification */
+.notif_time {
+  font-size: var(--little-size);
+  opacity: .8;
+  margin-top: 5px;
+}
+
+/* Bouton de suppression de la notification */
+.notif_close {
+  background: transparent;
+  align-self: start;
+  font-size: 18px;
+  line-height: 0;
+  opacity: 0;
+  border-radius: 100px;
+  aspect-ratio: 1;
+  padding: 2px;
+  transition: all .3s;
+}
+
+/* Affiche le bouton de suppression au survol de la notification */
+.notification:hover .notif_close {
+  opacity: 1
+}
+
+/* Alerte d'une notification */
+.notification.alert {
+  position: fixed;
+  width: 400px;
+  align-items: center;
+  z-index: 99;
+  bottom: 10px;
+  right: 10px;
+  background: var(--neutralDarker);
+  transform: translateY(100%);
+  opacity: 0;
+  filter: blur(5px);
+  transition: all .5s ease-in-out;
+}
+
+.notification.alert.up {
+  transform: translateY(0%);
+  opacity: 1;
+  filter: blur(0);
+  transition: all .5s ease-in-out;
+}
+
+.alert_close {
+  background: var(--neutral);
+  font-size: 18px;
+  line-height: 0;
+  border-radius: 100px;
+  aspect-ratio: 1;
+  padding: 2px;
 }
 
 /*** ------------------------------- ***/
@@ -1003,10 +1065,16 @@ ul#notif_list {
 }
 
 /* Suppression des liens peu utilisés*/
-.navbar a[href^="/faq"],/*faq*/
-.navbar a[href^="/calendar"],/*calendrier*/
-.navbar a[href^="/groups"],/*groupes*/
-.navbar a[href^="/images"]/*Dernières images*/ {
+.navbar a[href^="/faq"],
+/*faq*/
+.navbar a[href^="/calendar"],
+/*calendrier*/
+.navbar a[href^="/groups"],
+/*groupes*/
+.navbar a[href^="/images"]
+
+/*Dernières images*/
+  {
   display: none;
 }
 
@@ -1041,8 +1109,7 @@ a.mainmenu img {
  ****** PAGE PRINCIPALE, INDEX ------------------------------------------------------- ******/
 
 /* PAGE D'ACCUEIL ---*/
-.introduction {
-}
+.introduction {}
 
 /*** ------------------------------- ***/
 /*** CATEGORIES -------------------- ***/
@@ -1132,7 +1199,8 @@ a.forumtitle {
 
 /* liens des sous forums */
 #subforum {
-  font-size: 0; /*permet de retirer la virgule*/
+  font-size: 0;
+  /*permet de retirer la virgule*/
 }
 
 #subforum a {
@@ -1159,7 +1227,7 @@ a.forumtitle {
   margin-bottom: 10px;
 }
 
-.qeel > div {
+.qeel>div {
   background: var(--neutral);
   padding: 15px 10px;
 }
@@ -1202,12 +1270,10 @@ a.groups:last-child {
   margin-bottom: 0;
 }
 
-.qeel-middle {
-}
+.qeel-middle {}
 
 /*X connectés :: 1 membre, 0 invisible, 0 invité*/
-#total_users {
-}
+#total_users {}
 
 /*Connectés en ce moment*/
 #online_users {
@@ -1406,7 +1472,7 @@ a.groups:last-child {
   display: none;
 }
 
-.expanded ~ .sort-form {
+.expanded~.sort-form {
   display: block;
 }
 
@@ -1512,8 +1578,11 @@ ul.profile-icons li {
   padding: 2px 4px;
   border-radius: 5px;
 }
+
 /* Cache les boutons pour les invités */
-.profile-icons a[href=""] { display:none }
+.profile-icons a[href=""] {
+  display: none
+}
 
 /*hover d'un bouton d'édition*/
 ul.profile-icons li:hover {
@@ -1547,8 +1616,7 @@ ul.profile-icons li:hover {
 }
 
 /* Texte "j'aime" */
-button.rep-button .like_text {
-}
+button.rep-button .like_text {}
 
 /*compteur de like*/
 button.rep-button .rep-nb {
@@ -1573,7 +1641,9 @@ a.fa-mention {
 }
 
 /* Mention "en ligne" */
-.presence {display: none}
+.presence {
+  display: none
+}
 
 .presence.online {
   display: inline-block;
@@ -1707,8 +1777,7 @@ a.fa-mention {
 /*** TEXTES, BALISES, ETC ---------- ***/
 
 /* Lien-tag des utilisateurs */
-.mentiontag {
-}
+.mentiontag {}
 
 /* BALISES DE MESSAGE : spoiler, code, quote... */
 
@@ -1756,8 +1825,7 @@ div.cont_code {
 }
 
 /* Spoiler */
-.hidebox.spoiler {
-}
+.hidebox.spoiler {}
 
 /* spoiler fermé */
 .spoiler_content {
@@ -1811,8 +1879,7 @@ blockquote cite a {
   width: 200px;
 }
 
-.profile_infos {
-}
+.profile_infos {}
 
 .profile_contact {
   display: flex;
@@ -1833,7 +1900,7 @@ blockquote cite a {
 }
 
 .profile_field label,
-.profile_field label > span {
+.profile_field label>span {
   font-weight: 600;
   color: var(--link);
 }
@@ -1937,11 +2004,9 @@ blockquote cite a {
 /*** PROFILS SIMPLIFIÉS DES TAGS ---- ***/
 
 /* Supression de la flèche peu esthétique*/
-.tooltipster-arrow {
-}
+.tooltipster-arrow {}
 
-.tooltipster-default {
-}
+.tooltipster-default {}
 
 .preview_content {
   display: flex;
@@ -2000,8 +2065,7 @@ blockquote cite a {
   border-radius: 5px;
 }
 
-.userlist_avatar {
-}
+.userlist_avatar {}
 
 .userlist_avatar img {
   width: 75px;
@@ -2010,18 +2074,15 @@ blockquote cite a {
   object-position: center;
 }
 
-.userlist_details {
-}
+.userlist_details {}
 
 .userlist_pseudo {
   font-size: var(--medium-size);
 }
 
-.userlist_infos {
-}
+.userlist_infos {}
 
-.userlist_contact {
-}
+.userlist_contact {}
 
 /****** ------------------------------------------------------------------------------ 
  ****** MESSAGES PRIVES -------------------------------------------------------------- ******/
@@ -2156,7 +2217,7 @@ div#tabs li:nth-child(5) {
 }
 
 /* EDITER SIGNATURE ---*/
-#parent_editor_simple > #smiley-box {
+#parent_editor_simple>#smiley-box {
   float: left;
   /* float: right; -- pour smileys à droite */
 }
@@ -2166,11 +2227,11 @@ div#tabs li:nth-child(5) {
   /* margin-right: XXXpx -- pour smileys à droite */
 }
 
-#parent_editor_simple #message-box > br {
+#parent_editor_simple #message-box>br {
   display: none;
 }
 
-#parent_editor_simple #message-box > #textarea_content {
+#parent_editor_simple #message-box>#textarea_content {
   width: 100% !important;
 }
 
@@ -2193,7 +2254,7 @@ div#tabs li:nth-child(5) {
   background: var(--neutral);
 }
 
-.post_search > div {
+.post_search>div {
   padding: 10px;
 }
 
@@ -2211,7 +2272,7 @@ div#tabs li:nth-child(5) {
 
 /* Centrer les pages de connexion */
 form[name="form_login"],
-form[name="form_login"] ~ .panel {
+form[name="form_login"]~.panel {
   text-align: center;
 }
 
