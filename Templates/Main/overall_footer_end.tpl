@@ -93,7 +93,7 @@ $(document).ready(function() {
       afterLoad: function(aside, overlay) {
   	/* Personnalisation des champs de contact du profil */
           try { customContactField_inProfile(contactFields_list, contactFields_inProfile + " a"); }
-          catch { console.log("%c ⚠️ Erreur profils Wombat : Il manque le script de personnalisation des champs de contact", blankError)};
+          catch { console.log("⚠️ Erreur profils Wombat : Il manque le script de personnalisation des champs de contact")};
 
           /* D'autres scripts peuvent être ajoutés en plus de celui là !*/
       }
@@ -157,8 +157,6 @@ $(document).ready(function() {
 
 })();
 </script>
-
-<script src="https://cdn.jsdelivr.net/gh/Kim-Bnx/Blank-Theme@main/utils/blankLibrary.js"></script>
 
 </body>
 </html>
