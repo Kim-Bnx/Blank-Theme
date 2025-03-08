@@ -161,7 +161,7 @@ $(document).ready(function() {
 <!-- NOTIFFIN plugin : https://blankthemerpg.forumactif.com/t203-notiffi -->
 <script src="https://cdn.jsdelivr.net/gh/Kim-Bnx/Notiffi@main/notiffi/notiffi.min.js"></script>
 <!-- Initialisation de Notiffi -->
-script>Notiffi.init()</script>
+<script>Notiffi.init()</script>
 
 </body>
 </html>
