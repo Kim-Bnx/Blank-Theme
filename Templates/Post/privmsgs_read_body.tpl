@@ -66,13 +66,12 @@
                 {AVATAR_FROM}<br /><br />
 
                 <!-- pseudo -->
-                {MESSAGE_FROM}
-
-                <!-- Lien-image de contact -->
-                <!-- BEGIN switch_user_contact -->
-                <br />
-                {PROFILE_IMG} {WWW_IMG}
-                <!-- END switch_user_contact -->
+                <div class="message_from">
+                    {MESSAGE_FROM}
+                    <!-- BEGIN switch_user_contact -->
+                    {PROFILE_IMG}
+                    <!-- END switch_user_contact -->
+              </div>
             </div>
 
             <!-- contenu du MP -->
@@ -147,4 +146,17 @@ if('{QUOTE_PM_IMG}' && quoteBtn) { quoteBtn.href = '/privmsg?mode=quote&p=' + po
 
 const editBtn = document.querySelector('a[href="/privmsg?mode=edit"]');
 if('{EDIT_PM_IMG}' && editBtn) { editBtn.href = '/privmsg?mode=edit&p=' + post } else {editBtn.remove();}
+
+const container = document.querySelector(".message_from");
+if (!container) {
+  console.alert('[Affichage MP] Le pseudo et l\'image de renvoit vers le profil ne sont pas contenu dans le selecteur .message_from');
+}
+const link = container?.querySelector("a");
+const span = container?.querySelector("span");
+
+if (link && span) {
+    link.innerHTML = span.outerHTML; 
+    span.remove(); 
+    link.querySelector("img")?.remove();
+}
 </script>
