@@ -279,7 +279,8 @@ textarea {
 /* BOUTONS D'INTERACTION --- *
  * Envoyer, prévisualiser, sauvegarder, aller,... */
 input:is([type="submit"], [type="button"], [type="hidden"], [type="reset"]),
-.button {
+.button,
+button {
   font-size: var(--normal-size);
   padding: 10px 15px !important;
   border-radius: 5px;

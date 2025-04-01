@@ -54,8 +54,7 @@
     <!-- Affichage d'un message -->
     <!-- BEGIN postrow -->
     <!-- BEGIN displayed -->
-    <div id="{postrow.displayed.U_POST_ID}"></div>
-    <div class="post post_row post--{postrow.displayed.U_POST_ID}" id="p{postrow.displayed.U_POST_ID}">
+    <div class="post post_row post--{postrow.displayed.U_POST_ID}" id="{postrow.displayed.U_POST_ID}">
 
         <!-- Conteneur informations du message-->
         <div class="post_details">
