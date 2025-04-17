@@ -257,7 +257,7 @@
 
 </head>
 
-<body id="phpbb">
+<body id="blanktheme">
 
 	<!-- NOTIFFI : https://blankthemerpg.forumactif.com/t203-notiffi -->  
 	<!-- BEGIN switch_user_logged_in -->
