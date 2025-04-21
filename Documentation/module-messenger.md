@@ -18,7 +18,7 @@ Dans votre template `overall_footer_end`, trouvez le conteneur `<div class="side
 <a id="FAM-button-open" title="Forumactif Messenger"><i class="bi bi-chat-fill"></i></a>
 ```
 
-> ![NOTE]
+> [!NOTE]
 > Le code `<i class="bi bi-chat-fill"></i>` est une icone de [la bibliothèque Bootstrap](https://icons.getbootstrap.com/) installée par défaut sur le Blank Theme. Vous pouvez naturellement remplacer cet icone par ce que vous voulez.
 
 ### Installation du Javascript
