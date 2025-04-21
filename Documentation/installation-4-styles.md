@@ -2,7 +2,7 @@
 
 Dans votre panneau d'administration, rendez-vous dans `Affichage » Images et Couleurs » Couleurs & CSS` et collez le contenu du fichier [styles.css](CSS/styles.css) dans la zone de texte. 
 
-> [!WARNING] Rappel
+> [!WARNING]
 > N'oubliez pas de désactiver le CSS de base de Forumactif en réglant l'option présente en dessous de la zone de texte.
 > - *Forcer le CSS de base du forum :* **Non**
 

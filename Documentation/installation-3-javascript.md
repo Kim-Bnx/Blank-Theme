@@ -106,7 +106,7 @@ const contactFields_list = [
 ### Personnalisation des champs de profil
 Le tutoriel d'origine de ce script est disponible sur [le forum de support](https://blankthemerpg.forumactif.com/t188-). 
 
-> [!WARNING] Attention
+> [!WARNING]
 > Ce script est voué à évoluer, surveillez les mises à jour du Blank Theme à ce sujet. 
 
 Le fonctionnement principal de ce script est d'attribuer à chacun de vos champs de profil une classe personnalisée, par exemple, pour les champs par défaut, `field-date-dinscription` sera la classe attribuée au champ qui affiche la date d'inscription du membre. C'est la partie `date-dinscription` (sans le `field-` devant) qui sera importante pour la suite.

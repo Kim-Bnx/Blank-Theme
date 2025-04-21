@@ -132,5 +132,5 @@ Ainsi que toute la partie concernant le bouton de changement de thème :
 }
 ```
 
-> [!NOTE] Remarque
+> [!NOTE] 
 > Pensez à **vider le cache de votre forum** après le changement, en particulier si vous avez déjà utilisé le plugin, volontairement ou non.
