@@ -5,7 +5,8 @@ Le [Forumactif Messenger](https://github.com/SethClydesdale/forumactif-messenger
 Le code adapté aux précédentes versions du Blank Theme est cependant toujours disponible à ce jour dans le dossier [Messenger](Messenger/).
 
 > [!NOTE]
-> Le [tutoriel d'installation d'origine du Messenger](https://blankthemerpg.forumactif.com/t76-messenger) est disponible sur le forum du Blank Theme, mais ce qui suit contient peu ou prou les mêmes informations.
+> Un [tutoriel d'installation du Messenger](https://blankthemerpg.forumactif.com/t76-messenger) est disponible sur le forum du Blank Theme, mais ce qui suit contient peu ou prou les mêmes informations.
+> La [documentation officielle (en anglais) du plugin Forumactif Messenger](https://github.com/SethClydesdale/forumactif-messenger/wiki) se trouve sur son repository Github. 
 
 ## Installation de Forumactif Messenger
 

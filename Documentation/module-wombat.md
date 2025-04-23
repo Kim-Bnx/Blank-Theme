@@ -4,6 +4,7 @@ Le plugin Wombat change le fonctionnement de l'affichage du profil pour que celu
 
 > [!TIP]
 > La [documentation du plugin Wombat](https://blankthemerpg.forumactif.com/t74-wombat) est disponible sur le forum de support du Blank Theme. 
+> Vous trouverez le code d'origine du plugin sur son [repository Github](https://github.com/caezd/Wombat).
 
 ## Désactiver le plugin
 

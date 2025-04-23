@@ -6,6 +6,10 @@ Dans votre panneau d'administration, rendez-vous dans `Affichage » Images et Co
 > N'oubliez pas de désactiver le CSS de base de Forumactif en réglant l'option présente en dessous de la zone de texte.
 > - *Forcer le CSS de base du forum :* **Non**
 
+## Le cas des blogs
+
+Si vous utilisez la fonctionnalité des Blogs sur votre forum, vous trouverez une portion de CSS supplémentaire dans le dossier [Blogs](../Blogs/), à ajouter simplement à la suite de votre CSS existant.
+
 ## Informations importantes à savoir
 
 - Le Blank Theme est une réécriture complète du thème ModernBB de Forumactif, et sa feuille de style est donc extrêmement dense. Aidez-vous des commentaires pour vous y retrouver ;

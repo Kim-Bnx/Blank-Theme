@@ -9,3 +9,7 @@ Pour cela, commencez par vous rendre dans le dossier [Templates](../Templates/) 
 Par exemple, le fichier `index_body.tpl` dans le répertoire `Main/` contient le code que vous devrez placer dans le template `Général » index_body`. 
 
 Une fois que vous avez remplacé le code, **cliquez sur le bouton Enregistrer**. Forumactif vous renvoie automatiquement vers la page listant tous les templates de la rubrique en cours de modification. Votre template modifié devrait désormais s'afficher en rouge, avec l'indication "En attente" dans la colonne de statut. **Cliquez sur l'icone en forme de coche ✓ pour le publier** et valider définitivement cette modification.
+
+## Le cas des blogs
+
+Si vous utilisez la fonctionnalité des Blogs sur votre forum, vous trouverez les deux templates correspondants dans le dossier [Blogs](../Blogs/). Assurez-vous d'avoir au préalable activé cette fonctionnalité dans `Modules » Blogs » Configuration`, option *Activer les blogs* : **Oui**.

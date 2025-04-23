@@ -21,11 +21,12 @@ En tant que version modifiée de ModernBB, le Blank Theme inclut certains module
 - [Personnalisation des champs de profil](https://blankthemerpg.forumactif.com/t188-) : Un script qui attribue un identifiant unique aux champs de profil dans les messages, et permet également de les déplacer
 - Avatar du dernier inscrit dans le bloc Qui Est En Ligne
 - Un bouton `@` dans l'en-tête des messages pour mentionner l'auteur du message
-- D'autres modifications plus discrètes ont étés mises en place pour simplifier certains des éléments de base de Forumactif. C'est le cas pour le système "J'aime", pour le bloc "Qui Est En Ligne", pour l'affichage des sondages, etc. 
+- D'autres modifications plus discrètes ont étés mises en place pour simplifier certains des éléments de base de Forumactif. C'est le cas pour le système "J'aime", pour le bloc "Qui Est En Ligne", pour l'affichage des sondages, l'affichage des blogs, etc. 
 
 ## Les modules optionnels 
 - [Forumactif Messenger](https://blankthemerpg.forumactif.com/t76-install-messenger) : Messagerie instantanée créée par Ange Tuteur pour Forumactif Edge. La complexité de ce module et difficulté de personnalisation ont mené à sa suppression du code de base du Blank Theme, mais si vous vous en sentez le courage, une version est toujours disponible dans les fichiers.
 - [Persona](https://blankthemerpg.forumactif.com/t178-) : Générateur de fiches automatique, actuellement en beta. Son installation est assez complexe pour les débutants, à utiliser à vos risques et périls !
+- Blogs forumactif : Les codes correspondants ont été placés dans un dossier à part
 
 ## Les modules supprimés de Forumactif
 Voici une liste *non-exhaustive* de ce qui a été supprimé du fonctionnement de base de Forumactif. Ces éléments peuvent généralement être rajoutés à l'aide de quelques lignes de code si vous en avez l'usage, mais leur mise en page n'a pas été prévue dans le Blank Theme.
@@ -36,7 +37,6 @@ Voici une liste *non-exhaustive* de ce qui a été supprimé du fonctionnement d
 - La citation multiple dans les messages
 - Les publications, le calendrier, les évènements, les images partagées récemment
 - Le type de forums "Petites Annonces"
-- Le type de forums "Blogs" (Ils ont été retirés à la version 3.2 du Blank Theme)
 - Le système d'amis et de commentaires dans le profil
 - Le système de remerciement et de réputation
 - La prévisualisation de thèmes Hitskin
