@@ -13,3 +13,59 @@ Une fois que vous avez remplacé le code, **cliquez sur le bouton Enregistrer**.
 ## Le cas des blogs
 
 Si vous utilisez la fonctionnalité des Blogs sur votre forum, vous trouverez les deux templates correspondants dans le dossier [Blogs](../Blogs/). Assurez-vous d'avoir au préalable activé cette fonctionnalité dans `Modules » Blogs » Configuration`, option *Activer les blogs* : **Oui**.
+
+
+# Comment fonctionnent les templates ?
+
+Forumactif construit les différentes pages d'un forum en utilisant les templates. Ce sont, en quelque sorte, des modèles à suivre pour générer le contenu du forum. 
+
+Chaque page d'un forum est construite à partir d'un ou de plusieurs templates. Si l'on prend la page d'accueil du forum, elle est en réalité construite à partir des templates `overall_header`, `index_body`, `index_box`, `overall_footer_begin` et `overall_footer_end`. 
+
+Cependant :
+
+- Tous les éléments du forum ne disposent pas nécessairement d'un template correspondant. Par exemple, la Chatbox ne dispose pas de template associé. 
+- Lorsque Forumactif assemble les templates, il peut insérer du code en plus. C'est notamment le cas de la publicité, ou des liens dans le pied de page.
+
+Les pièces maîtresses de ce système sont les **boucles** et les **variables**. 
+
+## Qu'est-ce qu'une boucle ?
+
+Si vous regardez les templates d'un peu plus près, vous avez probablement remarqué ces commentaires HTML bien particuliers dans les templates, dont le contenu commence par `BEGIN` ou par `END` :
+
+```html
+<!-- BEGIN nom_du_bloc -->
+Votre contenu HTML qui apparaitra ou non selon certaines conditions.
+<!-- END nom_du_bloc -->
+```
+
+Contrairement à leur apparence, ce ne sont pas de simples commentaires ! Ils sont nécessaires au bon fonctionnement des templates. On appelle ces blocs des **boucles** parce que leur contenu est souvent destiné à être répété plusieurs fois, autant de fois qu'il y a de contenu à afficher. 
+
+Par exemple, lorsque vous codez vos catégories, vous n'avez besoin de coder le code correspondant à l'affichage d'un forum qu'une seule fois, dans la boucle `forumrow`. Au moment d'afficher la catégorie, Forumactif récupèrera les données de chaque forum pour les insérer dans ce template, puis affichera le résultat final. Et il recommencera pour le forum suivant, jusqu'à ce qu'il n'y ait plus de forum à afficher.
+
+- Le nom de la boucle est le mot clef qui suit `BEGIN` (ou `END`)
+- Une boucle ouverte (avec `BEGIN`) doit impérativement être fermée (avec `END`)
+- Vous ne pouvez pas "inventer" de nouvelles boucles. C'est Forumactif qui gère tout ça. 
+- Vous pouvez déplacer une boucle n'importe où dans le template (et dans certains cas, dans d'autres templates)
+- Vous pouvez réagencer le contenu d'une boucle comme vous le souhaitez
+
+Certaines boucles ne bouclent pas. Elles ont plutôt comme objectif de n'afficher leur contenu que si certaines conditions sont remplies. Par exemple, si l'utilisateur est connecté, ou bien si une option a été cochée dans le panneau d'administration. 
+
+## Qu'est-ce qu'une variable ?
+
+Les variables sont ces bouts de texte en majuscules entre accolades `{` et `}`. Elles contiennent une information : un nombre, du texte, voire des lignes de code. Elles permettent de d'indiquer quelle donnée placer à quel endroit dans un template. 
+
+Bien que les variables soient toujours en majuscules, elles sont également souvent précédées par les noms des boucles auxquelles elles sont liées. Ainsi, si l'on prend `{catrow.forumrow.FORUM_DESC}`, le nom de la variable est `FORUM_DESC`, et elle s'utilise à l'intérieur de la boucle `forumrow`, qui est elle-même à l'intérieur de la boucle `catrow`. Si vous tentez de l'utiliser ailleurs, son contenu sera toujours vide, et Forumactif n'affichera donc rien à son emplacement.
+
+- Si une variable n'a pas de boucle associée, il est possible en théorie de l'utiliser n'importe où, mais ce n'est pas toujours le cas, à vous d'expérimenter.
+- Le contenu d'une variable n'est pas toujours le même d'une version de Forumactif à l'autre, méfiez-vous des tutoriels un peu trop datés !
+
+## Comment savoir ce qui affiche quoi ?
+
+Une bonne connaissance de l'anglais sera votre meilleur atout pour déterminer à quoi servent une boucle ou variable donnée. En raison de son ancienneté, Forumactif a parfois nommé ses éléments de façon étrange (comme la boucle `disable_viewonline` dont le rôle est, contrairement à ce que son nom laisse entendre, d'afficher le QEEL), mais il y a quelques conventions de nommage qui pourront vous mettre la puce à l'oreille pour le reste :
+- Une variable dont le nom commence par `L_`, par exemple `{L_POST_NEW_TOPIC}`, contiendra généralement du texte, dans la langue de l'utilisateur. C'est ce qu'on appelle une variable de langue ;
+- Une variable dont le nom commence par `U_`, par exemple `{U_POST_NEW_TOPIC}`, contiendra généralement un lien (une url) ;
+- Une variable dont le nom se termine par `_IMG`, par exemple `{postrow.displayed.QUOTE_IMG}`, contiendra généralement soit le lien d'une image, soit du code HTML destiné à afficher une image ;
+- Les boucles dont le nom commence par `switch_`, par exemple `switch_description` sont souvent des boucles conditionnelles qui n'affichent leur contenu que si certaines conditions sont remplies
+- Les templates dont le nom contient `_body` ont des chances de contenir un ou plusieurs templates supplémentaires
+  - Le template `index_body` intègre le template `index_box` via la variable `{BOARD_INDEX}`
+  - Le template `viewforum_body` intègre lui aussi le template `index_box`, mais également le template `topic_list_box` (via la variable `{TOPICS_LIST_BOX}`)
