@@ -262,7 +262,7 @@ h3,
 /* CHAMPS DE TEXTE ---*/
 input:is([type="text"], [type="password"], .inputbox),
 textarea {
-  border: none;
+  border: 1px solid transparent;
   border-radius: 5px;
   background: var(--neutralDark);
   font-size: var(--normal-size);
