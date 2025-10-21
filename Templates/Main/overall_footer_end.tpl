@@ -92,7 +92,7 @@ $(document).ready(function() {
   new Wombat({
       afterLoad: function(aside, overlay) {
   	/* Personnalisation des champs de contact du profil */
-          try { customContactField_inProfile(contactFields_list, contactFields_inProfile + " a"); }
+          try { customContactField_inProfile(contactFields_list, contactFields_selectorInProfile); }
           catch { console.log("⚠️ Erreur profils Wombat : Il manque le script de personnalisation des champs de contact")};
 
           /* D'autres scripts peuvent être ajoutés en plus de celui là !*/
