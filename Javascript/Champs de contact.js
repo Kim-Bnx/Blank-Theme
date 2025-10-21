@@ -1,7 +1,4 @@
-/** * Script for Forumotion
- * Customizes contact fields by giving it a unique tooltip and/or replacing the original picture content
- * Works both in topics & in the profile page
- *
+/** * Script for Forumotion * Customizes contact fields by giving it a unique tooltip and/or replacing the original picture content * Works both in topics & in the profile page *
  * Script pour Forumactif
  * Personnalise les champs de contact en leur attribuant une infobulle personnelle et/ou en remplaçant l'image d'origine
  * Fonctionne aussi bien dans les messages que sur la page de profil
@@ -88,6 +85,11 @@ function customContactField_inProfile(customFields, selector) {
   contactFields.querySelectorAll(".field_uneditable").forEach((field) => {
     if (!field.querySelector("a")) field.parentElement.remove();
   });
+
+  /* Suppression du champs "email" */
+  const emailField = contactFields.querySelector(`div:has(a[href^='/profile?mode=email&u='])`);
+  if (!emailField) return;
+  emailField.remove();
 
   customContactField(customFields, contactFields.querySelectorAll("a"));
 }
