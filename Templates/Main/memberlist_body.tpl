@@ -1,76 +1,70 @@
-<!----------------------------------------------->
-<!-- BARRE DE SELECTION -------------->
+<!------------------------------------>
+<!-- BARRE D'ACTIONS ----------------->
 
-<div class="links_bar">
-    <form action="{S_MODE_ACTION}" method="get">
-        <span>
-            {L_USER_SELECT}&nbsp;<input type="text" class="inputbox tiny" name="username" maxlength="25" size="20" value="{L_USER_SELECT_VALUE}" />&nbsp;&nbsp;&nbsp;&nbsp;
-            {L_SELECT_SORT_METHOD}&nbsp;{S_MODE_SELECT}&nbsp;&nbsp;&nbsp;&nbsp;
-            {L_ORDER}&nbsp;{S_ORDER_SELECT}&nbsp;&nbsp;&nbsp;&nbsp;
-            {S_HIDDEN_SID}
-            <input class="button2" type="submit" name="submit" value="{L_SUBMIT}" />
-        </span>
-    </form>
-</div>
+<form action="{S_MODE_ACTION}" method="get" class="page-actions">
+  <div class="form-input"><label>{L_USER_SELECT}</label> <input type="text" name="username" size="20"
+      value="{L_USER_SELECT_VALUE}" /></div>
+  <div class="form-input"><label>{L_SELECT_SORT_METHOD}</label> {S_MODE_SELECT}</div>
+  <div class="form-input"><label>{L_ORDER}</label> {S_ORDER_SELECT}</div>
+  {S_HIDDEN_SID}
+  <input class="primary" type="submit" name="submit" value="Chercher" />
+</form>
 
 
-<!----------------------------------------------->
-<!-- LISTE DES MEMBRES -------------->
+<!------------------------------------>
+<!-- LISTE DES MEMBRES --------------->
 
 <div class="container">
 
-    <!-- Titre de la liste des membres -->
-    <h1 class="page-title">{PAGE_TITLE}</h1>
+  <!-- Titre de la liste des membres -->
+  <h1 class="page-title">{PAGE_TITLE}</h1>
 
-    <!-- Liste des membres -->
-    <div class="userlist">
+  <!-- Liste des membres -->
+  <div class="userlist">
 
-        <!-- Affichage d'un profil -->
-        <!-- BEGIN memberrow -->
-        <div class="userlist_profil">
+    <!-- Affichage d'un profil -->
+    <!-- BEGIN memberrow -->
+    <div class="userlist_profil">
 
-            <!-- Avatar -->
-            <div class="userlist_avatar">
-                {memberrow.AVATAR_IMG}
-            </div>
+      <!-- Avatar -->
+      <div class="userlist_avatar u-img-cover">
+        {memberrow.AVATAR_IMG}
+      </div>
 
-            <!-- Conteneurs des informations de membre -->
-            <div class="userlist_details">
+      <!-- Conteneurs des informations de membre -->
+      <div class="userlist_infos">
 
-                <!-- Pseudo -->
-                <span class="userlist_pseudo">
-                    <a href="{memberrow.U_VIEWPROFILE}">{memberrow.USERNAME}</a>
-                </span>
+        <div class="userlist_infos-user">
+          <!-- Pseudo -->
+          <a href="{memberrow.U_VIEWPROFILE}" class="userlist_pseudo">{memberrow.USERNAME}</a>
+          <br />
 
-                <!-- Champs de profil -->
-                <div class="userlist_infos">
-                    {L_JOINED}: {memberrow.JOINED}<br />
-                    {L_VISITED}: {memberrow.LASTVISIT}<br />
-                    {L_POSTS}: {memberrow.POSTS}<br />
-                </div>
-
-                <!-- Lien de contact -->
-                <div class="userlist_contact right">
-                    {memberrow.PM_IMG}&nbsp;
-                    {memberrow.WWW_IMG}
-                </div>
-            </div>
-
+          <!-- Champs de profil -->
+          <label>{L_JOINED}:</label> {memberrow.JOINED}<br />
+          <label>{L_VISITED}:</label> {memberrow.LASTVISIT}<br />
+          <label>{L_POSTS}:</label> {memberrow.POSTS}<br />
         </div>
-        <!-- END memberrow -->
-        <!-- Fin d'un profil -->
+
+        <!-- Bouton MP -->
+        <div class="userlist_contact">
+          {memberrow.PM_IMG}
+        </div>
+      </div>
 
     </div>
-    <!-- Fin liste des membres -->
-  
-    <!-- Pagination -->
-    <center>
-        <!-- BEGIN switch_pagination -->
-        <span class="pagination">
-            {PAGINATION}
-        </span>
-        <!-- END switch_pagination -->
-    </center>
-  
+    <!-- END memberrow -->
+    <!-- Fin d'un profil -->
+
+  </div>
+  <!-- Fin liste des membres -->
+
+  <!-- Pagination -->
+  <center>
+    <!-- BEGIN switch_pagination -->
+    <div class="pagination">
+      {PAGINATION}
+    </div>
+    <!-- END switch_pagination -->
+  </center>
+
 </div>
-            

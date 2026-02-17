@@ -1,0 +1,229 @@
+/* --- RESET ----------------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 !important;
+}
+
+ul,
+fieldset,
+dt,
+dd {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+button,
+input,
+fieldset,
+select,
+summary {
+    border: none;
+    cursor: pointer;
+}
+
+input:is([type="text"], [type="passeword"]) {
+    cursor: text;
+}
+
+/* -- NETTOYAGE --- */
+#p0,
+.post#0,
+#find_username br,
+#users_here br,
+#main-content>p,
+.adminlink br,
+.corners-top,
+.corners-bottom,
+div#page-body>p,
+.social_btn,
+form[action="/login"]~.panel {
+    display: none;
+}
+
+#find_username .panel {
+    border: none;
+    margin: 0;
+}
+
+/* --- OVERWRITE --- */
+
+#cp-main#cp-main#cp-main,
+table,
+.quickreply div#textarea_content {
+    width: 100% !important;
+}
+
+/* --- FORMULAIRES ----------------- */
+
+dl:not([class]) {
+    display: grid;
+    grid-template-columns: 220px auto;
+    grid-gap: 15px;
+}
+
+.submit-buttons,
+.center {
+    text-align: center;
+}
+
+/* --- CONNEXION ET INSCRIPTION ----------------- */
+
+/* --- PAGE : INSCRIPTION --- */
+form[name="post"][action=""]#ucp dd:has(.password-container) {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#form_confirm dl:has(input[value="Enregistrer"]) {
+    display: flex;
+    justify-content: center;
+}
+
+/* --- PAGE : CONNEXION --- */
+form[name="form_login"] .content {
+    display: grid;
+
+    .h3 {
+        text-align: center;
+        margin: 10px 0;
+    }
+}
+
+.fld_connexion dl {
+    display: grid;
+    grid-auto-flow: row;
+    grid-row-gap: 5px;
+    grid-template-columns: none;
+    justify-content: center;
+}
+
+/* Bloc connexion rapide */
+.user_login_form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: max-content max-content 1fr max-content;
+    gap: 5px;
+}
+
+.user_login_form .form-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0 5px;
+}
+
+/* --- MOT DE PASSE --- */
+/* Indicateur complexité du mot de passe */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: max-content;
+}
+
+img.show_hide_pwd {
+    position: absolute;
+    right: 10px;
+}
+
+[data-color-scheme="dark"] img.show_hide_pwd {
+    filter: invert(1);
+}
+
+#cont_pwd {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: 5px;
+}
+
+.pwd_img {
+    padding: 2px 6px;
+    display: none;
+    border-radius: 3px;
+}
+
+#pwd_good {
+    background-color: #4CAF50;
+    color: #FFF;
+}
+
+#pwd_middle {
+    background-color: #FFCC00;
+    color: #000;
+}
+
+#pwd_bad {
+    background-color: #F04040;
+    color: #FFF;
+}
+
+
+/* --- PAGE : POSTER UN MESSAGE ----------------- */
+
+/* Structure éditeur de texte */
+.message-edition {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 15px;
+}
+
+/* Reset du champs : type de message (note, annonce, ...) */
+.type-input {
+    font-size: 0;
+
+    label {
+        font-size: var(--normal-size);
+    }
+}
+
+/* --- PAGE : EDITION PROFIL ----------------- */
+
+/* Edition signature */
+#parent_editor_simple {
+    display: grid;
+    grid-template-columns: 0 max-content 1fr;
+
+    #message-box>br {
+        display: none;
+    }
+
+    #message-box>#textarea_content {
+        width: 100% !important;
+    }
+}
+
+/* Préférences profil */
+.profil_preferences dl,
+.profil_editavatar dl {
+    grid-template-columns: 350px auto;
+}
+
+.profil_preferences .italic {
+    font-size: var(--little-size);
+    opacity: 0.9;
+}
+
+/* Edition inline profil */
+field {
+    position: relative;
+}
+
+.ajax-profil_edit {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: -15px;
+}
+
+.ajax-profil_valid {
+    cursor: pointer;
+    margin-left: 4px;
+    vertical-align: middle;
+}

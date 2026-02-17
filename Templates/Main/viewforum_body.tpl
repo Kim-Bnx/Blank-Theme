@@ -1,206 +1,120 @@
-<!-- Affichage des sous forums (template : index_box) -->
+<!-- SOUS-FORUM  --------------------->
+<!-- (template : index_box) ---------->
 {BOARD_INDEX}
+
 <br />
 
+<!-- LIENS DE NAVIGATION ------------->
+<!-- (Catégorie > Forum > Sous-fo) --->
+<span class="navigation_links tag">{NAV_CAT_DESC} </span>
 
 
-<!----------------------------------------------->
-<!-- LIEN DE NAVIGATION -------------->
+<!------------------------------------>
+<!-- BARRE D'ACTIONS ----------------->
+<div class="page-actions">
+  <!-- Boutons : nouveau, répondre, verrouillé -->
+  <!-- BEGIN switch_user_authpost -->
+  <a class="button primary" href="{U_POST_NEW_TOPIC}" title="{T_POST_NEW_TOPIC}">Ouvrir un sujet</a>
+  <!-- END switch_user_authpost -->
 
-<div class="navigation_links">
+  <div class="buttons">
+    <!-- Bouton de modération du sujet -->
+    <div id="moderation_data" hidden>{S_AUTH_LIST}</div><!--Ne pas supprimer-->
+    <div id="moderation_link" class=" button"></div>
 
-    <!-- Chaîne de lien : Catégorie > Forum > Sous-fo -->
-    <span class="navigation_chain">
-        {NAV_CAT_DESC}
-    </span>
+    <!-- Bouton pour trier les sujets -->
+    <!-- BEGIN switch_sort_options -->
+    <div id="sort-topics">
+      <span id="sort-btn" class="button"><i class="bi bi-filter"></i> Trier les sujets</span>
 
-    <!-- Pagination -->
-    <span class="right pagination page-topic">
-        {PAGINATION}
-    </span>
+      <!-- Menu d'option de tri -->
+      <form method="post" class="sort-form">
+        <h3>{switch_sort_options.L_SORT_BY}</h3>
+        <p>
+          <label><input type="radio" name="sort_order" id="sort_order_d" value="0" {switch_sort_options.DESC_CHECKED} />
+            {switch_sort_options.L_DESC}</label>
+          <br />
+          <label><input type="radio" name="sort_order" id="sort_order_a" value="1" {switch_sort_options.ASC_CHECKED} />
+            {switch_sort_options.L_ASC}</label>
+        </p>
+
+        <select name="sort_method">{switch_sort_options.S_OPTIONS}</select>&nbsp;
+        <input type="submit" value="{switch_sort_options.L_SORT}">
+
+      </form>
+    </div>
+    <!-- END switch_sort_options -->
+    <!-- Fin du bouton -->
+  </div>
 
 </div>
+<!-- Fin barre d'actions -->
 
 
-<!----------------------------------------------->
-<!-- BARRE DE GESTION -------------->
-
-<div class="links_bar">
-
-    <!-- Boutons : nouveau, répondre, verrouillé -->
-    <!-- BEGIN switch_user_authpost -->
-    <a class="buttons" href="{U_POST_NEW_TOPIC}" accesskey="n" rel="nofollow">Nouveau sujet</a>
-    <!-- END switch_user_authpost -->
-
-    <!-- Lien Surveiller ce forum -->
-    <!-- BEGIN switch_user_logged_in -->
-    <span class="right">
-        {S_WATCH_FORUM}
-    </span>
-    <!-- END switch_user_logged_in -->
-
-</div>
-
-
-<!----------------------------------------------->
-<!-- LISTE DES SUJETS -------------->
-<!--(template: topics_list_box) -->
-
+<!------------------------------------>
+<!-- CONTENEUR DES SUJETS ------------>
 <div class="container">
 
-    <!-- Titre liste des sujets -->
-    <h1 class="page-title">{FORUM_NAME}</h1>
+  <!-- Titre liste des sujets -->
+  <h1 class="page-title">{FORUM_NAME}</h1>
 
-    <!-- Description du forum -->
-    <!-- BEGIN switch_forum_desc -->
-    <div class="forum-page_desc">
-        {SINGLE_FORUM_DESC}
-    </div>
-    <!-- END switch_forum_desc -->
+  <!-- Description du forum -->
+  <!-- BEGIN switch_forum_desc -->
+  <div class="forum-page_desc">{SINGLE_FORUM_DESC}</div>
+  <!-- END switch_forum_desc -->
 
-    <!-- Liste des sujets -->
-    {TOPICS_LIST_BOX}
+  <!-- Liste des sujets (template: topics_list_box) -->
+  {TOPICS_LIST_BOX}
+
+  <!-- Utilisateurs parcourant ce forum -->
+  <div id="users_here">{LOGGED_IN_USER_LIST}</div>
 </div>
 
 
+<!------------------------------------>
+<!-- BARRE D'ACTIONS ----------------->
+<div class="page-actions">
 
-
-<!-- Bouton pour trier les sujets -->
-<!-- BEGIN switch_sort_options -->
-<div id="sort-topics" class="button right">
-
-    <span id="sort-btn"><i class="bi bi-filter"></i> Trier les sujets</span>
-
-    <form method="post" class="sort-form">
-
-        <h3>{switch_sort_options.L_SORT_BY}</h3>
-        <select name="sort_method">{switch_sort_options.S_OPTIONS}</select>
-
-        <br /><br />
-
-        <h3>{switch_sort_options.L_ORDER}</h3>
-        <label><input type="radio" name="sort_order" id="sort_order_d" value="0" {switch_sort_options.DESC_CHECKED} />
-            {switch_sort_options.L_DESC}</label>
-        <label><input type="radio" name="sort_order" id="sort_order_a" value="1" {switch_sort_options.ASC_CHECKED} />
-            {switch_sort_options.L_ASC}</label>
-
-        <br /><br />
-        <input class="right" type="submit" value="{switch_sort_options.L_SORT}">
-    </form>
-</div>
-<!-- END switch_sort_options -->
-
-
-<!----------------------------------------------->
-<!-- BARRE DE GESTION -------------->
-
-<div class="links_bar">
-
-    <!-- Bouton : nouveau -->
-    <!-- BEGIN switch_user_authpost -->
-    <a href="{U_POST_NEW_TOPIC}" accesskey="n" rel="nofollow" title="{T_POST_NEW_TOPIC}" class="buttons">{L_POST_NEW_TOPIC}</a>
-    <!-- END switch_user_authpost -->
-
-
+  <div class="buttons">
+    <!-- Lien Surveiller ce forum -->
     <!-- BEGIN switch_user_logged_in -->
-    <span class="right">
-        <a href="{U_MARK_READ}">{L_MARK_TOPICS_READ}</a>
-    </span>
+    <span class="button">{S_WATCH_FORUM}</span>
     <!-- END switch_user_logged_in -->
 
+    <!-- BEGIN switch_user_logged_in -->
+    <a href="{U_MARK_READ}" class="button">{L_MARK_TOPICS_READ}</a>
+    <!-- END switch_user_logged_in -->
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination">{PAGINATION}</div>
+
 </div>
 
 
-
-<!-- Conteneur : utilisateurs et pagination -->
-<div class="navigation_links">
-
-    <!-- Utilisateurs parcourant ce forum -->
-    <span id="users_here">
-        {LOGGED_IN_USER_LIST}
-    </span>
-    <!-- Modification de la phrase "utilisateur parcourant ce forum" -->
-    <script type="text/javascript">
-        $("#users_here").html($("#users_here").html().replace("Utilisateurs parcourant actuellement ce forum",
-            "Actuellement sur ce forum"));
-    </script>
-
-
-    <!-- Pagination -->
-    <span class="right pagination page-topic">
-        {PAGINATION}
-    </span>
-</div>
-
-<!----------------------------------------------->
-<!---------------->
-
-<br />
-<div class="separator"></div>
-<br />
-
-
-<!----------------------------------------------->
-<!-- SAUTER VERS UN FORUM -------------->
-
-<div class="right">
-    <form action="{S_JUMPBOX_ACTION}" method="get" name="jumpbox"
-        onsubmit="if(document.jumpbox.f.value == -1){return false;}">
-        <fieldset class="vf_jumpbox">
-            <label>{L_JUMP_TO}:</label><br />
-            {S_JUMPBOX_SELECT} &nbsp;
-            <input class="button2" type="submit" value="{L_GO}" />
-        </fieldset>
-    </form>
-</div>
-
-
-<!----------------------------------------------->
-<!-- LIENS UTILES -------------->
-
-<a href="{U_EGOSEARCH_JS_PLUS_MENU}">Voir ses messages</a><br />
-<a href="{U_NEWPOSTS_JS_PLUS_MENU}">Nouveaux messages depuis la dernière visite</a><br />
-<a href="{U_UNANSWERED_JS_PLUS_MENU}">Messages sans réponses</a>
-
-<br /><br />
-
-<!----------------------------------------------->
-<!-- OUTILS DE MODERATION ------------>
-<div id="moderation_forum_tools">
-    {S_AUTH_LIST}
-</div>
-
-<!-- Changement de texte du lien "modérer ce forum" -->
+<!-- Modification de texte par défaut -->
+<!-- "Actuellement sur ce forum" et "Modérer ce forum" -->
 <script type="text/javascript">
-    document.getElementById('moderation_forum_tools').innerHTML = document.getElementById('moderation_forum_tools')
-        .innerHTML.replace(/modérer ce forum/, "Modérer les sujets du forum");
+  $("#users_here").html($("#users_here").html().replace("Utilisateurs parcourant actuellement ce forum", "Actuellement sur ce forum"));
+  $("#moderation_data").html($("#moderation_data").html().replace("modérer ce forum", "Modérer les sujets"));
+  $('#moderation_data a').appendTo('#moderation_link');
 </script>
-
-
-
-
-<br />
-<div class="clear"></div>
-
-
-
-
 
 <!-- BEGIN switch_sort_options -->
 <script type="text/javascript">
-    //<![CDATA[
-    $(document).ready(function () {
-        var sort_btn = $('#sort-btn');
-        sort_btn.on('click', function () {
-            sort_btn.toggleClass('expanded');
-        });
-
-        document.onclick = function (e) {
-            if ($(e.target).parents('#sort-topics').length == 0) {
-                document.getElementById('sort-btn').classList.remove('expanded');
-            }
-        };
+  //<![CDATA[
+  $(document).ready(function () {
+    var sort_btn = $('#sort-btn');
+    sort_btn.on('click', function () {
+      sort_btn.toggleClass('expanded');
     });
-    //]]>
+
+    document.onclick = function (e) {
+      if ($(e.target).parents('#sort-topics').length == 0) {
+        document.getElementById('sort-btn').classList.remove('expanded');
+      }
+    };
+  });
+  //]]>
 </script>
 <!-- END switch_sort_options -->

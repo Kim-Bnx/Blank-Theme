@@ -1,38 +1,35 @@
-<div class="wrapped">
+<br />
+<div class="wrapped container">
 
-    <!-- Titre "revue du sujet" -->
-    <!-- BEGIN switch_inline_mode -->
-    <div class="h3">{L_TOPIC_REVIEW}</div>
-    <!-- END switch_inline_mode -->
+  <!-- Titre "revue du sujet" -->
+  <!-- BEGIN switch_inline_mode -->
+  <h2>
+    <center>{L_TOPIC_REVIEW}</center>
+  </h2>
+  <!-- END switch_inline_mode -->
 
-    <!-- Affichage d'un message simplifié -->
-    <!-- BEGIN postrow -->
-    <!-- BEGIN displayed -->
-    <a name="{postrow.displayed.POST_ID}"></a>
-    <div class="panel {postrow.displayed.displayed.ROW_CLASS}">
+  <!-- Affichage d'un message simplifié -->
+  <!-- BEGIN postrow -->
+  <!-- BEGIN displayed -->
+  <div name="{postrow.displayed.POST_ID}" class="panel">
 
-        <!-- Contenu -->
-        <div class="postbody">
-            <!-- Sujet par - Auteur - le - date -->
-            <span> {postrow.displayed.L_TOPIC_BY} {postrow.displayed.POSTER_NAME} {postrow.displayed.L_TOPIC_ON} {postrow.displayed.POST_DATE}</span>
+    <!-- Sujet par - Auteur - le - date -->
+    <span> {postrow.displayed.L_TOPIC_BY} {postrow.displayed.POSTER_NAME} {postrow.displayed.L_TOPIC_ON}
+      {postrow.displayed.POST_DATE}</span>
+    <hr />
 
-            <!-- Message -->
-            <div class="content">{postrow.displayed.MESSAGE}</div>
-        </div>
+    <!-- Message -->
+    <div class="content">{postrow.displayed.MESSAGE}</div>
 
-        <div class="clear"></div>
-    </div>
-    <!-- END displayed -->
-    <!-- BEGIN hidden -->
-    <div class="post">
-        <p style="text-align:center">{postrow.hidden.MESSAGE}</p>
-    </div>
-    <!-- END hidden -->
-    <!-- END postrow -->
-    <!-- Fin de l'affichage -->
+  </div>
+  <!-- END displayed -->
+  <!-- BEGIN hidden -->
+  <div class="post">
+    <p style="text-align:center">{postrow.hidden.MESSAGE}</p>
+  </div>
+  <!-- END hidden -->
+  <!-- END postrow -->
+  <!-- Fin de l'affichage -->
 
 
 </div>
-<br />
-
-            

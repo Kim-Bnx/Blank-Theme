@@ -1,0 +1,54 @@
+:where(.u-img-cover) {
+    overflow: hidden;
+}
+
+:where(.u-img-cover > img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.u-clear {
+    clear: both;
+}
+
+img.u-img-square,
+.u-img-square img {
+    display: block;
+    width: var(--size);
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--round);
+}
+
+.u-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.u-center {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.tag {
+    background-color: var(--neutralDark);
+    padding: 7px 10px;
+    border-radius: 5px;
+}
+
+/* Visibilité utilitaires */
+.invisible {
+    display: none;
+    visibility: hidden;
+}
+
+.visible {
+    display: block;
+    visibility: visible;
+}

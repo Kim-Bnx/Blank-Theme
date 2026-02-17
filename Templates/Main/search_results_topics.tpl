@@ -1,74 +1,70 @@
-<br />
-<div class="container">
-    <h1 class="page-title">{L_SEARCH_MATCHES}</h1>
+<!-- PAGE DE RESULTAT DE RECHERCHE PAR SUJET -->
+<!-- Conteneur du résultat -->
+<form action="{S_ACTION}" method="post" name="post" onsubmit="return verify_select();" class="container">
 
-    <form action="{S_ACTION}" method="post" name="post" onsubmit="return verify_select();">
+  <!-- Titre de la recherche -->
+  <h1 class="page-title">{L_SEARCH_MATCHES}</h1>
 
-	<!-- BEGIN searchresults -->	
-        <div class="topicslist_row">
-            
-            <!-- Image d'un sujet -->
-            <div class="topicslist-img">
-                <img src="{searchresults.TOPIC_FOLDER_IMG}" />
-            </div>
+  <!-- Apparence de chaque sujet listé -->
+  <!-- (copié sur l'apparence des sujets dans la liste des sujets (template : topics_list_box) -->
 
+  <!-- BEGIN searchresults -->
+  <div class="topicslist_row">
 
-            <div class="topicslist_infos" {searchresults.TOPIC_ICON}>
+    <!-- Image du sujet -->
+    <div class="topicslist-img">
+      <img src="{searchresults.TOPIC_FOLDER_IMG}" />
+    </div>
 
-                <!-- Icone de message -->
-                <span class="topic_msgicon"></span>
+    <!-- Conteneur des informations principales -->
+    <div class="topicslist_infos">
 
-                <!-- Label type de sujet : annonce, note, ... -->
-                <span class="topic-type">{searchresults.TOPIC_TYPE}</span>
+      <!-- Type de sujet : annonce, post-it, global, ... -->
+      <span class="topic-type">{searchresults.TOPIC_TYPE}</span>
 
-                <!-- Titre du sujet -->
-                <a class="topictitle" href="{searchresults.U_VIEW_TOPIC}">{searchresults.TOPIC_TITLE}</a>&nbsp;
+      <!-- Titre du sujet -->
+      <a class="topictitle" href="{searchresults.U_VIEW_TOPIC}">{searchresults.TOPIC_TITLE}</a>&nbsp;
 
-                <!-- Icon vous avez posté dans ce sujet -->
-                {searchresults.PARTICIPATE_POST_IMG}
+      <!-- Icon "vous avez posté dans ce sujet" -->
+      {searchresults.PARTICIPATE_POST_IMG}
 
-                <br />
+      <br />
 
-                <span class="topic-author">
-                    {searchresults.L_BY} {searchresults.TOPIC_AUTHOR} {searchresults.L_IN} <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_NAME}</a>
-                </span>&nbsp;
+      <!-- Auteur du sujet -->
+      <span class="topic-author">
+        {searchresults.L_BY} {searchresults.TOPIC_AUTHOR} {searchresults.L_IN} <a
+          href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_NAME}</a>
+      </span>&nbsp;
 
-                <!-- Pagination du sujet -->
-                <span class="topicslist-pagination">
-                    {searchresults.GOTO_PAGE_NEW}
-                    <!-- BEGIN nav_tree -->
-                    {searchresults.TOPIC_NAV_TREE_NEW}
-                    <!-- END nav_tree -->
-                </span>
+      <!-- Pagination -->
+      <span class="topicslist-pagination">
+        {searchresults.GOTO_PAGE_NEW}
+      </span>
 
-            </div>
-
-
-            <!-- Statistiques -->
-            <div class="topicslist-stats">
-                {searchresults.REPLIES} {L_REPLIES}
-                <!-- Nombres // Indication "messages" -->
-                <br />
-                {searchresults.VIEWS} {L_VIEWS}
-                <!-- Nombres // Indication "vues" -->
-            </div>
+    </div>
 
 
+    <!-- Conteneur des statistiques -->
+    <div class="topicslist-stats">
+      <!-- Nombre de messages -->
+      {searchresults.REPLIES} {L_REPLIES}
+      <br />
+      <!-- Nombre de vues -->
+      {searchresults.VIEWS} {L_VIEWS}
+    </div>
 
-            <!-- Dernier message -->
-            <div class="topicslist-lastpost">
-                {searchresults.LAST_POST_TIME}&nbsp;
-                <br />
-                {searchresults.LAST_POST_AUTHOR}&nbsp;
-                {searchresults.LAST_POST_IMG}
-            </div>
+    <!-- Conteneur du dernier message posté -->
+    <div class="topicslist-lastpost">
+      {searchresults.LAST_POST_TIME}&nbsp;
+      <br />
+      {searchresults.LAST_POST_AUTHOR}&nbsp;
+      {searchresults.LAST_POST_IMG}
+    </div>
 
-        </div>
-	 <!-- END searchresults -->
-      
-        <p class="pagination">{PAGINATION}</p>
-    </form>
+  </div>
+  <!-- Fin du sujet -->
+  <!-- END searchresults -->
 
-</div>
-
-{JUMPBOX}
+  <!-- Pagination -->
+  <div class="pagination">{PAGINATION}</div>
+</form>
