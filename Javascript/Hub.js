@@ -316,7 +316,7 @@ const Hub = Blanket("Hub", function (utils) {
 
     // Génère les données à injecter dans le template
     const data = {
-      URL_AVATAR: await getUserAvatar(lastUser.name, lastUser.id),
+      NEW_USER_AVATAR: await getUserAvatar(lastUser.name, lastUser.id),
       NEW_USER: lastUser.name,
       NEW_USER_PROFILE: lastUser.profileLink,
 

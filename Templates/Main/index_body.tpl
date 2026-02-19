@@ -69,7 +69,7 @@
     <!-- Dernier inscrit -->
     <div class="hub_lastUser">
       <!-- Avatar du dernier inscrit -->
-      <img src="[URL_AVATAR]" alt="[NEW_USER]" class="lastUser-avatar u-img-square" />
+      <img src="[NEW_USER_AVATAR]" alt="[NEW_USER]" class="lastUser-avatar u-img-square" />
 
       <div class="lastUser-welcome">
         Bienvenue à<br />
