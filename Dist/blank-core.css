@@ -30,17 +30,18 @@ input:is([type="text"], [type="passeword"]) {
 }
 
 /* -- NETTOYAGE --- */
-#p0,
-.post#0,
-#find_username br,
-#users_here br,
-#main-content>p,
-.adminlink br,
-.corners-top,
-.corners-bottom,
-div#page-body>p,
-.social_btn,
-form[action="/login"]~.panel {
+:is(#p0,
+    #0.post,
+    #find_username br,
+    #users_here br,
+    #main-content>p,
+    .corners-top,
+    .corners-bottom,
+    div#page-body>p,
+    .social_btn,
+    form[action="/login"]~.panel,
+    p.right.rightside+p,
+    p.right.rightside) {
     display: none;
 }
 
