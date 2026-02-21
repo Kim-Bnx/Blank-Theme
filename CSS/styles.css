@@ -522,7 +522,7 @@ hr {
   --menuSize: 500px;
   width: var(--menuSize);
   position: fixed;
-  z-index: 98;
+  z-index: 998;
   top: 0;
   height: 100%;
   left: calc(var(--menuSize) * -1);
