@@ -74,7 +74,7 @@
         <fieldset>
           <!-- BEGIN field -->
           <dl>
-            <dt>{switch_informations_menu.switch_profile_fields.field.NAME}</dt>
+            <dt class="editprofile-field">{switch_informations_menu.switch_profile_fields.field.NAME}</dt>
             <dd>
               {switch_informations_menu.switch_profile_fields.field.OBJECT}<br />
               <span class="italic">{switch_informations_menu.switch_profile_fields.field.DESCRIPTION}</span>
@@ -425,8 +425,23 @@
 
     </form>
   </div>
-  <div class="clear"></div>
 </div>
+
+<!-- Supprime les champs par défaut de Forumactif (Genre, date de naissance, ...) et les champs de contact (skype, facebook, ...) -->
+<script>
+const UselessField = Blanket("Useless Field", ({ get, getAll, ready }) => {
+  const trashField = ["Genre", "Date de naissance", "Localisation", "Emploi/loisirs", "Humeur", "Commentaires", "Site web", "Facebook", "Twitter", "Pinterest", "Skype"];
+  ready(() =>
+    getAll("dl:has(.editprofile-field)")
+      .forEach(field => {
+        const text = get("dt", field).innerText;
+        trashField.some(label => text.includes(label)) && field.remove();
+      })
+  );
+});
+</script>
+
+
 <script type="text/javascript">
   $(function () {
     $('input[name=reset]').click(function () {

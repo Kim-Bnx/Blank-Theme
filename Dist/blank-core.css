@@ -186,6 +186,11 @@ img.show_hide_pwd {
 
 /* --- PAGE : EDITION PROFIL ----------------- */
 
+/* Fausse image des champs de contact */
+.editprofile-field img {
+    display: none;
+}
+
 /* Edition signature */
 #parent_editor_simple {
     display: grid;
