@@ -41,7 +41,8 @@ input:is([type="text"], [type="passeword"]) {
     .social_btn,
     form[action="/login"]~.panel,
     p.right.rightside+p,
-    p.right.rightside) {
+    p.right.rightside,
+    form[action="/viewforum"]) {
     display: none;
 }
 
@@ -186,15 +187,11 @@ img.show_hide_pwd {
 
 /* --- PAGE : EDITION PROFIL ----------------- */
 
-/* Fausse image des champs de contact */
-.editprofile-field img {
-    display: none;
-}
-
-/* Edition signature */
+/* --- SIGNATURE --- */
 #parent_editor_simple {
     display: grid;
     grid-template-columns: 0 max-content 1fr;
+    gap: 10px;
 
     #message-box>br {
         display: none;
@@ -203,6 +200,12 @@ img.show_hide_pwd {
     #message-box>#textarea_content {
         width: 100% !important;
     }
+}
+
+/* --- EDITION ET PREFERENCES  --- */
+/* Fausse image des champs de contact */
+.editprofile-field img {
+    display: none;
 }
 
 /* Préférences profil */
@@ -232,4 +235,38 @@ field {
     cursor: pointer;
     margin-left: 4px;
     vertical-align: middle;
+}
+
+
+/* --- SUJET SURVEILLÉ --- */
+table#memberlist.table1 {
+    th {
+        text-align: left;
+        text-transform: uppercase;
+    }
+
+    th:first-child,
+    th:nth-child(6) {
+        display: none;
+    }
+
+    tr[class^="row"] td:first-child,
+    tr[class^="row"] td:nth-child(6) {
+        display: none;
+    }
+
+    tr[class^="row"] td:nth-child(2) .mobile-visible,
+    .right-box {
+        display: none;
+    }
+}
+
+form:has(table#memberlist.table1)>.right-box {
+    display: none;
+}
+
+form[name="addtag_form"] {
+    background: var(--neutral);
+    border-radius: 5px;
+    padding: 1px 10px;
 }
