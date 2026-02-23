@@ -69,7 +69,7 @@
     <!-- Dernier inscrit -->
     <div class="hub_lastUser">
       <!-- Avatar du dernier inscrit -->
-      <img src="[NEW_USER_AVATAR]" alt="[NEW_USER]" class="lastUser-avatar u-img-square" />
+      <img src="[NEW_USER_AVATAR]" alt="[NEW_USER]" class="lastUser-avatar u-img-square" @click.right="updateAvatar"/>
 
       <div class="lastUser-welcome">
         Bienvenue à<br />
@@ -116,7 +116,7 @@
       [NOW_CONNECTED_LIST]
       <!-- Utilisateur en ligne-->
       <div class="user">
-        <img src="[AVATAR]" alt="[NAME]" class="user-avatar u-img-square" />
+        <img src="[AVATAR]" alt="[NAME]" class="user-avatar u-img-square" @click.right="updateAvatar"/>
         <a href="[HREF]" class="[GROUP]" style="color:[COLOR]">[NAME]</a>
       </div>
 
@@ -155,20 +155,21 @@
   <div class="hub_groups">
 
     <!-- Groupe : à dupliquer pour chaque groupe -->
-    <a class="group moderateurs">
+    <div class="group moderateurs">
       <span class="group-name">Modérateurs</span>
       <!-- PRE-REQUIS : modifiez le nom du groupe correspond dans la variable [GRP_COUNT...] (voir aide dans la page votreforum.com/groups)-->
       <span class="group-count">[GRP_COUNT.moderateurs]</span>
-    </a>
+    </div>
 
-    <a class="group beta">
+    <div class="group beta">
       <span class="group-name">Bêta</span>
       <span class="group-count">[GRP_COUNT.beta]</span>
-    </a>
-    <a class="group charlie">
+    </div>
+    
+    <div class="group charlie">
       <span class="group-name">Charlie</span>
       <span class="group-count">[GRP_COUNT.charlie]</span>
-    </a>
+    </div>
   </div>
   <!-- Fin du conteneur -->
 

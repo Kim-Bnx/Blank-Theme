@@ -10,7 +10,7 @@
  * @auteur        Kim
  */
 const Hub = Blanket("Hub", function (utils) {
-  const { warn, ready, get, getUserAvatar } = utils;
+  const { warn, ready, get, getUser, getUserIDFromUrl } = utils;
 
   // OPTIONS :
   const hubSettings = {
@@ -107,22 +107,6 @@ const Hub = Blanket("Hub", function (utils) {
   }
 
   /**
-   * Récupère l'ID utilisateur à partir d'une URL /u<ID>
-   * @param {string} url - L'URL à partir de laquelle extraire l'ID utilisateur
-   * @returns {number|null} L'ID utilisateur ou null si non trouvé
-   */
-  function getUserIdFromUrl(url) {
-    try {
-      const path = new URL(url, window.location.origin).pathname;
-      const match = path.match(/\/u(\d+)(?:-|\/|$)/);
-      return match ? parseInt(match[1], 10) : null;
-    } catch (err) {
-      warn("Impossible de récupérer l'ID utilisateur :", err);
-      return null;
-    }
-  }
-
-  /**
    * Récupère les utilisateurs à partir d'un conteneur HTML
    * @param {HTMNode} list - L'élément HTML contenant la liste des utilisateurs
    * @param {boolean} withAvatar - Indique si l'avatar doit être fetché
@@ -144,17 +128,21 @@ const Hub = Blanket("Hub", function (utils) {
     // Récupère les informations des utilisateurs depuis les liens
     const users = await Promise.all(
       userLinks.map(async (a) => {
-        const span = a.querySelector("span");
-        const style = span?.getAttribute("style") || "";
+        const span = a.querySelector("span"),
+          style = span?.getAttribute("style") || "";
+
+        const name = a.textContent,
+          id = getUserIDFromUrl(a.href),
+          userInfo = await getUser({ name, id });
 
         return {
           HREF: a.href,
-          NAME: a.textContent,
-          AVATAR: withAvatar ? await getUserAvatar(a.textContent, getUserIdFromUrl(a.href)) : null,
+          NAME: name,
+          AVATAR: withAvatar ? userInfo.avatar : null,
           GROUP: span?.className || null,
           COLOR: style.match(/color:\s*(#[0-9a-f]{3,6})/i)?.[1] || null,
         };
-      })
+      }),
     );
 
     return users;
@@ -211,114 +199,152 @@ const Hub = Blanket("Hub", function (utils) {
 
   /**
    * Récupère les noms des groupes et leur nombre de membres par groupe depuis la page /groups
-   * @param {boolean} forceUpdate - ignore le cache et force un nouveau fetch pour mettre à jour les données
-   * @typedef {Object} result
-   * @property {number} count - Nombre total de membres
-   * @returns {Promise<result{groupName:number}>} Un objet composé des clés des noms de groupes et des valeurs du nombre de membres
+   * @param {boolean} [forceUpdate=false] - Ignore le cache et force un nouveau fetch pour mettre à jour les données
+   * @typedef {Object.<string, number>} GroupCountResult
+   * @returns {Promise<GroupCountResult>} Objet : { [groupSlug]: count }
    */
   async function getGroupCount(forceUpdate = false) {
-    const CACHE_KEY = "groupCount"; // Nom de la clé de stockage dans le localStorage
-    const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 heures = délai de sauvegarde du cache avant rafraîchissement
-    const now = Date.now();
-
     // Vérifie si le compte des groupes est activé dans les paramètres
     if (!hubSettings.groups?.enable_count) {
-      console.warn("[BLANK : newQeel] Group count is not enabled or invalid.");
+      utils.warn("[Hub] Group count is not enabled or invalid.");
       return {};
     }
 
-    // Vérifie l'état du cache
-    let cache = null;
-    try {
-      cache = JSON.parse(localStorage.getItem(CACHE_KEY));
-    } catch {
-      cache = null;
-    }
+    const CACHE_TTL = 12 * 60 * 60 * 1000; // 12h
+    const CACHE_ID = "__data";
+    const store = utils.storage("groupCount", { ttl: CACHE_TTL });
 
-    // Retourne les données du cache si la mise à jour n'est pas forcée et que le cache est encore valide
-    if (!forceUpdate && cache && now - cache.timestamp < CACHE_TTL) {
-      return cache.data;
-    }
+    // Retourne le cache si valide
+    const cached = store.get(CACHE_ID);
+    if (cached && typeof cached.data === "object") return cached.data;
 
     // Fetch de la page /groups
-    const res = await fetch("/groups");
+    let res;
+    try {
+      res = await fetch("/groups", { credentials: "same-origin" });
+    } catch (err) {
+      warn("Erreur réseau lors de la récupération de /groups:", err);
+      const stale = store.getAll?.()?.[CACHE_ID];
+      return stale?.data || {};
+    }
+
     if (!res.ok) {
       warn("Erreur lors de la récupération de /groups:", res.status);
-      // Si le fetch échoue, retourne l'ancien cache sauvegardé ou un objet vide
-      return cache?.data || {};
+      const stale = store.getAll?.()?.[CACHE_ID];
+      return stale?.data || {};
     }
 
     // Parse
     const text = await res.text();
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(text, "text/html");
+    const doc = new DOMParser().parseFromString(text, "text/html");
 
-    // Récupère et transforme le nom des groupes en slugs
-    const groups = Array.from(doc.querySelectorAll(".group_list a[style]")).map((a) => slugifyGroup(a.textContent));
+    // Récupère tous les liens de groupes
+    const links = Array.from(doc.querySelectorAll(".group_list a"));
+
+    // Liste des slugs de groupes
+    const groups = links.filter((a) => a.getAttribute("style")).map((a) => slugifyGroup(a.textContent));
+
     if (groups.length === 0) {
       warn("Aucun groupe trouvé sur la page /groups.");
-      return cache?.data || {};
+      const stale = store.getAll?.()?.[CACHE_ID];
+      return stale?.data || {};
     }
 
-    let result = {};
-
+    const result = {};
     // Réccupère le nombre de membres par groupe
     for (const groupName of groups) {
-      const link = [...doc.querySelectorAll(".group_list a")].find((a) => a.href.includes(groupName));
+      const link = links.find((a) => a.href && a.href.includes(groupName));
 
-      if (link) {
-        const match = link.href.match(/\/(g\d+)-/);
-        const groupId = match ? match[1] : null;
-
-        if (groupId) {
-          const countEl = doc.querySelector(`#nb-users-${groupId}`);
-          const count = countEl ? parseInt(countEl.textContent.trim(), 10) : 0;
-          result[groupName] = count;
-        } else {
-        warn(`Impossible d'extraire l'ID du groupe ${groupName}`);
-        }
-      } else {
+      if (!link) {
         warn(`Impossible de trouver le lien du groupe ${groupName}`);
+        continue;
+      }
+
+      const match = link.href.match(/\/(g\d+)-/);
+      const groupId = match ? match[1] : null;
+
+      if (!groupId) {
+        warn(`Impossible d'extraire l'ID du groupe ${groupName}`);
+        continue;
+      }
+
+      const countEl = doc.querySelector(`#nb-users-${groupId}`);
+      const count = countEl ? parseInt(countEl.textContent.trim(), 10) : 0;
+
+      result[groupName] = Number.isFinite(count) ? count : 0;
+    }
+
+    // Sauvegarde via storage()
+    store.set(CACHE_ID, { data: result });
+
+    return result;
+  }
+
+  /**
+   * Met à jour l'avatar au clic droit en relançant une requête
+   */
+  async function updateAvatar() {
+    const target = event.target;
+    const src = target.getAttribute("src");
+    const alt = target.alt;
+
+    const all = utils.storage("avatarCache").getAll();
+
+    let id = null;
+    // Cherche l'ID du membre dans le cache par son nom ou l'url de son avatar
+    if (!src && alt) {
+      for (const key in all) {
+        const entry = all[key];
+        if (entry?.name === alt) {
+          id = key;
+          break;
+        }
       }
     }
 
-    // Sauvegarde le résultat dans le cache
-    try {
-      localStorage.setItem(
-        CACHE_KEY,
-        JSON.stringify({
-          data: result,
-          timestamp: now,
-        })
-      );
-    } catch (err) {
-      warn("Échec de la sauvegarde du cache groupCount:", err);
+    if (!id && src) {
+      for (const key in all) {
+        if (all[key]?.avatar === target.src) {
+          id = key;
+          break;
+        }
+      }
     }
 
-    return result;
+    if (!id) {
+      utils.warn("Impossible de retrouver l'id correspondant à cet avatar.");
+      return;
+    }
+
+    // Lance une nouvelle requête
+    const updatedInfos = await utils.getUser({ name: target.alt, id }, true);
+    // Met à jour l'avatar
+    target.src = updatedInfos.avatar || target.src;
   }
 
   /**
    * Transforme l'élément <template type="template/potion" data-name="enhancedHUB"> de index_body grâce au plugin Potion
    */
   async function init() {
-    if (!get('template[data-name="hub"]', {required: false})) return;
+    if (!get('template[data-name="hub"]', { required: false })) return;
 
     const forumVar = await getForumVar();
-    const lastUser = {
-      name: forumVar.FORUMLASTUSER,
-      id: getUserIdFromUrl(forumVar.FORUMLASTUSERLINK),
-      profileLink: forumVar.FORUMLASTUSERLINK,
-    };
+    const newUser = {
+        name: forumVar.FORUMLASTUSER,
+        id: getUserIDFromUrl(forumVar.FORUMLASTUSERLINK),
+        profileLink: forumVar.FORUMLASTUSERLINK,
+      },
+      newUserInfo = await getUser({ name: newUser.name, id: newUser.id });
+
     const onlineUsers = getOnlineUsers();
     const connectedList = await getUsers(document.querySelector("#online_users"), true);
     const lastConnectedList = await getUsers(document.querySelector("#last_connected"));
 
     // Génère les données à injecter dans le template
     const data = {
-      NEW_USER_AVATAR: await getUserAvatar(lastUser.name, lastUser.id),
-      NEW_USER: lastUser.name,
-      NEW_USER_PROFILE: lastUser.profileLink,
+      NEW_USER_AVATAR: newUserInfo.avatar,
+      NEW_USER: newUser.name,
+      NEW_USER_PROFILE: newUser.profileLink,
 
       TOTAL_USERS: forumVar.FORUMCOUNTUSER,
       TOTAL_USERS_TEXT: forumVar.FORUMCOUNTUSER > 1 ? hubSettings.text.total_users.many : hubSettings.text.total_users.one,
@@ -341,13 +367,14 @@ const Hub = Blanket("Hub", function (utils) {
 
       LAST_CONNECTED_LIST: lastConnectedList,
       LAST_CONNECTED_TEXT:
-      forumVar.FORUMLASTUSER == 0
-      ? hubSettings.text.last_connected.none
-      : forumVar.FORUMLASTUSER == 1
-      ? hubSettings.text.last_connected.one
-      : hubSettings.text.last_connected.many,
+        forumVar.FORUMLASTUSER == 0
+          ? hubSettings.text.last_connected.none
+          : forumVar.FORUMLASTUSER == 1
+            ? hubSettings.text.last_connected.one
+            : hubSettings.text.last_connected.many,
 
       GRP_COUNT: await getGroupCount(),
+      updateAvatar,
     };
 
     // Avec le plugin potion, génère le HTML des données
@@ -355,7 +382,7 @@ const Hub = Blanket("Hub", function (utils) {
       tag: "div",
     });
   }
-  
+
   ready(init); // Éxécute le script une fois la page chargée
   return { init };
 });
