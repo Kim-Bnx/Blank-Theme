@@ -1,7 +1,7 @@
 <!-- Boucle des catégories -->
 <!-- BEGIN catrow -->
 
-<!- Conteneur d'une catégorie -->
+<!-- Conteneur d'une catégorie -->
   <!-- BEGIN tablehead -->
   <div class="container" id="{catrow.tablehead.ID}">
 
