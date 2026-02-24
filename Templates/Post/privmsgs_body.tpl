@@ -68,8 +68,10 @@
 
   <!-- Tout sélectionner/déselectionner -->
   <center>
-    <p><a href="javascript:select_switch_privmsg(true);">{L_MARK_ALL}</a> ou <a
-        href="javascript:select_switch_privmsg(false);">{L_UNMARK_ALL}</a></p>
+    <p>
+      <a href="javascript:select_switch_privmsg(true);">{L_MARK_ALL}</a> ou 
+      <a href="javascript:select_switch_privmsg(false);">{L_UNMARK_ALL}</a>
+    </p>
   </center>
 
   <!-- Boutons de gestion des MP -->
