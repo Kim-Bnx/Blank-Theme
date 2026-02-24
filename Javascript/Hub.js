@@ -203,7 +203,7 @@ const Hub = Blanket("Hub", function (utils) {
    * @typedef {Object.<string, number>} GroupCountResult
    * @returns {Promise<GroupCountResult>} Objet : { [groupSlug]: count }
    */
-  async function getGroupCount(forceUpdate = false) {
+  async function getGroupCount() {
     // Vérifie si le compte des groupes est activé dans les paramètres
     if (!hubSettings.groups?.enable_count) {
       utils.warn("[Hub] Group count is not enabled or invalid.");
@@ -312,12 +312,12 @@ const Hub = Blanket("Hub", function (utils) {
     }
 
     if (!id) {
-      utils.warn("Impossible de retrouver l'id correspondant à cet avatar.");
+      warn("Impossible de retrouver l'id correspondant à cet avatar.");
       return;
     }
 
     // Lance une nouvelle requête
-    const updatedInfos = await utils.getUser({ name: target.alt, id }, true);
+    const updatedInfos = await getUser({ name: target.alt, id }, true);
     // Met à jour l'avatar
     target.src = updatedInfos.avatar || target.src;
   }
