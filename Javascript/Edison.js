@@ -1,18 +1,19 @@
 /**
- * Plugin Edison : gestion du thème clair/sombre 
- * Permet de basculer entre un thème clair et un thème sombre 
+ * Plugin Edison : gestion du thème clair/sombre
+ * Permet de basculer entre un thème clair et un thème sombre
  * Applique le thème aux images (via <picture><source data-theme>) et aux iframes
- * 
+ *
  * @placement     Sur toutes les pages
  * @doc           https://blankthemerpg.forumactif.com/t77-edison
  * @version       v2.0
- * 
+ *
  * @auteur        Poumon (v1) Kim (v2)
  */
-const Edison = Blanket("Edison", function ({ ready, warn, get, getAll, mergeOptions }) {
+const Edison = Blanket("Edison", function ({ ready, get, getAll }) {
   const defaults = {
     button: ".theme-toggle", // Sélecteur du bouton de switch thème
   };
+  let config = { ...defaults };
   const storageKey = "colorTheme"; // Nom du stockage du thème en localStorage
   const attrName = "data-color-scheme"; // Attribut du thème sur la balise <html>
   let themeObserver = null;
@@ -54,7 +55,7 @@ const Edison = Blanket("Edison", function ({ ready, warn, get, getAll, mergeOpti
   }
 
   /**
-   * Met à jour les URL d'images selon le thème actuel 
+   * Met à jour les URL d'images selon le thème actuel
    * (grâce aux balises <picture><source data-theme>)
    * @param {string} theme - "dark" | "light"
    */
@@ -77,7 +78,7 @@ const Edison = Blanket("Edison", function ({ ready, warn, get, getAll, mergeOpti
 
   /**
    * Applique le thème courant à la page HTML intégrée dans l'iframe
-   * @param {HTMLIFrameElement} frame 
+   * @param {HTMLIFrameElement} frame
    */
   function syncIframe(frame) {
     try {
@@ -132,10 +133,10 @@ const Edison = Blanket("Edison", function ({ ready, warn, get, getAll, mergeOpti
    */
   function toggle() {
     const next = getTheme() === "dark" ? "light" : "dark";
-    setTheme(next);            // Applique le thème
+    setTheme(next); // Applique le thème
     updateToggleLabel(get(defaults.button)); // Update le bouton de switch
-    setImgSource(next);        // Met à jour les images
-    syncAllIframes();          // Sync les iframes
+    setImgSource(next); // Met à jour les images
+    syncAllIframes(); // Sync les iframes
   }
 
   /**
@@ -152,8 +153,8 @@ const Edison = Blanket("Edison", function ({ ready, warn, get, getAll, mergeOpti
    * @param {Object} [options]
    * @param {string} [options.button] Selector du bouton de switch thème
    */
-  function init(options) {
-    const opts = mergeOptions(defaults, options);
+  function init(options = {}) {
+    config = { ...defaults, ...options };
 
     const button = get(opts.button);
     if (!button) return;
