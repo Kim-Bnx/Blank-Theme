@@ -69,8 +69,7 @@
   <!-- Conteneur des actions -->
   <div class="notiffi_manage">
     <!-- Lien vers la page de gestion des notifications dans le profil -->
-    <a class="notiffi_see_all" href="/profile?mode=editprofile&page_profil=notifications">Voir toutes les
-      notifications</a>
+    <a class="notiffi_see_all" href="/profile?mode=editprofile&page_profil=notifications">Voir toutes les notifications</a>
 
     <!-- Bouton d'action -->
     <div class="notiffi_actions">

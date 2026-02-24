@@ -133,7 +133,9 @@ label {
 button,
 .button,
 select,
-input {
+input,
+textarea {
+  border: none;
   border-radius: 5px;
   padding: 6px 10px;
   font-family: var(--font);
