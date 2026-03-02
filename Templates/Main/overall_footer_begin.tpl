@@ -3,7 +3,7 @@
     <!-- BEGIN switch_user_logged_in -->
     <!-- Bouton pour ouvrir le panneau des notifications -->
     <div id="notiffi_button">
-      <template class="myface u-img-square" type="template/potion" data-name="myface"><img src="[avatar]" /></template>
+      <template class="myface u-img-square" type="template/potion" data-name="mirror"><img src="[avatar]" /></template>
       <div class="myface-tooltip">Voir mes notifications</div>
       <template class="unread_count" type="template/potion" data-name="unread_notifs">[count]</template>
     </div>
@@ -36,7 +36,7 @@
 <!-- Panneau des notifications -->
 <div id="notiffi_panel">
   <div class="myprofile">
-    <template class="myname" type="template/potion" data-name="myname">
+    <template class="myname" type="template/potion" data-name="mirror">
       <a href="/u[id]" style="color: #[groupColor]">[username]</a>
     </template>
     <a href="/profile?mode=editprofile" class="myprofile-edit">Éditer mon profil</a>
